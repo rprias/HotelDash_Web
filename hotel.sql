@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2021 at 05:40 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.25
+-- Generation Time: Nov 06, 2024 at 03:55 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `hotel`
 --
+
 -- --------------------------------------------------------
 
 --
@@ -32,7 +33,7 @@ CREATE TABLE `contact` (
   `LastName` varchar(50) NOT NULL,
   `Email` text NOT NULL,
   `Message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `contact`
@@ -62,7 +63,7 @@ CREATE TABLE `event_booking` (
   `Email` text NOT NULL,
   `Phone_number` bigint(10) NOT NULL,
   `Status` enum('Rejected','Cancelled','Paid','Booked','CheckedOut') NOT NULL DEFAULT 'Booked'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event_booking`
@@ -86,7 +87,7 @@ CREATE TABLE `event_list` (
   `HallNumber` bigint(10) NOT NULL,
   `Status` enum('active','in-active') NOT NULL,
   `Booking_status` enum('Booked','Available') NOT NULL DEFAULT 'Available'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event_list`
@@ -116,7 +117,7 @@ CREATE TABLE `event_payment` (
   `PaymentDate` date NOT NULL DEFAULT current_timestamp(),
   `Amount` int(50) NOT NULL,
   `Status` enum('Paid') NOT NULL DEFAULT 'Paid'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event_payment`
@@ -140,7 +141,7 @@ CREATE TABLE `event_type` (
   `Description` text NOT NULL,
   `Cost` double NOT NULL,
   `Status` enum('active','in-active') NOT NULL DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event_type`
@@ -170,14 +171,14 @@ CREATE TABLE `general_settings` (
   `Phone_number` bigint(10) NOT NULL,
   `Telephone_number` bigint(10) NOT NULL,
   `Description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `general_settings`
 --
 
 INSERT INTO `general_settings` (`ID`, `Name`, `Address_line1`, `Address_line2`, `City`, `State`, `Country`, `Zip_code`, `Email`, `Phone_number`, `Telephone_number`, `Description`) VALUES
-(1, 'Hotel Elite', ' Address:No. 63', 'Mount Road,Guindy', 'Chennai', 'TamilNadu', 'India', 600015, 'elite@gmail.com', 9658968555, 123456789, ' Whether you book a hotel online, on the phone, or through a travel agent, it should be a simple process.                  It should be easy to contact a knowledgeable, helpful person');
+(1, 'Hotel Dash Bogota', 'Calle 93', 'Numero 13 - 70', 'Bogota', 'Bogota DC', 'Colombia', 41011, 'admin_dash@dash-hotel.com', 3658968555, 123456789, 'El Hotel Dash es más que un simple lugar para hospedarse; es una experiencia de lujo que combina la belleza natural de los cerros con un servicio excepcional. Ideal para viajeros que buscan lo mejor, este hotel promete crear recuerdos inolvidables en un entorno deslumbrante, donde cada detalle brilla como un diamante.');
 
 -- --------------------------------------------------------
 
@@ -198,7 +199,7 @@ CREATE TABLE `room_booking` (
   `Email` text NOT NULL,
   `Phone_number` bigint(10) NOT NULL,
   `Status` enum('Rejected','Cancelled','Paid','Booked','CheckedOut') NOT NULL DEFAULT 'Booked'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_booking`
@@ -226,7 +227,7 @@ CREATE TABLE `room_list` (
   `RoomNumber` bigint(10) NOT NULL,
   `Status` enum('active','in-active') NOT NULL,
   `Booking_status` enum('Booked','Available') NOT NULL DEFAULT 'Available'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_list`
@@ -267,7 +268,7 @@ CREATE TABLE `room_payment` (
   `PaymentDate` date NOT NULL DEFAULT current_timestamp(),
   `Amount` int(50) NOT NULL,
   `Status` enum('Paid') NOT NULL DEFAULT 'Paid'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_payment`
@@ -292,7 +293,7 @@ CREATE TABLE `room_type` (
   `Description` text NOT NULL,
   `Cost` double NOT NULL,
   `Status` enum('active','in-active') NOT NULL DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_type`
@@ -316,26 +317,28 @@ INSERT INTO `room_type` (`RoomTypeId`, `RoomType`, `RoomImage`, `Description`, `
 
 CREATE TABLE `users_details` (
   `UserId` bigint(10) NOT NULL,
-  `FirstName` varchar(50) NOT NULL,
-  `LastName` varchar(50) NOT NULL,
+  `Nombre` varchar(250) NOT NULL,
+  `NoDocu` varchar(50) NOT NULL,
   `Email` text NOT NULL,
   `Password` varchar(64) NOT NULL,
   `ContactNo` varchar(50) NOT NULL,
-  `Gender` varchar(50) NOT NULL,
+  `Genero` varchar(50) NOT NULL,
   `ProfileImage` text NOT NULL DEFAULT 'user.png',
-  `Status` enum('active','in-active') NOT NULL DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Rol` enum('Admin','Cliente') NOT NULL DEFAULT 'Cliente',
+  `DcoTipo` enum('CC','CE','DIE','NUIP','PP','PEP') NOT NULL DEFAULT 'CC'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users_details`
 --
 
-INSERT INTO `users_details` (`UserId`, `FirstName`, `LastName`, `Email`, `Password`, `ContactNo`, `Gender`, `ProfileImage`, `Status`) VALUES
-(2, 'admin', 'kumar', 'admin@gmail.com', '123', '9656859685', 'male', '1.jpg', 'in-active'),
-(5, 'Rajesh', 'K S', 'raju@gmail.com', '123', '9636636363', 'male', '2.jpeg', 'active'),
-(9, 'guvi', 'wew', 'guvi@gmail.com', '123', '9636636363', 'female', '2.jpeg', 'in-active'),
-(11, 'kamesh', 'K S', 'kamesh@gmail.com', '123', '9636636363', 'male', 'images.jpg', 'active'),
-(15, 'Rakesh', 'Balu', 'rakesh@gmail.com', '1234', '8563526352', 'female', '4.jpg', 'active');
+INSERT INTO `users_details` (`UserId`, `Nombre`, `NoDocu`, `Email`, `Password`, `ContactNo`, `Genero`, `ProfileImage`, `Rol`, `DcoTipo`) VALUES
+(2, 'admin', 'Venka', 'admin@gmail.com', '123', '3044632346', 'female', '1.jpg', 'Admin', 'CC'),
+(5, 'Rajesh', 'K S', 'raju@gmail.com', '123', '3636636363', 'male', '2.jpeg', 'Cliente', 'CC'),
+(9, 'guvi', 'wew', 'guvi@gmail.com', '123', '3636636361', 'male', '2.jpeg', 'Cliente', 'CE'),
+(15, 'Rodrigo', 'Prias', 'Rodri@dash.com', '1234', '3563526352', 'hombre', '4.jpg', 'Admin', 'NUIP'),
+(16, 'Alexander', 'Echeverri', 'Alex@Dash-hotels.com', '123', '7160244487', 'male', '4.jpg', 'Cliente', 'PP'),
+(23, 'Rodrigo Prias', '80195531', 'rodrigo@prias.com', '123', '3044632346', 'Hombre', 'images.png', 'Cliente', 'CC');
 
 --
 -- Indexes for dumped tables
@@ -483,7 +486,7 @@ ALTER TABLE `room_type`
 -- AUTO_INCREMENT for table `users_details`
 --
 ALTER TABLE `users_details`
-  MODIFY `UserId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `UserId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables

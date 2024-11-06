@@ -65,7 +65,7 @@ if(!isset($_SESSION['loggedUserId'])) {
  <div class="container-fluid ml-5" id="contentArea">
      <div class="col-8 ml-5 pl-5">
          
-         <h4 class="mb-4 text-center">Account Details</h4>
+         <h4 class="mb-4 text-center">Detalle de la Cuenta</h4>
          
          <div class="accountMessage">
             
@@ -81,7 +81,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <img  class="picture-src" id="updatePicture" title="" />
                                 <input type="file" id="wizardUpdate-picture" class="" name="profileImage" required>
                             </div>
-                        <h6 class="">Choose Picture</h6>
+                        <h6 class="">Escojer Imagen</h6>
                         
                     </div>
                    
@@ -91,7 +91,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                     <!-- First Name -->
                     <div class="input-group col-lg-6 mb-4">
                     <div class="ml-2">
-                         <label for="updatefirstName">First Name</label>
+                         <label for="updatefirstName">Nombre Completo</label>
                      </div>
                      <div class="input-group ">
                         <div class="input-group-prepend">

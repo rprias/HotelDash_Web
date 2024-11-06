@@ -43,7 +43,7 @@ if(isset($_SESSION['loggedUserId'])) {
    
 }
   
-  if(isset($user_details['FirstName'])){
+  if(isset($user_details['Nombre'])){
   ?>
    <!-- navbar two (when user log in)  -->
    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -90,12 +90,12 @@ if(isset($_SESSION['loggedUserId'])) {
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <!-- <img src="<" width="40" height="40" class="rounded-circle"> -->
-          <?php echo $user_details['FirstName']; ?>
+          <?php echo $user_details['Nombre']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="../hotel-dash/client/dashboard.php">Mis Reservas</a>
-          <a class="dropdown-item" href="../hotel-dash/client/account.php">Editar Datos</a>
-          <a class="dropdown-item" href="../hotel-dash/destroy.php">Salir</a>
+          <a class="dropdown-item" href="../hotel-dash-web/client/dashboard.php">Mis Reservas</a>
+          <a class="dropdown-item" href="../hotel-dash-web/client/account.php">Editar Datos</a>
+          <a class="dropdown-item" href="../hotel-dash-web/destroy.php">Salir</a>
         </div>
       </li>   
         </ul>

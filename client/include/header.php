@@ -60,7 +60,7 @@ if(isset($_SESSION['loggedUserId'])) {
    
 }
   
-  if(isset($user_details['FirstName'])){
+  if(isset($user_details['Nombre'])){
   ?>
    <!-- navbar segunda (de cara al usuario registrado)  -->
    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -109,7 +109,7 @@ if(isset($_SESSION['loggedUserId'])) {
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <!-- <img src="<" width="40" height="40" class="rounded-circle"> -->
-          <?php echo $user_details['FirstName']; ?>
+          <?php echo $user_details['Nombre']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="dashboard.php">Mis Reservas</a>

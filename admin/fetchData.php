@@ -18,14 +18,15 @@ if(isset($_POST['userFilter'])){
         <table class="table table-hover " id="userTable">
 <thead class="thead-dark">
     <tr >
-      <th scope="col">Profile</th>
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
-      <th scope="col">Gender</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">DcoTipo</th>
+      <th scope="col">NoDocu</th>
       <th scope="col">Email</th>
       <th scope="col">Contact no</th>
+      <th scope="col">Genero</th>
       <th scope="col">Rol</th>
-      <th scope="col">Action</th>      
+      <th scope="col">Accion</th>      
     </tr>
   </thead>
   <tbody>';
@@ -51,17 +52,18 @@ if(isset($_POST['userFilter'])){
                     <img class="round-img" src="../assets/picture/profiles/'.$row["ProfileImage"].'" alt="Profile"/>
                     </a>
                     </td>
-                    <td>'.$row["FirstName"].'</td>
-                    <td>'.$row["LastName"].'</td>
-                    <td>'.$row["Gender"].'</td>
+                    <td>'.$row["Nombre"].'</td>
+                    <td>'.$row["DcoTipo"].'</td>
+                    <td>'.$row["NoDocu"].'</td>
                     <td>'.$row["Email"].'</td>
                     <td>'.$row["ContactNo"].'</td>
+                    <td>'.$row["Genero"].'</td>
                     <td>'.$row["Rol"].'</td>
                     <td>
                        
               <input type="hidden" name="userId" value="'.$row["UserId"].'"/> ';
-              $userTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editUser('".$row["UserId"]."') \"> Edit </button>";
-              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["FirstName"]."') && deleteUser('".$row["UserId"]."')\">Delete</button>
+              $userTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editUser('".$row["UserId"]."') \"> Editar</button>";
+              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["Nombre"]."') && deleteUser('".$row["UserId"]."')\">Borrar</button>
                      
                     </td>
             </tr>";

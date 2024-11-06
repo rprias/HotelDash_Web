@@ -59,7 +59,7 @@ include('../include/general.php');
 					<a class="tab" href="user.php">Usuarios</a>
 				</li>
 	           <li>
-	            <a href="#roomSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Rooms</a>
+	            <a href="#roomSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Alojamientos</a>
 	            <ul class="collapse list-unstyled" id="roomSubmenu">
 				<li class="nav-item">
                     <a class="tab" href="roomType.php">Tipos de Habitaciones</a>

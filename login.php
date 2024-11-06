@@ -6,8 +6,6 @@
  ?>
 <!-- Navbar-->
 
-
-
 <div class="container">
     <div class="row align-items-center my-5">
         <!-- For Demo Purpose -->

@@ -2,20 +2,20 @@
 include("include/dbConnect.php");
 
 if(isset($_POST['Message'])){
-    $fname = $_POST['FirstName'];
-    $lname = $_POST['LastName'];
+    $nombre = $_POST['Nombre'];
+    $nodocu = $_POST['NoDocu'];
     $email = $_POST['Email'];
     $msg = $_POST['Message'];
-    $insert_query = "INSERT INTO contact(FirstName,LastName,Email,Message) values('$fname','$lname','$email','$msg')";
+    $insert_query = "INSERT INTO contact(Nombre,NoDocu,Email,Message) values('$nombre','$nodocu','$email','$msg')";
     $sendData = array();
     if( mysqli_query($con,$insert_query)){
-        $mesg="Thanks For Your Feedback!";
+        $mesg="Gracias por sus comentarios!";
         $sendData = array(
             "msg"=>$mesg,
             "error"=>""
         );
     }else{
-        $error="Server Down! Try After Sometimes...";
+        $error="Servidor Caido. Intente mas tarde";
         $sendData = array(
             "msg"=>"",
             "error"=>$error

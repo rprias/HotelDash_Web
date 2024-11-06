@@ -42,14 +42,14 @@ if(!isset($_SESSION['loggedUserId'])) {
                   </div>
                
 
-                    <!-- First Name -->
+                    <!-- Nombre Completo -->
                     <div class="input-group col-lg-6 mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="Nombre" type="text" name="Nombre" placeholder="Nombre Completo" class="form-control bg-white border-left-0 border-md" required>
                     </div>
 
                     <!-- Last Name -->
@@ -182,14 +182,14 @@ if(!isset($_SESSION['loggedUserId'])) {
                 </div>
                
 
-                    <!-- First Name -->
+                    <!-- Nombre Completo -->
                     <div class="input-group col-lg-6 mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="updatefirstName" type="text" name="firstName" placeholder="Nombres" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="updateNombre" type="text" name="Nombre" placeholder="Nombres" class="form-control bg-white border-left-0 border-md" required>
                     </div>
 
                     <!-- Last Name -->

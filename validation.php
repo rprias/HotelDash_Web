@@ -20,7 +20,7 @@ if(isset($_POST['user_login'])){
             header("Location:index.php?");
         }
 
-        $_SESSION['loggedUserName']=$row['FirstName'];
+        $_SESSION['loggedUserName']=$row['Nombre'];
         $_SESSION['loggedUserId']=$row['UserId'];
        
         
