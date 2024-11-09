@@ -33,38 +33,41 @@
         <img class="d-block w-100" src="assets/picture/cesourel/Parking.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
           <h1 class="display-5 text-dark">Capacidad suficiente y ubicación conveniente de las plazas de parqueo </h1>
-          <p class="text-dark">Un parqueadero bien diseñado y mantenido no sólo mejora el aspecto exterior del establecimiento...</p>
+          <p class="text-dark">A well-designed and maintained parking lot not only improves the curb appeal of the
+            establishment...</p>
         </div>
       </div>
       <div class="carousel-item ">
         <img class="d-block w-100" src="assets/picture/cesourel/Reception.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="display-5 text-dark">Una bienvenida va más allá de las palabras, crea un sentimiento de cariño y da una sensación de placer</h1>
-          <p class="text-dark">Fácil accesibilidad a puntos comerciales y zonas clave de la ciudad con la mejor zona de parqueaderos.</p>
+          <h1 class="display-5">A welcome goes beyond words, it creates a feeling of caring and gives a sense of
+            pleasure</h1>
+          <p>Easy accessibility to commercial points and key areas in the city with best parking area.</p>
         </div>
       </div>
       <div class="carousel-item ">
         <img class="d-block w-100" src="assets/picture/cesourel/Service.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="display-5 text-dark">Los huéspedes pueden comer y beber en su propia habitación privada del hotel.</h1>
-          <p class="text-dark">Se ofrecen cupones y descuentos para atracciones locales...</p>
+          <h1 class="display-5 text-dark"> Guest can eat and drink within their own private room in the hotel</h1>
+          <p class="text-dark">Offer coupons and discounts to local attractions...</p>
         </div>
       </div>
       <div class="carousel-item ">
         <img class="d-block w-100" src="assets/picture/cesourel/lighting.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="display-5">Iluminación Asombrosa en todos lados </h1>
-          <p>La calidad del conjunto de la iluminación y su efecto sobre el estado de ánimo dependen a menudo de la relación entre las luces principales y de relleno...</p>
+          <h1 class="display-5">The Best lighting Effects </h1>
+          <p>The quality of the overall lighting scheme and its effect on mood
+            is often dependent on the relationship between the key and fill lights...</p>
         </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
+      <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Siguiente</span>
+      <span class="sr-only">Next</span>
     </a>
   </div>
 </section>
@@ -74,40 +77,46 @@
 
 <section class="py-5 white-section" id="introduction">
   <div class="container">
-    <h1 class="display-4 title"><?php echo $general_setting['Name'] ?>, colecciones de Lujo</h1>
-    <p class="lead">Las vias bien conectadas con el sistema de transporte y con medidas de seguridad de los clientes.</p>
+    <h1 class="display-4 title"><?php echo $general_setting['Name'] ?>,luxury collections ,chennai.</h1>
+    <p class="lead">The well-connected roads with transportation system and with safty measures of clients</p>
   </div>
 
   <div class="container">
 
-    <h3>Panorama</h3>
+    <h3>Overview</h3>
 
-    <p class="text-justify">Este elegante y sofisticado refugio, situado en el vibrante corazón de Bogotá, 
-      se eleva entre el verde paisaje urbano de la ciudad. Este hotel de lujo ofrece amplias instalaciones 
-      para eventos y banquetes, una variedad de restaurantes de alta cocina, experiencias exclusivas de bienestar, y mucho más..
+    <p class="text-justify">This ornate, palatial tribute to Southern India's greatest empires -The pasific - overlooks
+      verdant foliage in the heart of Chennai. This luxury hotel offers one of the largest banqueting
+      facilities in India, 10 award winning F&B outlets, signature wellness experiences and more.<br>
+      It embodies the highest standards in Indian hospitality balanced with elegant restraint in a prime
+      property with distinct personality.
       <br>
-      El Hotel Dash cuenta con 522 habitaciones y 78 apartamentos de servicio lujosamente equipados, 
-      sumando en total 600 espaciosas habitaciones, suites y apartamentos de lujo que son el epítome de 
-      la elegancia colombiana y el estilo contemporáneo. Con una atención meticulosa a los detalles y 
-      servicios pensados para la comodidad, el Hotel Dash atiende tanto las necesidades del viajero de 
-        negocios en movimiento como los requerimientos únicos de quienes buscan una experiencia exclusiva en el destino.
+      The passific has 522 rooms and 78 luxuriously appointed service apartments- collectively
+      its 600 spacious guest rooms, suites and luxury service apartments,are the epitome
+      of Indian grace and style, expertly delegated with thoughtful amenities.The pasific meets
+      the needs of both the business traveller on the move as well as the bespoke requirements of
+      the destination connoisseur.
     </p>
 
     <p>
-    <blockquote class="blockquote">Ubicación Ideal</blockquote>
-    Las maravillas de este lujoso hotel son variadas. Como un homenaje a la rica historia cultural de Bogotá, el Hotel 
-    Dash representa la belleza y el lujo atemporales. Ubicado en el corazón de la zona empresarial de la ciudad, 
-    cerca de importantes áreas comerciales y a tan solo 8 km del aeropuerto internacional El Dorado, 
-    el Hotel Dash es un destino ideal tanto para viajes de negocios como de placer. Su ubicación estratégica, 
-    con fácil acceso a las principales vías y sistemas de transporte, permite un desplazamiento cómodo hacia los 
-    principales puntos comerciales y turísticos de la ciudad.</p>
+    <blockquote class="blockquote">Ideal Location</blockquote>
+
+    The delights of this luxurious hotel are varied. As a fascinating
+    throwback to a vibrant period in Indian history, The pasific stands for timeless beauty
+    and luxury. Built in the midst of the business hub of Guindy and located on Mount Road
+    ,Pasific in Chennai is within close proximity to many key areas of Chennai and is just 8
+    km away from the domestic and international airport which serves as an ideal destination
+    for both business and leisure sojourns. The well-connected roads and transportation system
+    enable easy accessibility to commercial points and key areas in the city.
+    </p>
 
     <p>
-    <blockquote class="blockquote">Arte refinado</blockquote>
-    Las imponentes fachadas y la arquitectura fluida del Hotel Dash evocan la estética de las antiguas civilizaciones 
-    que dejaron una huella profunda en diversas regiones de América Latina. Desde las costas caribeñas hasta los Andes, 
-    estas culturas han influido en el arte, la arquitectura y la identidad cultural, inspirando elementos que se reflejan 
-    en cada rincón del hotel y conectan el pasado con el presente.
+    <blockquote class="blockquote">Refined Artistry</blockquote>
+    Towering facades and flowing architecture are leaves taken from the aesthetics of the Cholas,
+    an ancient dynasty that made a deep impact on many regions within and outside of this country.
+    From the shores of the Bay of Bengal to that of South Asian borders of Malaysia, China
+    and Sri Lanka among others, the Cholas have influenced art, architecture and culture from
+    their time to now.
     </p>
 
   </div>
