@@ -20,13 +20,13 @@ if(isset($_POST['userFilter'])){
     <tr >
       <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
-      <th scope="col">DcoTipo</th>
-      <th scope="col">NoDocu</th>
+      <th scope="col">Tipo Documento</th>
+      <th scope="col">No. Documento</th>
       <th scope="col">Email</th>
-      <th scope="col">Contact no</th>
+      <th scope="col">Telefono</th>
       <th scope="col">Genero</th>
       <th scope="col">Rol</th>
-      <th scope="col">Accion</th>      
+      <th scope="col">Acciones</th>      
     </tr>
   </thead>
   <tbody>';
@@ -64,7 +64,7 @@ if(isset($_POST['userFilter'])){
               <input type="hidden" name="userId" value="'.$row["UserId"].'"/> ';
               $userTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editUser('".$row["UserId"]."') \"> Editar</button>";
               $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["Nombre"]."') && deleteUser('".$row["UserId"]."')\">Borrar</button>
-                     
+                    
                     </td>
             </tr>";
         }
@@ -72,7 +72,7 @@ if(isset($_POST['userFilter'])){
     else 
     {
     
-      $userTable.='<tr><td colspan="8" style="color:red;text-align:center;">No records are found </td></tr>';
+      $userTable.='<tr><td colspan="8" style="color:red;text-align:center;">Sin Registros</td></tr>';
     
     }
 

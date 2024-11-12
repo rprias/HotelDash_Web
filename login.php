@@ -7,8 +7,7 @@
 <!-- Navbar-->
 
 <div class="container">
-    <div class="row align-items-center my-5">
-        <!-- For Demo Purpose -->
+    <div class="row align-items-center my-5">   
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img src="assets/picture/icons/thumbs-up.png" alt="" class="img-fluid mb-3 d-none d-md-block">
             <h1>Ingrese para Reservar</h1>
@@ -34,7 +33,7 @@
                         <span class="fa fa-user"></span>
                     </span>                    
                 </div>
-                <input type="text" class="form-control" name="email" placeholder="Email" required="required">				
+                <input type="text" class="form-control" name="email" placeholder="Direccion de Correo" required="required">				
             </div>
         </div>
 		<div class="form-group">
@@ -44,11 +43,11 @@
                         <i class="fa fa-lock"></i>
                     </span>                    
                 </div>
-                <input type="password" class="form-control" name="password" placeholder="Password" required="required">				
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">				
             </div>
         </div>    
         <div class="clearfix mb-3">
-            <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+            <label class="float-left form-check-label"><input type="checkbox"> Recordar mis datos</label>
             <a href="#" class="float-right">Olvidaste tu Contraseña?</a>
         </div>
 
