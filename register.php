@@ -24,7 +24,7 @@ if (isset($_POST['user_registration'])) {
     $num = mysqli_num_rows($result);
 
     if ($nombre == "admin") {
-        $error = "Invalid Username (You cannot use the username as admin!)";
+        $error = "Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
         error("signup.php", $error);
     } else if ($num > 0) {
         $error = "Username or email id is already taken!";
@@ -37,7 +37,7 @@ if (isset($_POST['user_registration'])) {
         $specialChars = preg_match('@[^\w]@', $password);
 
         if (strlen($password) < 3){  //|| !$number || !$uppercase || !$lowercase || !$specialChars)
-            $error = "Password must be at least 3 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+            $error = "La contraseña debe tener al menos 3 caracteres y contener como mínimo un número, una letra mayúscula, una letra minúscula y un carácter especial.";
             error("signup.php", $error);
         } else {
             if ($password == $confirmPassword) {
@@ -50,14 +50,14 @@ if (isset($_POST['user_registration'])) {
 
                 if (mysqli_query($con, $insert)) {
                     if (!move_uploaded_file($tempname, $folder)) {
-                        $error = "Error in Registration ...! Here";
+                        $error = "Error en registro, los campos no coinciden";
                         error("signup.php", $error);
                     } else {
                         header("Location:index.php");
                         exit(); // Asegúrate de usar exit después de redirigir
                     }
                 } else {
-                    $error = "Error in Registration ...! There";
+                    $error = "Error en su registro. Intente nuevamente";
                     error("signup.php", $error);
                 }
             }

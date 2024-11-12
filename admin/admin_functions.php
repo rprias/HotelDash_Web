@@ -1,23 +1,23 @@
-
 <?php
-
-include('../include/functions.php');
+include '../include/functions.php';
+include '../include/dbConnect.php';
 
 // ---------------------------------------User Actions----------------------------------------------
 
    // Adding New User into Database
-    if(isset($_POST['firstname'])){
+    if(isset($_POST['user_registration'])){
              
-        $firstname = mysqli_real_escape_string($con, $_POST['firstname']);
-        $lastname = mysqli_real_escape_string($con, $_POST['lastname']);
+        $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
+        $noDocu = mysqli_real_escape_string($con, $_POST['noDocu']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
-        $contactno = mysqli_real_escape_string($con, $_POST['contactno']);  
-        $gender = mysqli_real_escape_string($con, $_POST['gender']);
-        $rol = mysqli_real_escape_string($con, $_POST['rol']);
+        $dcoTipo = mysqli_real_escape_string($con, $_POST['dcoTipo']);
+        $contactno = mysqli_real_escape_string($con, $_POST['contactno']);
+        $genero = mysqli_real_escape_string($con, $_POST['genero']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
+        $rol = mysqli_real_escape_string($con, $_POST['rol']);
         $confirmPassword = mysqli_real_escape_string($con, $_POST['conformPassword']);
 
-    
+     
         // profile image upload
         $profileImageName = $_FILES["profileImage"]["name"];
         $tempname = $_FILES["profileImage"]["tmp_name"];   
@@ -26,13 +26,13 @@ include('../include/functions.php');
     
         // $re_pass = base64_encode(mysqli_real_escape_string($conn, $_POST['reg_pass']));
     
-        $User_details="SELECT * FROM users_details WHERE Firstname='$firstname' OR Email='$email'";
+        $User_details="SELECT * FROM users_details WHERE nombre='$nombre' OR Email='$email'";
         $result=mysqli_query($con,$User_details)or die("can't fetch");
         $num=mysqli_num_rows($result);
     
       
         $sendData = array();
-        if ($firstname == "admin") {
+        if ($nombre == "admin") {
             $error="Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
             $sendData = array(
                 "msg"=>"",
@@ -76,13 +76,12 @@ include('../include/functions.php');
                   }else{
     
                         // query validation
-                        $insert="insert into users_details (FirstName,LastName,Email,Password,ContactNo,Gender,Rol,ProfileImage) values('$firstname','$lastname','$email','$password','$contactno','$gender','$rol', '$profileImageName') " ;
-
+                        $insert = "INSERT INTO users_details (dcoTipo, Nombre, NoDocu, Email, password, ContactNo, genero, ProfileImage) 
+                           VALUES ('$dcoTipo', '$nombre', '$noDocu', '$email', '$password', '$contactno', '$genero', '$profileImageName')";
     
                         if(mysqli_query($con,$insert))
                         {
                             if(!move_uploaded_file($tempname, $folder)){
-                            //if(false){
                                 $error ="¡Error en el registro ...! Pruebe en otro momento.";
                                 $sendData = array(
                                     "msg"=>"",
@@ -90,13 +89,8 @@ include('../include/functions.php');
                                 );
                                 echo json_encode($sendData);
                             }else{
-                              $message = "Usuario Registrado";
-                              // message("user.php","User Added");
-                              $sendData = array(
-                                "msg"=>$message,
-                                "error"=>""
-                            );
-                            echo json_encode($sendData);
+                                header("Location:user.php");
+                                exit(); // Asegúrate de usar exit después de redirigir
                             }
                         }
                         else{
@@ -138,10 +132,10 @@ if(isset($_POST['deleteUser'])){
 }
 
 //update - getting the selected user details
-if(isset($_POST['userUpdateId'])){
-    $userID = $_POST['userUpdateId'];
+if(isset($_POST['updateUserID'])){
+    $userID = $_POST['updateUserID'];
    
-    $query_selectUser = "select * from users_details where UserId = '$userID' ";
+    $query_selectUser = "SELECT * FROM users_details where UserId = '$userID' ";
     $single_user = mysqli_query($con,$query_selectUser);
     $num_of_rows = mysqli_num_rows($single_user);
     $response = array();
@@ -162,12 +156,13 @@ if(isset($_POST['userUpdateId'])){
 if(isset($_POST['updateUserID'])){
              
     $user_id = mysqli_real_escape_string($con, $_POST['updateUserID']);
-    $firstname = mysqli_real_escape_string($con, $_POST['firstName']);
-    $lastname = mysqli_real_escape_string($con, $_POST['lastname']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $contactno = mysqli_real_escape_string($con, $_POST['contactno']);  
-    $gender = mysqli_real_escape_string($con, $_POST['gender']);
-    $rol = mysqli_real_escape_string($con, $_POST['rol']);
+    $nombre = mysqli_real_escape_string($con, $_POST['updateNombre']);
+    $noDocu = mysqli_real_escape_string($con, $_POST['updateNoDocu']);
+    $email = mysqli_real_escape_string($con, $_POST['updateEmail']);
+    $dcoTipo = mysqli_real_escape_string($con, $_POST['updateDdcoTipo']);
+    $contactno = mysqli_real_escape_string($con, $_POST['updatecontactno']);
+    $genero = mysqli_real_escape_string($con, $_POST['updategenero']);
+    $rol = mysqli_real_escape_string($con, $_POST['updateRol']);
    
     // profile image upload
     $profileImageName = $_FILES["profileImage"]["name"];
@@ -177,7 +172,7 @@ if(isset($_POST['updateUserID'])){
 
     // $re_pass = base64_encode(mysqli_real_escape_string($conn, $_POST['reg_pass']));
 
-    $User_details="SELECT * FROM users_details WHERE (Firstname='$firstname' OR Email='$email') AND UserId <> ' $user_id '";
+    $User_details="SELECT * FROM users_details WHERE (nombre='$nombre' OR Email='$email') AND UserId <> ' $user_id '";
     $result=mysqli_query($con,$User_details)or die("can't fetch");
     $num=mysqli_num_rows($result);
 
@@ -185,7 +180,7 @@ if(isset($_POST['updateUserID'])){
     $sendData = array();
    
     
-   if ($firstname == "admin") {
+   if ($nombre == "admin") {
         $error="Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
         $sendData = array(
             "msg"=>"",
@@ -203,7 +198,7 @@ if(isset($_POST['updateUserID'])){
     } else {
 
                     // query validation
-                    $update="UPDATE users_details SET  FirstName='$firstname', LastName ='$lastname',Email='$email',ContactNo='$contactno',Gender='$gender',Rol='$rol',ProfileImage='$profileImageName' where UserId = '$user_id'" ;
+                    $update="UPDATE users_details SET  nombre='$nombre', noDocu ='$$noDocu ',email='$email',ContactNo='$contactno',genero='$genero',Rol='$rol',ProfileImage='$profileImageName' where UserId = '$user_id'" ;
 
 
                     if(mysqli_query($con,$update))
@@ -638,7 +633,7 @@ if(isset($_POST['updateRoomId'])){
 if(isset($_POST['bookingDetail'])){
     $ID = $_POST['bookingId'];
    
-    $selectBooking =   "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName,us.ContactNo FROM room_booking rm 
+    $selectBooking =   "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.nombre,us.ContactNo FROM room_booking rm 
                         inner join room_list rl on rl.RoomId = rm.RoomId
                         inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                         inner join users_details us on us.Userid = rm.User_id 
@@ -1011,7 +1006,7 @@ if(isset($_POST['updateEventId'])){
 if(isset($_POST['eventBookingDetail'])){
     $ID = $_POST['bookingId'];
    
-    $selectBooking = "SELECT em.*,et.EventType,el.HallNumber,us.FirstName,us.ContactNo FROM event_booking em 
+    $selectBooking = "SELECT em.*,et.EventType,el.HallNumber,us.nombre,us.ContactNo FROM event_booking em 
                       inner join event_list el on el.EventId = em.EventId
                       inner join event_type et on el.EventTypeId = et.EventTypeId 
                       inner join users_details us on us.Userid = em.User_id 

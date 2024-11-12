@@ -7,12 +7,12 @@ include('include/header.php');
 
 <div class="container">
     <div class="row align-items-center my-5">
-        <!-- For Demo Purpose -->
+
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img src="assets/picture/icons/thumbs-up.png" alt="" class="img-fluid mb-3 d-none d-md-block">
             <h1>Crea una Cuenta</h1>
-            <p class="font-italic text-muted mb-0">La información facilitada a continuación se utilizará para acceder a
-                su cuenta Hotel Dash.</p>
+            <p class="font-italic text-muted mb-0">La información facilitada a continuación se utilizará para crear su
+                cuenta Hotel Dash.</p>
 
             </p>
         </div>
@@ -37,6 +37,8 @@ include('include/header.php');
                         }
                         ?>
                     </div>
+
+
                     <!-- DcoTipo -->
                     <div class="input-group col-lg-6 mb-4">
                         <div class="input-group-prepend">
@@ -46,7 +48,7 @@ include('include/header.php');
                         </div>
                         <select id="dcoTipo" type="text" name="dcoTipo" placeholder="Tipo de Documento"
                             class="form-control bg-white border-left-0 border-md" required>
-                            <option value="CC">Tipo de Documento</option>
+                            <option value="">Tipo de Documento</option>
                             <option value="CC">Cédula de ciudadanía</option>
                             <option value="CE">Cédula de extranjería</option>
                             <option value="DIE">Documento de identificación extranjero</option>
@@ -55,9 +57,12 @@ include('include/header.php');
                             <option value="PEP">Permiso especial de permanencia</option>
                         </select>
                     </div>
-                    <!-- Numero de Documentos-->
+
+
+
+                    <!-- Numero de Documento-->
                     <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
+                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
                                 <i class="fa fa-user text-muted"></i>
                             </span>
@@ -83,7 +88,7 @@ include('include/header.php');
                                 <i class="fa fa-envelope text-muted"></i>
                             </span>
                         </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address"
+                        <input id="email" type="email" name="email" placeholder="Dirección de Correo"
                             class="form-control bg-white border-left-0 border-md" required>
                     </div>
 
@@ -95,7 +100,7 @@ include('include/header.php');
                             </span>
                         </div>
                         <input id="phoneNumber" type="tel" name="contactno" pattern="[3,6][0-9]{9}"
-                            placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3"
+                            placeholder="Número de Telefono" class="form-control bg-white border-md border-left-0 pl-3"
                             required>
                     </div>
 
@@ -123,7 +128,7 @@ include('include/header.php');
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                         </div>
-                        <input id="password" type="password" name="password" placeholder="Password"
+                        <input id="password" type="password" name="password" placeholder="Contraseña"
                             class="form-control bg-white border-left-0 border-md" required>
                     </div>
 
@@ -135,7 +140,7 @@ include('include/header.php');
                             </span>
                         </div>
                         <input id="passwordConfirmation" type="password" name="conformPassword"
-                            placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md"
+                            placeholder="Confirma Contraseña" class="form-control bg-white border-left-0 border-md"
                             required>
                     </div>
 
@@ -149,7 +154,7 @@ include('include/header.php');
                     <!-- Divider Text -->
                     <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                         <div class="border-bottom w-100 ml-5"></div>
-                        <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                        <span class="px-2 small text-muted font-weight-bold text-muted">'Ó'</span>
                         <div class="border-bottom w-100 mr-5"></div>
                     </div>
 
