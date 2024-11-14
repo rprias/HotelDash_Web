@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 06, 2024 at 03:55 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 15-11-2024 a las 00:21:46
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hotel`
+-- Base de datos: `hotel_dash`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Estructura de tabla para la tabla `contact`
 --
 
 CREATE TABLE `contact` (
@@ -36,17 +36,16 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `contact`
+-- Volcado de datos para la tabla `contact`
 --
 
 INSERT INTO `contact` (`ID`, `FirstName`, `LastName`, `Email`, `Message`) VALUES
-(1, 'Ramesh', 'babu', 'ram@gmail.com', 'Well Organized Project .....Cool!'),
-(2, 'ganapathy', 'subu', 'gana@gmail.com', 'Super buddy!');
+(1, 'Ramesh', 'babu', 'ram@gmail.com', 'Well Organized Project .....Cool!');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_booking`
+-- Estructura de tabla para la tabla `event_booking`
 --
 
 CREATE TABLE `event_booking` (
@@ -66,7 +65,7 @@ CREATE TABLE `event_booking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `event_booking`
+-- Volcado de datos para la tabla `event_booking`
 --
 
 INSERT INTO `event_booking` (`BookingId`, `EventId`, `User_id`, `Date`, `Modified_date`, `Event_date`, `NoOfGuest`, `EventTime`, `Package`, `Amount`, `Email`, `Phone_number`, `Status`) VALUES
@@ -78,7 +77,7 @@ INSERT INTO `event_booking` (`BookingId`, `EventId`, `User_id`, `Date`, `Modifie
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_list`
+-- Estructura de tabla para la tabla `event_list`
 --
 
 CREATE TABLE `event_list` (
@@ -86,28 +85,28 @@ CREATE TABLE `event_list` (
   `EventTypeId` bigint(10) NOT NULL,
   `HallNumber` bigint(10) NOT NULL,
   `Status` enum('Activa','Inactiva') NOT NULL,
-  `Booking_status` enum('Booked','Available') NOT NULL DEFAULT 'Available'
+  `Booking_status` enum('Ocupada','Disponible') NOT NULL DEFAULT 'Disponible'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `event_list`
+-- Volcado de datos para la tabla `event_list`
 --
 
 INSERT INTO `event_list` (`EventId`, `EventTypeId`, `HallNumber`, `Status`, `Booking_status`) VALUES
-(18, 11, 1, 'Activa', 'Available'),
-(19, 11, 2, 'Activa', 'Booked'),
-(20, 11, 3, 'Activa', 'Booked'),
-(21, 11, 4, 'Activa', 'Available'),
-(22, 12, 5, 'Activa', 'Available'),
-(23, 12, 6, 'Activa', 'Available'),
-(24, 11, 7, 'Activa', 'Available'),
-(25, 12, 8, 'Activa', 'Available'),
-(26, 11, 9, 'Activa', 'Available');
+(18, 11, 1, 'Activa', 'Ocupada'),
+(19, 11, 2, 'Activa', 'Disponible'),
+(20, 11, 3, 'Activa', 'Disponible'),
+(21, 11, 4, 'Activa', 'Disponible'),
+(22, 12, 5, 'Activa', 'Disponible'),
+(23, 12, 6, 'Activa', 'Disponible'),
+(24, 11, 7, 'Activa', 'Disponible'),
+(25, 12, 8, 'Activa', 'Disponible'),
+(26, 11, 9, 'Activa', 'Disponible');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_payment`
+-- Estructura de tabla para la tabla `event_payment`
 --
 
 CREATE TABLE `event_payment` (
@@ -120,7 +119,7 @@ CREATE TABLE `event_payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `event_payment`
+-- Volcado de datos para la tabla `event_payment`
 --
 
 INSERT INTO `event_payment` (`PaymentId`, `BookingId`, `PaymentType`, `PaymentDate`, `Amount`, `Status`) VALUES
@@ -131,7 +130,7 @@ INSERT INTO `event_payment` (`PaymentId`, `BookingId`, `PaymentType`, `PaymentDa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_type`
+-- Estructura de tabla para la tabla `event_type`
 --
 
 CREATE TABLE `event_type` (
@@ -144,7 +143,7 @@ CREATE TABLE `event_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `event_type`
+-- Volcado de datos para la tabla `event_type`
 --
 
 INSERT INTO `event_type` (`EventTypeId`, `EventType`, `EventImage`, `Description`, `Cost`, `Status`) VALUES
@@ -155,7 +154,7 @@ INSERT INTO `event_type` (`EventTypeId`, `EventType`, `EventImage`, `Description
 -- --------------------------------------------------------
 
 --
--- Table structure for table `general_settings`
+-- Estructura de tabla para la tabla `general_settings`
 --
 
 CREATE TABLE `general_settings` (
@@ -174,7 +173,7 @@ CREATE TABLE `general_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `general_settings`
+-- Volcado de datos para la tabla `general_settings`
 --
 
 INSERT INTO `general_settings` (`ID`, `Name`, `Address_line1`, `Address_line2`, `City`, `State`, `Country`, `Zip_code`, `Email`, `Phone_number`, `Telephone_number`, `Description`) VALUES
@@ -183,7 +182,7 @@ INSERT INTO `general_settings` (`ID`, `Name`, `Address_line1`, `Address_line2`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `room_booking`
+-- Estructura de tabla para la tabla `room_booking`
 --
 
 CREATE TABLE `room_booking` (
@@ -202,7 +201,7 @@ CREATE TABLE `room_booking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `room_booking`
+-- Volcado de datos para la tabla `room_booking`
 --
 
 INSERT INTO `room_booking` (`BookingId`, `RoomId`, `User_id`, `Date`, `Modified_date`, `CheckIn`, `CheckOut`, `NoOfGuest`, `Amount`, `Email`, `Phone_number`, `Status`) VALUES
@@ -213,12 +212,14 @@ INSERT INTO `room_booking` (`BookingId`, `RoomId`, `User_id`, `Date`, `Modified_
 (31, 13, 15, '2021-10-12', '2021-10-12 15:09:00', '2021-11-11', '2021-11-13', '2', 2400, 'rakesh@gmail.com', 7485965263, 'Cancelled'),
 (32, 16, 15, '2021-10-12', '2021-10-12 15:09:31', '2021-11-18', '2021-11-20', '2', 3600, 'rakesh@gmail.com', 9652635241, 'Paid'),
 (33, 29, 15, '2021-10-12', '2021-10-12 15:10:07', '2021-10-14', '2021-10-23', '1', 31500, 'rakesh@gmail.com', 8541526352, 'Paid'),
-(34, 18, 15, '2021-10-12', '2021-10-12 15:10:42', '2021-11-11', '2021-11-13', '2', 3600, 'rakesh@gmail.com', 8585968563, 'Booked');
+(34, 18, 15, '2021-10-12', '2021-10-12 15:10:42', '2021-11-11', '2021-11-13', '2', 3600, 'rakesh@gmail.com', 8585968563, 'Booked'),
+(35, 16, 5, '2024-11-14', '2024-11-14 22:31:05', '1970-01-01', '1970-01-01', '1', 0, 'rodrigo.prias@gmail.com', 3044632346, 'Cancelled'),
+(36, 18, 5, '2024-11-14', '2024-11-14 22:32:39', '2024-11-02', '2024-11-09', '1', 0, 'rodrigo.prias@gmail.com', 3044632346, 'Cancelled');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `room_list`
+-- Estructura de tabla para la tabla `room_list`
 --
 
 CREATE TABLE `room_list` (
@@ -226,39 +227,39 @@ CREATE TABLE `room_list` (
   `RoomTypeId` bigint(10) NOT NULL,
   `RoomNumber` bigint(10) NOT NULL,
   `Status` enum('Activa','Inactiva') NOT NULL,
-  `Booking_status` enum('Booked','Available') NOT NULL DEFAULT 'Available'
+  `Booking_status` enum('Disponible','Ocupado') NOT NULL DEFAULT 'Disponible'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `room_list`
+-- Volcado de datos para la tabla `room_list`
 --
 
 INSERT INTO `room_list` (`RoomId`, `RoomTypeId`, `RoomNumber`, `Status`, `Booking_status`) VALUES
-(13, 11, 1, 'Activa', 'Available'),
-(14, 11, 2, 'Activa', 'Available'),
-(15, 11, 3, 'Activa', 'Available'),
-(16, 12, 4, 'Activa', 'Booked'),
-(17, 11, 5, 'Activa', 'Available'),
-(18, 12, 6, 'Activa', 'Booked'),
-(19, 12, 7, 'Activa', 'Available'),
-(20, 13, 8, 'Activa', 'Booked'),
-(21, 13, 9, 'Activa', 'Available'),
-(22, 14, 10, 'Activa', 'Booked'),
-(23, 14, 11, 'Activa', 'Available'),
-(24, 14, 12, 'Activa', 'Available'),
-(25, 15, 13, 'Activa', 'Available'),
-(26, 15, 14, 'Activa', 'Available'),
-(27, 16, 15, 'Activa', 'Available'),
-(28, 18, 16, 'Activa', 'Available'),
-(29, 17, 17, 'Activa', 'Booked'),
-(30, 16, 18, 'Activa', 'Available'),
-(31, 17, 19, 'Activa', 'Available'),
-(32, 15, 20, 'Activa', 'Available');
+(13, 11, 1, 'Activa', 'Disponible'),
+(14, 11, 2, 'Activa', 'Disponible'),
+(15, 11, 3, 'Activa', 'Disponible'),
+(16, 12, 4, 'Activa', ''),
+(17, 11, 5, 'Activa', 'Disponible'),
+(18, 12, 6, 'Activa', ''),
+(19, 12, 7, 'Activa', 'Disponible'),
+(20, 13, 8, 'Activa', 'Disponible'),
+(21, 13, 9, 'Activa', 'Disponible'),
+(22, 14, 10, 'Activa', 'Disponible'),
+(23, 14, 11, 'Activa', 'Disponible'),
+(24, 14, 12, 'Activa', 'Disponible'),
+(25, 15, 13, 'Activa', 'Disponible'),
+(26, 15, 14, 'Activa', 'Disponible'),
+(27, 16, 15, 'Activa', 'Disponible'),
+(28, 18, 16, 'Activa', 'Disponible'),
+(29, 17, 17, 'Activa', 'Disponible'),
+(30, 16, 18, 'Activa', 'Disponible'),
+(31, 17, 19, 'Activa', 'Disponible'),
+(32, 15, 20, 'Activa', 'Disponible');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `room_payment`
+-- Estructura de tabla para la tabla `room_payment`
 --
 
 CREATE TABLE `room_payment` (
@@ -271,7 +272,7 @@ CREATE TABLE `room_payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `room_payment`
+-- Volcado de datos para la tabla `room_payment`
 --
 
 INSERT INTO `room_payment` (`PaymentId`, `BookingId`, `PaymentType`, `PaymentDate`, `Amount`, `Status`) VALUES
@@ -283,7 +284,7 @@ INSERT INTO `room_payment` (`PaymentId`, `BookingId`, `PaymentType`, `PaymentDat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `room_type`
+-- Estructura de tabla para la tabla `room_type`
 --
 
 CREATE TABLE `room_type` (
@@ -291,28 +292,28 @@ CREATE TABLE `room_type` (
   `RoomType` varchar(30) NOT NULL,
   `RoomImage` text NOT NULL,
   `Description` text NOT NULL,
-  `Cost` double NOT NULL,
-  `Status` enum('Activa','Inactiva') NOT NULL DEFAULT 'Activa'
+  `Cost` decimal(10,2) NOT NULL,
+  `Status` enum('Activa','InActiva') NOT NULL DEFAULT 'Activa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `room_type`
+-- Volcado de datos para la tabla `room_type`
 --
 
 INSERT INTO `room_type` (`RoomTypeId`, `RoomType`, `RoomImage`, `Description`, `Cost`, `Status`) VALUES
-(11, 'Family Room', 'away.jpg', '32 Inch flat screen TV, Kitchen facilities,Towels,Dining tables', 1200, 'Activa'),
-(12, 'Bachelor Room', 'F.jpg', 'Soap & bath amenities,Mini-bar, Telephone', 1800, 'Activa'),
-(13, 'Presidential Suites', 'A.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 2000, 'Activa'),
-(14, 'Classic Room', 'accomadation.jpg', 'Closet with hangers, HD flat-screen TV, Telephone\r\n\r\n', 1750, 'Activa'),
-(15, 'Club Room ', 'A.jpg', ' Closet with hangers, 24 Hour room service,Computer and Internet access', 1680, 'Activa'),
-(16, 'Deluxe Room', 'classic.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 1900, 'Activa'),
-(17, 'Super Deluxe ', 'club.jpg', '32 Inch flat screen TV, HD flat-screen TV,Mini-bar, Telephone', 3500, 'Activa'),
-(18, 'Luxury', 'super.jpg', 'Closet with hangers,32 Inch flat screen TV,Mini-bar, Telephone', 3500, 'Activa');
+(11, 'Habitacion Familiar', 'classic.jpg', 'TV de pantalla plana de 32 pulgadas,Equipamiento de cocina,Toallas,Mesas de comedor', 120000.00, 'Activa'),
+(12, 'Habitacion para Estudiantes', 'well.jpg', 'Jabón y amenidades de baño,Mini-bar, Teléfono', 180000.00, 'Activa'),
+(13, 'Presidential Suites', 'A.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 200000.00, 'Activa'),
+(14, 'Classic Room', 'accomadation.jpg', 'Closet with hangers, HD flat-screen TV, Telephone\r\n\r\n', 175000.00, 'Activa'),
+(15, 'Club Room ', 'A.jpg', ' Closet with hangers, 24 Hour room service,Computer and Internet access', 168000.00, 'Activa'),
+(16, 'Deluxe Room', 'classic.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 190000.00, 'Activa'),
+(17, 'Super Deluxe ', 'club.jpg', '32 Inch flat screen TV, HD flat-screen TV,Mini-bar, Telephone', 350000.00, 'Activa'),
+(18, 'Luxury', 'super.jpg', 'Closet with hangers,32 Inch flat screen TV,Mini-bar, Telephone', 350000.00, 'Activa');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_details`
+-- Estructura de tabla para la tabla `users_details`
 --
 
 CREATE TABLE `users_details` (
@@ -329,29 +330,36 @@ CREATE TABLE `users_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users_details`
+-- Volcado de datos para la tabla `users_details`
 --
 
 INSERT INTO `users_details` (`UserId`, `Nombre`, `NoDocu`, `Email`, `Password`, `ContactNo`, `Genero`, `ProfileImage`, `Rol`, `DcoTipo`) VALUES
-(2, 'admin', 'Venka', 'admin@gmail.com', '123', '3044632346', 'female', '1.jpg', 'Admin', 'CC'),
-(5, 'Rajesh', 'K S', 'raju@gmail.com', '123', '3636636363', 'male', '2.jpeg', 'Cliente', 'CC'),
-(9, 'guvi', 'wew', 'guvi@gmail.com', '123', '3636636361', 'male', '2.jpeg', 'Cliente', 'CE'),
-(15, 'Rodrigo', 'Prias', 'Rodri@dash.com', '1234', '3563526352', 'Masculino', '4.jpg', 'Admin', 'NUIP'),
-(16, 'Alexander', 'Echeverri', 'Alex@Dash-hotels.com', '123', '7160244487', 'male', '4.jpg', 'Cliente', 'PP'),
-(23, 'Rodrigo Prias', '80195531', 'rodrigo@prias.com', '123', '3044632346', 'Masculino', 'images.png', 'Cliente', 'CC');
+(5, 'Raul', '12512432154', 'raul23@gmail.com', '123', '3636636363', 'Masculino', '2.jpeg', 'Cliente', 'CC'),
+(15, 'Rodrigo', 'Prias', 'Rodri@dash.com', '456', '3563526352', 'Masculino', 'Perfil.png', 'Admin', 'NUIP'),
+(30, 'Rodrigo Prias', '80195531', 'rodrigo.prias@cun.edu.co', '123', '3044632347', 'Masculino', 'Perfil.png', 'Admin', 'CC'),
+(31, 'Juan Pérez', '12345678', 'juan.perez@example.com', 'password123', '3123456789', 'Masculino', 'profile1.jpg', 'Cliente', 'CC'),
+(32, 'María González', '87654321', 'maria.gonzalez@example.com', 'password123', '6123456789', 'Femenino', 'profile2.jpg', 'Cliente', 'CE'),
+(33, 'Carlos Rodríguez', '23456789', 'carlos.rodriguez@example.com', 'password123', '3129876543', 'Masculino', 'profile3.jpg', 'Cliente', 'DIE'),
+(34, 'Ana Martínez', '34567890', 'ana.martinez@example.com', 'password123', '6123456780', 'Femenino', 'profile4.jpg', 'Cliente', 'NUIP'),
+(35, 'Luis Fernández', '45678901', 'luis.fernandez@example.com', 'password123', '3123456781', 'Masculino', 'profile5.jpg', 'Cliente', 'PP'),
+(36, 'Laura López', '56789012', 'laura.lopez@example.com', 'password123', '6123456782', 'Femenino', 'profile6.jpg', 'Cliente', 'PEP'),
+(37, 'Javier Sánchez', '67890123', 'javier.sanchez@example.com', 'password123', '3123456783', 'Masculino', 'profile7.jpg', 'Cliente', 'CC'),
+(38, 'Patricia Torres', '78901234', 'patricia.torres@example.com', 'password123', '6123456785', 'Femenino', 'profile6.jpg', 'Cliente', 'CE'),
+(39, 'Miguel Ángel Díaz', '89012345', 'miguel.diaz@example.com', 'password123', '3123456785', 'Masculino', 'profile9.jpg', 'Cliente', 'DIE'),
+(40, 'Sofía Ramírez', '90123456', 'sofia.ramirez@example.com', 'password123', '6123456786', 'Femenino', 'profile10.jpg', 'Cliente', 'NUIP');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `contact`
+-- Indices de la tabla `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `event_booking`
+-- Indices de la tabla `event_booking`
 --
 ALTER TABLE `event_booking`
   ADD PRIMARY KEY (`BookingId`),
@@ -359,33 +367,33 @@ ALTER TABLE `event_booking`
   ADD KEY `FK_RoomBooking` (`EventId`);
 
 --
--- Indexes for table `event_list`
+-- Indices de la tabla `event_list`
 --
 ALTER TABLE `event_list`
   ADD PRIMARY KEY (`EventId`),
   ADD KEY `FK_EventType` (`EventTypeId`);
 
 --
--- Indexes for table `event_payment`
+-- Indices de la tabla `event_payment`
 --
 ALTER TABLE `event_payment`
   ADD PRIMARY KEY (`PaymentId`),
   ADD KEY `Fk_Booking` (`BookingId`);
 
 --
--- Indexes for table `event_type`
+-- Indices de la tabla `event_type`
 --
 ALTER TABLE `event_type`
   ADD PRIMARY KEY (`EventTypeId`);
 
 --
--- Indexes for table `general_settings`
+-- Indices de la tabla `general_settings`
 --
 ALTER TABLE `general_settings`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `room_booking`
+-- Indices de la tabla `room_booking`
 --
 ALTER TABLE `room_booking`
   ADD PRIMARY KEY (`BookingId`),
@@ -393,139 +401,139 @@ ALTER TABLE `room_booking`
   ADD KEY `FK_RoomBooking` (`RoomId`);
 
 --
--- Indexes for table `room_list`
+-- Indices de la tabla `room_list`
 --
 ALTER TABLE `room_list`
   ADD PRIMARY KEY (`RoomId`),
   ADD KEY `FK_RoomType` (`RoomTypeId`);
 
 --
--- Indexes for table `room_payment`
+-- Indices de la tabla `room_payment`
 --
 ALTER TABLE `room_payment`
   ADD PRIMARY KEY (`PaymentId`),
   ADD KEY `Fk_Booking` (`BookingId`);
 
 --
--- Indexes for table `room_type`
+-- Indices de la tabla `room_type`
 --
 ALTER TABLE `room_type`
   ADD PRIMARY KEY (`RoomTypeId`);
 
 --
--- Indexes for table `users_details`
+-- Indices de la tabla `users_details`
 --
 ALTER TABLE `users_details`
   ADD PRIMARY KEY (`UserId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT de la tabla `contact`
 --
 ALTER TABLE `contact`
   MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `event_booking`
+-- AUTO_INCREMENT de la tabla `event_booking`
 --
 ALTER TABLE `event_booking`
   MODIFY `BookingId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `event_list`
+-- AUTO_INCREMENT de la tabla `event_list`
 --
 ALTER TABLE `event_list`
   MODIFY `EventId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `event_payment`
+-- AUTO_INCREMENT de la tabla `event_payment`
 --
 ALTER TABLE `event_payment`
   MODIFY `PaymentId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `event_type`
+-- AUTO_INCREMENT de la tabla `event_type`
 --
 ALTER TABLE `event_type`
   MODIFY `EventTypeId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `general_settings`
+-- AUTO_INCREMENT de la tabla `general_settings`
 --
 ALTER TABLE `general_settings`
   MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `room_booking`
+-- AUTO_INCREMENT de la tabla `room_booking`
 --
 ALTER TABLE `room_booking`
-  MODIFY `BookingId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `BookingId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT for table `room_list`
+-- AUTO_INCREMENT de la tabla `room_list`
 --
 ALTER TABLE `room_list`
   MODIFY `RoomId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `room_payment`
+-- AUTO_INCREMENT de la tabla `room_payment`
 --
 ALTER TABLE `room_payment`
   MODIFY `PaymentId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `room_type`
+-- AUTO_INCREMENT de la tabla `room_type`
 --
 ALTER TABLE `room_type`
   MODIFY `RoomTypeId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `users_details`
+-- AUTO_INCREMENT de la tabla `users_details`
 --
 ALTER TABLE `users_details`
-  MODIFY `UserId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `UserId` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `event_booking`
+-- Filtros para la tabla `event_booking`
 --
 ALTER TABLE `event_booking`
   ADD CONSTRAINT `FK_EventBooking` FOREIGN KEY (`EventId`) REFERENCES `event_list` (`EventId`) ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_UserBooking` FOREIGN KEY (`User_id`) REFERENCES `users_details` (`UserId`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `event_list`
+-- Filtros para la tabla `event_list`
 --
 ALTER TABLE `event_list`
   ADD CONSTRAINT `FK_EventType` FOREIGN KEY (`EventTypeId`) REFERENCES `event_type` (`EventTypeId`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `event_payment`
+-- Filtros para la tabla `event_payment`
 --
 ALTER TABLE `event_payment`
   ADD CONSTRAINT `FK_EventPayment` FOREIGN KEY (`BookingId`) REFERENCES `event_booking` (`BookingId`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `room_booking`
+-- Filtros para la tabla `room_booking`
 --
 ALTER TABLE `room_booking`
   ADD CONSTRAINT `FK_RoomBooking` FOREIGN KEY (`RoomId`) REFERENCES `room_list` (`RoomId`) ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_User` FOREIGN KEY (`User_id`) REFERENCES `users_details` (`UserId`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `room_list`
+-- Filtros para la tabla `room_list`
 --
 ALTER TABLE `room_list`
   ADD CONSTRAINT `FK_RoomType` FOREIGN KEY (`RoomTypeId`) REFERENCES `room_type` (`RoomTypeId`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `room_payment`
+-- Filtros para la tabla `room_payment`
 --
 ALTER TABLE `room_payment`
   ADD CONSTRAINT `Fk_Booking` FOREIGN KEY (`BookingId`) REFERENCES `room_booking` (`BookingId`) ON UPDATE CASCADE;
