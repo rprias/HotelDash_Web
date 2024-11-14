@@ -65,23 +65,25 @@ function deleteUser(UserID){
   });
 }
 
-//function to editar the user 
+//function to Edit the user 
 function editUser(UserID){
-   $('#userID').val(UserID);
-   $.post('admin_functions.php',{userUpdateId:UserID},function(data,status){
-     console.log(data);
-      userData = JSON.parse(data);
-      var path ='../assets/picture/profiles/' +userData.ProfileImage;
-      console.log(path);
-      $('#updatePicture').attr("src",path);
-      $('#updatefirstName').val(userData.FirstName);
-      $('#updatelastName').val(userData.LastName);
-      $('#updateemail').val(userData.Email);
-      $('#updatephoneNumber').val(userData.ContactNo);
-      $('#updategender').val(userData.Gender);
-      $('#updateRol').val(userData.rol);
-   });
-   $('#updateModal').modal('show');
+  $('#userId').val(UserID);
+  $.post('admin_functions.php',{userUpdateId: UserID},function(data,status){
+    console.log(data);
+     userData = JSON.parse(data);
+     var path ='../assets/picture/profiles/' +userData.ProfileImage;
+     console.log(path);
+         
+         // Rellenar los campos del modal con los datos del usuario
+         $('#updatePicture').attr("src", path);
+         $('#updatefirstName').val(userData.FirstName);
+         $('#updatelastName').val(userData.LastName);
+         $('#updateemail').val(userData.Email);
+         $('#updatephoneNumber').val(userData.ContactNo);
+         $('#updategender').val(userData.Gender);
+         $('#updateStatus').val(userData.Status);
+  });
+  $('#updateModal').modal('show');
 }
 
 // Action when the document is ready

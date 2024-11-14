@@ -1,4 +1,5 @@
 <?php include("include/header.php");
+
 if (!isset($_SESSION['loggedUserId'])) {
     echo "<script> window.location.href = '../login.php';</script>";
 }
@@ -187,80 +188,89 @@ if (!isset($_SESSION['loggedUserId'])) {
         </div>
     </div>
 
-    <!-- Modal Update for  User -->
+
+<!-- Modal Update for  User -->
     <div class="modal" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update user details</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Actualiza los datos del usuario</h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- update New User Form  -->
-                    <form action="admin_functions.php" method="POST" enctype="multipart/form-data" autocomplete="on">
+                    <!-- Formulario de Actulizacion de usuario  -->
+                    <form id="model-updateUser" method="POST" action="admin_functions.php" enctype="multipart/form-data"
+                        autocomplete="off">
                         <div class="row">
                             <div class="container mb-4">
                                 <div class="picture-container">
                                     <div class="picture">
-                                        <img class="picture-src" id="updatePicture" title="" />
+                                        <img class="picture-src" id="updatePicture" title="updatePicture" />
                                         <input type="file" id="wizardUpdate-picture" class="" name="profileImage"
                                             required>
                                     </div>
-                                    <h6 class="">Seleccion la Imagen</h6>
+                                    <h6 class="">Escoja una Imagen</h6>
 
                                 </div>
 
                             </div>
 
                             <!-- DcoTipo -->
+                            <div class="input-group col-lg-7 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-id-card text-muted"></i>
+                                    </span>
+                                </div>
+                                <select id="updatedcoTipo" name="dcoTipo"
+                                    class="form-control custom-select bg-white border-left-0 border-md" required>
+                                    <option value="">Tipo de Documento</option>
+                                    <option value="CC">Cédula de ciudadanía</option>
+                                    <option value="CE">Cédula de extranjería</option>
+                                    <option value="DIE">Documento de identificación extranjero</option>
+                                    <option value="NUIP">NUIP</option>
+                                    <option value="PP">Pasaporte</option>
+                                    <option value="PEP">Permiso especial de permanencia</option>
+                                </select>
+                            </div>
+
+                            <!-- Numero de Documento-->
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-id-card text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="updateNoDocu" name="NoDocu" placeholder="Numero de Documento"
+                                    class="form-control bg-white border-left-0 border-md" required>
+                            </div>
+
+                            <!-- Nombre Completo -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-user text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="updateDdcoTipo" type="text" name="updateDdcoTipo" placeholder=""
+                                <input id="updatenombre" type="text" name="nombre" placeholder="Nombre Completo"
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                            <!-- Nombre Completo-->
-                            <div class="input-group col-lg-6 mb-4">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class="fa fa-user text-muted"></i>
-                                    </span>
-                                </div>
-                                <input id="updateNombre" type="text" name="updateNombre" placeholder=""
-                                    class="form-control bg-white border-left-0 border-md" required>
-                            </div>
-
-                            <!-- Nombre Completo-->
-                            <div class="input-group col-lg-6 mb-4">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class="fa fa-user text-muted"></i>
-                                    </span>
-                                </div>
-                                <input id="updateNombre" type="text" name="updateNombre" placeholder=""
-                                    class="form-control bg-white border-left-0 border-md" required>
-                            </div>
-
-
-                            <!-- Email Address -->
+                            <!-- Direccion de Correo -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-envelope text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="updateemail" type="email" name="email" placeholder="Email"
+                                <input id="updateemail" type="email" name="email" placeholder="Correo Electrónico"
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                            <!-- Phone Number -->
+                            <!-- Numero de Contacto -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -268,37 +278,36 @@ if (!isset($_SESSION['loggedUserId'])) {
                                     </span>
                                 </div>
 
-                                <input id="updatephoneNumber" type="tel" name="contactno" pattern="[3,6][0-9]{9}"
-                                    placeholder="Telefono" class="form-control bg-white border-md border-left-0 pl-3"
-                                    required>
+                                <input id="updatecontactNo" type="tel" name="contactno" pattern="[3,6][0-9]{9}"
+                                    placeholder="Numero de Contacto"
+                                    class="form-control bg-white border-md border-left-0 pl-3" required>
                             </div>
 
 
-                            <!-- genero -->
+                            <!-- Genero -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-black-tie text-muted"></i>
                                     </span>
                                 </div>
-                                <select id="updategender" name="gender"
+                                <select id="updategenero" name="genero"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
-                                    <option value="">Selecciona el Genero</option>
-                                    <option value="hombre">Hombre</option>
-                                    <option value="mujer">Mujer</option>
-                                    <option value="otro">Otro</option>
+                                    <option value="">Esocoje tu Genero</option>
+                                    <option value="Hombmre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
                                 </select>
                             </div>
-                            <!-- Job -->
+                            <!-- Rol -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-black-tie text-muted"></i>
                                     </span>
                                 </div>
-                                <select id="updateRol" name="rol"
+                                <select id="updaterol" name="Rol"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
-                                    <option disabled="" selected="">Escoja un Rol</option>
+                                    <option disabled="" selected="">Seleccione un Rol</option>
                                     <option value="Cliente">Cliente</option>
                                     <option value="Admin">Admin</option>
                                 </select>
@@ -307,13 +316,12 @@ if (!isset($_SESSION['loggedUserId'])) {
 
                         </div>
                         <!-- Submit Button -->
-                        <input type="visible" id="userID" name="updateUserID">
-                        <div class="form-group col-lg-12 mx-auto mb-0">
-                            <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2"
-                                name="updateUser">
-                                <span class="font-weight-bold">Guardar Cambios</span>
-                            </button>
-                        </div>
+                        <input type="" id="userID" name="updateUserID">
+                            <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2" name="updateUser" >
+                            <span class="font-weight-bold">Guardar Cambios</span>
+                        </button>
+                    </div>
 
                     </form>
                 </div>

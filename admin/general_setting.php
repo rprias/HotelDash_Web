@@ -18,7 +18,7 @@ if(!isset($_SESSION['loggedUserId'])) {
  <div class="Message">
             
 </div>
- <!-- update New User Form  -->
+ <!--  Actualiza el nombre de la compañia-->
  <form id="gs_form" method="POST" action="admin_functions.php" enctype="multipart/form-data" autocomplete="off">
  
                 <div class="row">

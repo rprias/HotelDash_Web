@@ -35,9 +35,9 @@ if(isset($_POST['userFilter'])){
    
     $userFilter = $_POST['userFilter'];
    if($userFilter==""){
-    $selectAllUser = "SELECT * FROM users_details where Rol <> '' ";
+    $selectAllUser = "SELECT * FROM users_details where nombre <> ''";
    }else{
-    $selectAllUser = "SELECT * FROM users_details WHERE Rol like '".$userFilter."' AND Rol <> '' ";
+    $selectAllUser = "SELECT * FROM users_details WHERE rol like '".$userFilter."'";
    }
    
     $allUser = mysqli_query($con,$selectAllUser);
@@ -61,9 +61,9 @@ if(isset($_POST['userFilter'])){
                     <td>'.$row["Rol"].'</td>
                     <td>
                        
-              <input type="hidden" name="userId" value="'.$row["UserId"].'"/> ';
-              $userTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editUser('".$row["UserId"]."') \"> Editar</button>";
-              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["Nombre"]."') && deleteUser('".$row["UserId"]."')\">Borrar</button>
+                      <input type="" name="userId" value="'.$row["UserId"].'"/> ';
+                      $userTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editUser('".$row["UserId"]."') \"> Editar</button>";
+                      $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma el borrado de: ".$row["Nombre"]."') && deleteUser('".$row["UserId"]."')\">Borrar</button>
                     
                     </td>
             </tr>";

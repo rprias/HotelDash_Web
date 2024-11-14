@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +60,7 @@ if(isset($_SESSION['loggedUserId'])) {
    
 }
   
-  if(isset($user_details['Nombre'])){
+  if(isset($user_details['Email'])){
   ?>
    <!-- navbar segunda (de cara al usuario registrado)  -->
    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -107,8 +107,8 @@ if(isset($_SESSION['loggedUserId'])) {
           
         <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          <!-- <img src="<" width="40" height="40" class="rounded-circle"> -->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="<" width="40" height="40" class="rounded-circle"> -->
           <?php echo $user_details['Nombre']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

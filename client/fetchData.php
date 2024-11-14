@@ -1,5 +1,7 @@
 <?php
 include("../include/functions.php");
+
+
 // ------------------------------------ Room types Available ------------------------------------
 
 if(isset($_POST['roomType'])){

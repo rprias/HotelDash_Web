@@ -2,7 +2,7 @@
 include('../include/general.php');
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
   	<title>Consola de Administración</title>
     <meta charset="utf-8">

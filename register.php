@@ -18,8 +18,8 @@ if (isset($_POST['user_registration'])) {
     $tempname = $_FILES["profileImage"]["tmp_name"];
     $folder = "assets/picture/profiles/" . $profileImageName;
 
-    // Check if user or email already exists
-    $user_details = "SELECT * FROM users_details WHERE Nombre='$nombre' OR Email='$email'";
+    // Revisa si el usuario con el mismo email ya existe
+    $user_details = "SELECT * FROM users_details WHERE Email='$email'";
     $result = mysqli_query($con, $user_details) or die("Can't fetch");
     $num = mysqli_num_rows($result);
 
@@ -27,7 +27,7 @@ if (isset($_POST['user_registration'])) {
         $error = "Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
         error("signup.php", $error);
     } else if ($num > 0) {
-        $error = "Username or email id is already taken!";
+        $error = "Usuario ya Registrado, intente con un nuevo Email!";
         error("signup.php", $error);
     } else {
         // Password validation
@@ -41,7 +41,7 @@ if (isset($_POST['user_registration'])) {
             error("signup.php", $error);
         } else {
             if ($password == $confirmPassword) {
-                $error = "Invalid password and confirm password!";
+                $error = "Las Contraseñas no son iguales!";
                 error("signup.php", $error);
             } else {
                 // Query to insert user details
@@ -53,6 +53,9 @@ if (isset($_POST['user_registration'])) {
                         $error = "Error en registro, los campos no coinciden";
                         error("signup.php", $error);
                     } else {
+                        $_SESSION['success_message'] = "Registro exitoso. Bienvenido!";
+                        $_SESSION['loggedUserName']=$row['Nombre'];
+                        $_SESSION['loggedUserId']=$row['UserId'];
                         header("Location:index.php");
                         exit(); // Asegúrate de usar exit después de redirigir
                     }

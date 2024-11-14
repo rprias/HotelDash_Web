@@ -1,6 +1,6 @@
 
 
-//function to delete the user 
+//function to edit the user 
 function editUser(){
     UserID = $('#user_Id').val();
     console.log(UserID);
@@ -10,9 +10,13 @@ function editUser(){
        var path ='../assets/picture/profiles/' +userData.ProfileImage;
        console.log(path);
        $('#updatePicture').attr("src",path);
-       $('#updatelastName').val(userData.LastName);
-       $('#updatephoneNumber').val(userData.ContactNo);
-       $('#updategender').val(userData.Gender);
+       $('#updateNombre').val(userData.nombre);
+       $('#updateNoDocu').val(userData.noDocu);
+       $('#updateemail').val(userData.email);
+       $('#updateDdcoTipo').val(userData.dcoTipo);
+       $('#updatecontactno').val(userData.contactno);
+       $('#updategenero').val(userData.genero);
+       $('#updateRol').val(userData.rol);
     });
   
  }

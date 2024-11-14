@@ -1,12 +1,13 @@
 <?php
 include '../include/functions.php';
-include '../include/dbConnect.php';
-
+    include '../include/dbconnection.php';
+    
 // ---------------------------------------User Actions----------------------------------------------
 
-   // Adding New User into Database
+   // Añade un nuevo usuario desde la consola de Administración
     if(isset($_POST['user_registration'])){
-             
+    if(isset($_POST['user_registration'])){
+        
         $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
         $noDocu = mysqli_real_escape_string($con, $_POST['noDocu']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -113,7 +114,7 @@ include '../include/dbConnect.php';
 // delete of user account
 if(isset($_POST['deleteUser'])){
     $user_id = mysqli_real_escape_string($con, $_POST['userId']);
-    $query_deleteUser = "Delete from users_details where UserId = '$user_id' ";
+    $query_deleteUser = "DELETE FROM users_details WHERE UserId = '$user_id' ";
     $sendData = array();
     if(mysqli_query($con,$query_deleteUser)){
         $sendData = array(
@@ -132,109 +133,106 @@ if(isset($_POST['deleteUser'])){
 }
 
 //update - getting the selected user details
-if(isset($_POST['updateUserID'])){
-    $userID = $_POST['updateUserID'];
-   
-    $query_selectUser = "SELECT * FROM users_details where UserId = '$userID' ";
-    $single_user = mysqli_query($con,$query_selectUser);
-    $num_of_rows = mysqli_num_rows($single_user);
-    $response = array();
-    if($num_of_rows<1){
-        $response['rol'] = 200;
-        $response['message'] = "Id De usuario Invalido";
-    }else{
-        while($row = mysqli_fetch_assoc($single_user)){
-            $response = $row;
+if (isset($_POST['userUpdateId'])) 
+
+    $userID = $_POST['userUpdateId'];
+
+    // Preparar la consulta SQL
+    $query_selectUser  = "SELECT * FROM users_details WHERE UserId = '$userID'";
+    
+    // Inicializar la declaración
+    if ($stmt = mysqli_prepare($con, $query_selectUser )) {
+        // Vincular el parámetro
+        mysqli_stmt_bind_param($stmt, "s", $userID); // "s" indica que el parámetro es una cadena
+
+        // Ejecutar la consulta
+        mysqli_stmt_execute($stmt);
+
+        // Obtener el resultado
+        $result = mysqli_stmt_get_result($stmt);
+        $num_of_rows = mysqli_num_rows($result);
+        $response = array();
+
+        if ($num_of_rows < 1) {
+            $response['status'] = 200;
+            $response['message'] = "ID de usuario no válido";
+        } else {
+            // Obtener los datos del usuario
+            $response = mysqli_fetch_assoc($result);
         }
+
+        // Cerrar la declaración
+        mysqli_stmt_close($stmt);
+    } else {
+        // Manejo de errores si la preparación de la consulta falla
+        $response['status'] = 500;
+        $response['message'] = "Error en la consulta a la base de datos";
     }
+
+    // Devolver la respuesta en formato JSON
     echo json_encode($response);
 }
 
 
 //update the details of user table
 
-if(isset($_POST['updateUserID'])){
-             
+if (isset($_POST['updateUserID'])) {
+    // Sanitizar los datos de entrada
     $user_id = mysqli_real_escape_string($con, $_POST['updateUserID']);
-    $nombre = mysqli_real_escape_string($con, $_POST['updateNombre']);
-    $noDocu = mysqli_real_escape_string($con, $_POST['updateNoDocu']);
-    $email = mysqli_real_escape_string($con, $_POST['updateEmail']);
-    $dcoTipo = mysqli_real_escape_string($con, $_POST['updateDdcoTipo']);
-    $contactno = mysqli_real_escape_string($con, $_POST['updatecontactno']);
-    $genero = mysqli_real_escape_string($con, $_POST['updategenero']);
-    $rol = mysqli_real_escape_string($con, $_POST['updateRol']);
-   
-    // profile image upload
+    $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
+    $noDocu = mysqli_real_escape_string($con, $_POST['noDocu']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $dcoTipo = mysqli_real_escape_string($con, $_POST['dcoTipo']);
+    $contactno = mysqli_real_escape_string($con, $_POST['contactno']);
+    $genero = mysqli_real_escape_string($con, $_POST['genero']);
+    $rol = mysqli_real_escape_string($con, $_POST['rol']);
+
+    // Manejar la carga de la imagen de perfil
     $profileImageName = $_FILES["profileImage"]["name"];
-    $tempname = $_FILES["profileImage"]["tmp_name"];   
-    $folder = "../assets/picture/profiles/".$profileImageName;
-         
+    $tempname = $_FILES["profileImage"]["tmp_name"];
+    $folder = "../assets/picture/profiles/" . basename($profileImageName);
 
-    // $re_pass = base64_encode(mysqli_real_escape_string($conn, $_POST['reg_pass']));
+    // Comprobar si ya existen detalles de usuario
+    $user_details_query = "SELECT * FROM users_details WHERE (Email='$email') AND UserId <> '$user_id'";
+    $result = mysqli_query($con, $user_details_query) or die("No se pueden obtener los datos");
+    $num = mysqli_num_rows($result);
 
-    $User_details="SELECT * FROM users_details WHERE (nombre='$nombre' OR Email='$email') AND UserId <> ' $user_id '";
-    $result=mysqli_query($con,$User_details)or die("can't fetch");
-    $num=mysqli_num_rows($result);
-
-  
     $sendData = array();
-   
-    
-   if ($nombre == "admin") {
-        $error="Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
-        $sendData = array(
-            "msg"=>"",
-            "error"=>$error
-        );
+
+    // Comprobaciones de validación
+    if ($nombre == "admin") {
+        $error = "Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
+        $sendData = array("msg" => "", "error" => $error);
         echo json_encode($sendData);
-    } 
-   else if ($num>0) {
-        $error="El nombre de usuario o la dirección de correo electrónico ya están ocupados.";
-        $sendData = array(
-            "msg"=>"",
-            "error"=>$error
-        );
+    } else if ($num > 0) {
+        $error = "El nombre de usuario o la dirección de correo electrónico ya están ocupados.";
+        $sendData = array("msg" => "", "error" => $error);
         echo json_encode($sendData);
     } else {
+        // Actualizar los detalles del usuario
+        $update_query = "UPDATE users_details SET Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', Rol='$rol', ProfileImage='$profileImageName' WHERE UserId = '$user_id'";
 
-                    // query validation
-                    $update="UPDATE users_details SET  nombre='$nombre', noDocu ='$$noDocu ',email='$email',ContactNo='$contactno',genero='$genero',Rol='$rol',ProfileImage='$profileImageName' where UserId = '$user_id'" ;
-
-
-                    if(mysqli_query($con,$update))
-                    {
-                        if(!move_uploaded_file($tempname, $folder)){
-                        //if(false){
-                            $error ="Error in Updation ...! Try after sometime";
-                            $sendData = array(
-                                "msg"=>"",
-                                "error"=>$error
-                            );
-                            echo json_encode($sendData);
-                        }else{
-                          $message = "Usuario Actualizado";
-                          // message("user.php","User Added");
-                          $sendData = array(
-                            "msg"=>$message,
-                            "error"=>""
-                        );
-                        echo json_encode($sendData);
-                        }
-                    }
-                    else{
-                          $error ="Error en la Actualizacion, Intente nuevamente.";
-                          $sendData = array(
-                            "msg"=>"",
-                            "error"=>$error
-                        );
-                        echo json_encode($sendData);
-
-                  }
-
-             
-        
-   }
-
+        if (mysqli_query($con, $update_query)) {
+            // Mover el archivo subido
+            if (!move_uploaded_file($tempname, $folder)) {
+                $error = "Error en la carga del archivo. Intente nuevamente más tarde.";
+                $sendData = array("msg" => "", "error" => $error);
+                echo json_encode($sendData);
+            } else {
+                $message = "Usuario actualizado correctamente.";
+                $sendData = array("msg" => $message, "error" => "");
+                echo json_encode($sendData);
+            }
+        } else {
+            $error = "Error al actualizar los detalles del usuario.";
+            $sendData = array("msg" => "", "error" => $error);
+            echo json_encode($sendData);
+        }
+    }
+} else {
+    $error = "No se recibieron datos para actualizar.";
+    $sendData = array("msg" => "", "error" => $error);
+    echo json_encode($sendData);
 }
 
 // ------------------------------------- Gallery Actions -----------------------------------------------------

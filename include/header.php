@@ -21,6 +21,7 @@
 <!-- font awesome  -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">;
 <script src="https://kit.fontawesome.com/292f8aaa1c.js" crossorigin="anonymous"></script>
 
 <!-- Styling -->
@@ -93,9 +94,9 @@ if(isset($_SESSION['loggedUserId'])) {
           <?php echo $user_details['Nombre']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="../hotel-dash-web/client/dashboard.php">Mis Reservas</a>
-          <a class="dropdown-item" href="../hotel-dash-web/client/account.php">Editar Datos</a>
-          <a class="dropdown-item" href="../hotel-dash-web/destroy.php">Salir</a>
+          <a class="dropdown-item" href="client/dashboard.php">Mis Reservas</a>
+          <a class="dropdown-item" href="client/account.php">Editar Datos</a>
+          <a class="dropdown-item" href="destroy.php">Salir</a>
         </div>
       </li>   
         </ul>
