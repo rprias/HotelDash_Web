@@ -226,13 +226,20 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 </div>
                                 <select id="updatedcoTipo" name="dcoTipo"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
+<<<<<<< HEAD
+                                    
+                                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                                    <option value="Cédula de extranjería">Cédula de extranjería</option>
+                                    <option value="Documento de identificación extranjero">Documento de identificación extranjero</option>
+=======
                                     
                                     <option value="CC">Cédula de ciudadanía</option>
                                     <option value="CE">Cédula de extranjería</option>
                                     <option value="DIE">Documento de identificación extranjero</option>
+>>>>>>> b93f509fb91ad06c9ef8906d742b98393927b2c2
                                     <option value="NUIP">NUIP</option>
-                                    <option value="PP">Pasaporte</option>
-                                    <option value="PEP">Permiso especial de permanencia</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                    <option value="Permiso especial de permanencia">Permiso especial de permanencia</option>
                                 </select>
                             </div>
 
