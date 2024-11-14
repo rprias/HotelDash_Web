@@ -1099,7 +1099,7 @@ if(isset($_POST["oldPassword"])){
         if($old == $row['Password']){
             $Q_update = "UPDATE users_details us SET us.Password = '$new' Where UserId = '$ID'";
             $result = mysqli_query($con,$Q_update);
-            $msg = "Password Changed";
+            $msg = "Contraseña Cambiada con Exito";
             $sendData = array(
                 "msg"=>$msg,
                 "error"=>""
