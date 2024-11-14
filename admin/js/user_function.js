@@ -73,15 +73,17 @@ function editUser(UserID){
      userData = JSON.parse(data);
      var path ='../assets/picture/profiles/' +userData.ProfileImage;
      console.log(path);
-         
-         // Rellenar los campos del modal con los datos del usuario
-         $('#updatePicture').attr("src", path);
-         $('#updatefirstName').val(userData.FirstName);
-         $('#updatelastName').val(userData.LastName);
-         $('#updateemail').val(userData.Email);
-         $('#updatephoneNumber').val(userData.ContactNo);
-         $('#updategender').val(userData.Gender);
-         $('#updateStatus').val(userData.Status);
+  
+     // Rellenar los campos del modal con los datos del usuario
+      $('#updatePicture').attr("src", path);
+      $('#updatenombre').val(userData.Nombre);
+      $('#updatenoDocu').val(userData.NoDocu);
+      $('#updateemail').val(userData.Email);
+      $('#updatedcoTipo').val(userData.DcoTipo);
+      $('#updatecontactNo').val(userData.Contactno);
+      $('#updategenero').val(userData.Genero);
+      $('#updaterol').val(userData.Rol);
+
   });
   $('#updateModal').modal('show');
 }
