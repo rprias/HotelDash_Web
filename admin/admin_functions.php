@@ -132,7 +132,8 @@ if(isset($_POST['deleteUser'])){
 }
 
 //update - getting the selected user details
-if(isset($_POST['userUpdateId'])){
+if (isset($_POST['userUpdateId'])){
+
     $userID = $_POST['userUpdateId'];
 
     $query_selectUser = "select * from users_details where UserId = '$userID' ";
