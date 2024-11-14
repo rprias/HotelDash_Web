@@ -7,7 +7,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 <!-- Page Content  -->
 <div id="content" class="p-4 p-md-5 pt-5">
 
-<h2 class="mb-4">Rooms</h2>
+<h2 class="mb-4">Habitaciones</h2>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-dark" id="addRoomBtn">

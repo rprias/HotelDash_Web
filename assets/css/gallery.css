@@ -27,6 +27,7 @@
     max-width:500px;
     max-height: 150px;
     margin:0 auto 40px;
+    flex-wrap: 50;
   }
   
   .photo-gallery .intro p {
@@ -42,8 +43,8 @@
     
   }
   .gallery-images{
-    height: 100x;
-    width: 300px;
+    height: 1000x;
+    width: 3000px;
   }
   .gallery-images:hover{
     opacity: 0.6;

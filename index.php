@@ -153,7 +153,7 @@
 
       <!--Indicators-->
       <ol class="carousel-indicators">
-        <li data-target="#multi-item-example" data-slide-to="0" class="Active"></li>
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
         <li data-target="#multi-item-example" data-slide-to="1"></li>
 
       </ol>
@@ -164,11 +164,11 @@
       <div class="carousel-inner" role="listbox">
 
         <!--First slide-->
-        <div class="carousel-item Active">
+        <div class="carousel-item active">
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2 ">
-              <img class="card-img-top" src="assets/picture/common/away.jpg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/away.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Suite Sojourns</h4>
@@ -180,7 +180,7 @@
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2">
-              <img class="card-img-top" src="assets/picture/common/suits.jpg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/suits.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Short Break</h4>
@@ -193,7 +193,7 @@
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2">
-              <img class="card-img-top" src="assets/picture/common/dining.jpg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/dining.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Wellness</h4>
@@ -206,7 +206,7 @@
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2">
-              <img class="card-img-top" src="assets/picture/common/accomadation.jpg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/accomadation.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Accommodation</h4>
@@ -239,7 +239,7 @@
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2">
-              <img class="card-img-top" src="assets/picture/common/events.jpeg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/events.jpeg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Conference</h4>
@@ -252,7 +252,7 @@
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2">
-              <img class="card-img-top" src="assets/picture/common/wedding.jpg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/wedding.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Wedding</h4>
@@ -265,7 +265,7 @@
 
           <div class="col-md-3" style="float:left">
             <div class="card mb-2">
-              <img class="card-img-top" src="assets/picture/common/meeting.jpeg" alt="Card image cap" height="180"
+              <img class="card-img-top" src="assets/picture/common/meeting.jpeg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
                 <h4 class="card-title">Meeting</h4>

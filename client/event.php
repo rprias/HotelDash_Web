@@ -11,19 +11,18 @@ if(!isset($_SESSION['loggedUserId'])) {
     <div class="container">
         <div class="row justify-content-center pb-2">
             <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated">
-                <h2 class="my-3">Types of Events Available</h2>
+                <h2 class="my-3">Tipos de Eventos Disponibles</h2>
             </div>
         </div>
  
  <!-- Filter Drop down  -->
  <div class="float-right ">
-<select name="category" id="eventFilter" class="form-control custom-select bg-white border-md filter">
-  <option disabled="" selected="">FilterBy  </option>
+<select name="category" id="roomFilter" class="form-control custom-select bg-white border-md filter">
+  <option disabled="" selected="">Filtrar por  </option>
   <option value="1">All</option>
-  <option value="2">below 1500</option>
-  <option value="3">Cost between 1500 and 2000</option>
-  <option value="4">Cost between 2000 and 2500</option>
-  <option value="5">Cost above 2500</option>
+  <option value="2">Menos de $500.000</option>
+  <option value="3">Cost between 500 and 1000</option>
+  <option value="4">Mas de $1.000.000</option>
 </select>
 </div>
 

@@ -26,7 +26,7 @@ if(isset($_POST['bookRoom'])){
 {
       $flag = false;
       $ID=$row['RoomId'];
-      if ($row['Booking_status']=='Available')
+      if ($row['Booking_status']=='Disponible')
       { 
            $flag =true;
            $reg="INSERT into room_booking (RoomId,User_id,Date,CheckIn,CheckOut,NoOfGuest,Amount,Email,Phone_number)
@@ -43,7 +43,7 @@ if(isset($_POST['bookRoom'])){
     if ($flag==false)
     {
        
-        echo "<script>alert('Oops! Rooms are not available..'); window.location.href='room.php'; </script>";
+        echo "<script>alert('Oops! Rooms are not Disponible..'); window.location.href='room.php'; </script>";
         
     }
       else {
@@ -53,7 +53,7 @@ if(isset($_POST['bookRoom'])){
      
 }
 else {
-    echo "<script>alert('Oops! Rooms are not available'); window.location.href='room.php'; </script>";
+    echo "<script>alert('Oops! Rooms are not Disponible'); window.location.href='room.php'; </script>";
 }
 
 
@@ -84,7 +84,7 @@ if(isset($_POST['bookEvent'])){
 {
       $flag = false;
       $ID=$row['EventId'];
-      if ($row['Booking_status']=='Available')
+      if ($row['Booking_status']=='Disponible')
       { 
           
            $reg="INSERT into event_booking (EventId,User_id,Date,Event_date,NoOfGuest,EventTime,Package,Amount,Email,Phone_number)
@@ -102,7 +102,7 @@ if(isset($_POST['bookEvent'])){
     if ($flag==false)
     {
        
-        echo "<script>alert('Oops! Event hall are not available..'); window.location.href='event.php'; </script>";
+        echo "<script>alert('Oops! Event hall are not Disponible..'); window.location.href='event.php'; </script>";
         
     }
       else {
@@ -113,7 +113,7 @@ if(isset($_POST['bookEvent'])){
      
 }
 else {
-    echo "<script>alert('Oops! Activa Event halls are not available'); window.location.href='room.php'; </script>";
+    echo "<script>alert('Oops! Activa Event halls are not Disponible'); window.location.href='room.php'; </script>";
 }
 
 

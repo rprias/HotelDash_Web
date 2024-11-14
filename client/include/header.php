@@ -11,21 +11,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Jquery Time Picker  -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
   <!-- Jquery Date Picker  -->
-  <link href=
-'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/
-ui-lightness/jquery-ui.css'
-        rel='stylesheet'>
+  <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'rel='stylesheet'>
       
     <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+                "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
     </script>
       
-    <script src=
-"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" >
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
     <!-- Jquery Date Picker End -->
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <!-- Google Fonts  -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,8 +33,6 @@ ui-lightness/jquery-ui.css'
 <!-- font awesome  -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://kit.fontawesome.com/292f8aaa1c.js" crossorigin="anonymous"></script>
-
 <!-- Styling -->
  <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
 
@@ -76,13 +73,13 @@ if(isset($_SESSION['loggedUserId'])) {
                 </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="../about.php"> Quienes Somos</a>
+            <a class="nav-link" href="../nosotros.php"> Quienes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../gallery.php">Galeria</a>
+            <a class="nav-link" href="../Galeria.php">Galeria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../service.php">Servicios</a>
+            <a class="nav-link" href="../Servicios.php">Servicios</a>
           </li>
         
             <li class="nav-item dropdown">
@@ -98,10 +95,10 @@ if(isset($_SESSION['loggedUserId'])) {
           </li>   
         
           <li class="nav-item">
-            <a class="nav-link" href="../events.php">Salones de Eventos</a>
+            <a class="nav-link" href="../Eventos.php">Salones de Eventos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../contact.php">Contáctenos</a>
+            <a class="nav-link" href="../Contacto.php">Contáctenos</a>
           </li>
           </ul >
           
@@ -142,19 +139,19 @@ if(isset($_SESSION['loggedUserId'])) {
                 </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="../about.php"> Quienes Somos</a>
+            <a class="nav-link" href="../nosotros.php">Quienes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../gallery.php">Galeria</a>
+            <a class="nav-link" href="../Galeria.php">Galeria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../service.php">Servicios</a>
+            <a class="nav-link" href="../Servicios.php">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../events.php">Salones de Eventos</a>
+            <a class="nav-link" href="../Eventos.php">Salones de Eventos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../contact.php">Contáctenos</a>
+            <a class="nav-link" href="../Contacto.php">Contáctenos</a>
           </li>
           </ul >
           <ul class="navbar-nav ml-auto">

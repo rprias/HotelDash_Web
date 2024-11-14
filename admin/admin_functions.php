@@ -1007,7 +1007,7 @@ if(isset($_POST['deleteContact'])){
     $sendData = array();
     if(mysqli_query($con,$query_deleteUser)){
         $sendData = array(
-            "msg"=>"Detail is Deleted",
+            "msg"=>"Mensaje Borrado.",
             "error"=>""
         );
         echo json_encode($sendData);

@@ -1,10 +1,10 @@
-# Hotel-Management-System-Ajax-PHP-Mysql
+# Sistema de Gestión Hotelera
 
- A hotel management system in which clients can perform operations such as booking a room and event. It is possible for the clients to cancel the rooms that they had booked and the admin has control over the rooms allotted to the clients and can also manage client requests for rooms, event halls. From the admin side, the admin can add a new type of room and events, then admin can Añadir una nueva Habitación. and hall to the corresponding type, with that admin has an over view of hotel booking on the dashboard with graph.
+ Un sistema de gestión hotelera en el que los clientes pueden realizar operaciones como reservar una habitación y un evento. Es posible que los clientes cancelen las habitaciones que han reservado y el administrador tiene control sobre las habitaciones asignadas a los clientes y también puede gestionar las solicitudes de habitaciones y salones de eventos de los clientes. Desde el lado del administrador, este puede agregar un nuevo tipo de habitación y eventos, y luego el administrador puede añadir nuevas habitaciones y salones al tipo correspondiente. Además, el administrador tiene una visión general de las reservas del hotel en el panel de control con gráficos.
 
-  **Visit** : [Live Demo](https://hotel-management-system-ajax.000webhostapp.com/)
 
-<h1>login credentials</h1>
+
+<h1>Credenciales de Prueba</h1>
  <h3>Admin :</h3>
    <p>Email : admin@gmail.com<br>Password : 123</p>
  <h3>Client :</h3>

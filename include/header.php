@@ -13,6 +13,11 @@
     <!-- Inclusion de FavIcon -->
     <link rel="icon" href="assets/picture/icons/favicon.png" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
     <!-- bootstrap  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -65,13 +70,13 @@ if(isset($_SESSION['loggedUserId'])) {
             <a class="nav-link"  href="index.php">Hotel</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="about.php"> Quienes Somos</a>
+            <a class="nav-link" href="nosotros.php"> Quienes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gallery.php">Galeria</a>
+            <a class="nav-link" href="Galeria.php">Galeria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="service.php">Servicios</a>
+            <a class="nav-link" href="Servicios.php">Servicios</a>
           </li>
         
             <li class="nav-item dropdown">
@@ -86,10 +91,10 @@ if(isset($_SESSION['loggedUserId'])) {
           </li>   
         
           <li class="nav-item">
-            <a class="nav-link" href="events.php">Salon de Eventos</a>
+            <a class="nav-link" href="Eventos.php">Salon de Eventos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contáctenos</a>
+            <a class="nav-link" href="Contacto.php">Contáctenos</a>
           </li>
           </ul >
           
@@ -129,19 +134,19 @@ if(isset($_SESSION['loggedUserId'])) {
             <a class="nav-link"  href="index.php">Hotel</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="about.php"> Quienes Somos</a>
+            <a class="nav-link" href="nosotros.php"> Quienes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gallery.php">Galeria</a>
+            <a class="nav-link" href="Galeria.php">Galeria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="service.php">Servicios</a>
+            <a class="nav-link" href="Servicios.php">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="events.php">Salones de Eventos</a>
+            <a class="nav-link" href="Eventos.php">Salones de Eventos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contáctenos</a>
+            <a class="nav-link" href="Contacto.php">Contáctenos</a>
           </li>
           </ul >
           <ul class="navbar-nav ml-auto">

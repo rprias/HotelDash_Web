@@ -15,17 +15,17 @@ if(isset($_POST['roomType'])){
 
         case 2:  $selectAllType ="select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='Activa' AND rt.Status='Activa' AND rt.Cost<=500
+                                    where rl.Status='Activa' AND rt.Status='Activa' AND rt.Cost<=500000
                                     group by rl.RoomTypeId "; break;
 
         case 3:  $selectAllType ="select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='Activa' AND rt.Status='Activa'  AND rt.Cost>=500 AND rt.Cost<=1000 
+                                    where rl.Status='Activa' AND rt.Status='Activa'  AND rt.Cost>=500000 AND rt.Cost<=1000000
                                     group by rl.RoomTypeId "; break;
 
         case 4:  $selectAllType = "select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='Activa' AND rt.Status='Activa' AND rt.Cost>=1000
+                                    where rl.Status='Activa' AND rt.Status='Activa' AND rt.Cost>=1000000
                                     group by rl.RoomTypeId "; break;
 
         default: $selectAllType = "select rt.*,count(rl.RoomId) as count_rooms
@@ -40,7 +40,7 @@ if(isset($_POST['roomType'])){
      if($noOfType>=1){
          while($row=mysqli_fetch_assoc($allType))
          {
-             $query_avail = "select count(RoomId) as avail_rooms from room_list where RoomTypeId = ' ".$row["RoomTypeId"]." ' AND Status = 'Activa' AND Booking_status = 'Available'";
+             $query_avail = "select count(RoomId) as avail_rooms from room_list where RoomTypeId = ' ".$row["RoomTypeId"]." ' AND Status = 'Activa' AND Booking_status = 'Disponible'";
              $exec_avail = mysqli_query($con,$query_avail);
              $countOfRooms=mysqli_fetch_assoc($exec_avail);
 
@@ -51,12 +51,12 @@ if(isset($_POST['roomType'])){
                <img class="img" src="../assets/picture/RoomType/'.$row['RoomImage'].'" />
                <div class="text-center p-4">
                    <span class="excerpt d-block">'.$row['RoomType'].'</span>
-                   <span class="price mb-2"><sup>Rs</sup> <span class="number">'.$row['Cost'].'</span> <sub>/per night</sub></span>
+                   <span class="price mb-2"><sup>Rs</sup> <span class="number">'.$row['Cost'].'</span> <sub>/por noche</sub></span>
                    <ul class="pricing-text mb-2">';
                    if($countOfRooms['avail_rooms']==0){
-                    $roomTypeCard.='<li><span class="fa fa-close mr-2" style="color:red"></span> Available : '.$countOfRooms['avail_rooms'].'/'.$row['count_rooms'].'</li> ';
+                    $roomTypeCard.='<li><span class="fa fa-close mr-2" style="color:red"></span> Disponible : '.$countOfRooms['avail_rooms'].'/'.$row['count_rooms'].'</li> ';
                    }else{
-                    $roomTypeCard.='<li><span class="fa fa-check mr-2"></span> Available : '.$countOfRooms['avail_rooms'].'/'.$row['count_rooms'].'</li> ';
+                    $roomTypeCard.='<li><span class="fa fa-check mr-2"></span> Disponible : '.$countOfRooms['avail_rooms'].'/'.$row['count_rooms'].'</li> ';
                    }
                        
                    $roomTypeCard.='<li><span class="fa fa-check" ></span> Facilities: '.$row['Description'].'</li>                      
@@ -82,7 +82,7 @@ if(isset($_POST['roomType'])){
      
        $roomTypeCard.='<br><br>
       
-            <p class="col-12 text-center text-danger" >No Tipo de Habitacions are Available...</p>'
+            <p class="col-12 text-center text-danger" >No hay Habitaciones Disponibles</p>'
            ;
      
      }
@@ -289,7 +289,7 @@ if(isset($_POST['eventType'])){
      if($noOfType>=1){
          while($row=mysqli_fetch_assoc($allType))
          {
-             $query_avail = "select count(EventId) as avail_events from event_list where EventTypeId = ' ".$row["EventTypeId"]." ' AND Status = 'Activa' AND Booking_status = 'Available'";
+             $query_avail = "select count(EventId) as avail_events from event_list where EventTypeId = ' ".$row["EventTypeId"]." ' AND Status = 'Activa' AND Booking_status = 'Disponible'";
              $exec_avail = mysqli_query($con,$query_avail);
              $countOfRooms=mysqli_fetch_assoc($exec_avail);
 
@@ -303,9 +303,9 @@ if(isset($_POST['eventType'])){
                    <span class="price mb-2"><sup>Rs</sup> <span class="number">'.$row['Cost'].'</span> <sub>/per hour</sub></span>
                    <ul class="pricing-text mb-2">';
                    if($countOfRooms['avail_events']==0){
-                    $TypeCard.='<li><span class="fa fa-close mr-2" style="color:red"></span> Available : '.$countOfRooms['avail_events'].'/'.$row['count_events'].'</li> ';
+                    $TypeCard.='<li><span class="fa fa-close mr-2" style="color:red"></span> Disponible : '.$countOfRooms['avail_events'].'/'.$row['count_events'].'</li> ';
                    }else{
-                    $TypeCard.='<li><span class="fa fa-check mr-2"></span> Available : '.$countOfRooms['avail_events'].'/'.$row['count_events'].'</li> ';
+                    $TypeCard.='<li><span class="fa fa-check mr-2"></span> Disponible : '.$countOfRooms['avail_events'].'/'.$row['count_events'].'</li> ';
                    }
                        
                    $TypeCard.='<li><span class="fa fa-check" ></span> Facilities: '.$row['Description'].'</li>                      

@@ -7,28 +7,24 @@
     >
       <!-- Left -->
       <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
+        <span>Conéctate con nuestas redes sociales:</span>
       </div>
       <!-- Left -->
   
       <!-- Right -->
       <div>
-        <a href="" class="ml-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="ml-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="ml-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="ml-4 text-reset">
+       
+      <a href="https://twitter.com" class="ml-4 text-reset" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+        <a href="https://instagram.com" class="ml-4 text-reset" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="" class="ml-4 text-reset">
+        <a href="https://www.linkedin.com" class="ml-4 text-reset" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="" class="ml-4 text-reset">
+        <a href="https://github.com" class="ml-4 text-reset" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -45,12 +41,11 @@
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i> Hotel Elite
+              <i class="fas fa-gem me-3"></i><?php echo $general_setting['Name'] ?>
             </h6>
             <p>
-                Whether you book a hotel online, on the phone, or through a travel agent, it should be a simple process.
-                 It should be easy to contact a knowledgeable, helpful person
-                 
+              <!-- Description  -->
+               <?php echo $general_setting['Description'] ?>
             </p>
           </div>
           <!-- Grid column -->
@@ -59,19 +54,19 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Useful Links
+              Links Útiles
             </h6>
             <p>
-              <a href="#!" class="text-reset">Terms & Conditions</a>
+              <a href="#!" class="text-reset">Terminos y Condiciones</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Privacy and Policy</a>
+              <a href="#!" class="text-reset">Politica de Tratamiento de Datos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Rooms</a>
+              <a href="client/room.php" class="text-reset">Habitaciones</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Meeting & Events</a>
+              <a href="client/event.php" class="text-reset">Salones de Eventos</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -80,19 +75,19 @@
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Quick links
+              Enlaces Rápidos
             </h6>
             <p>
-              <a href="#!" class="text-reset">About</a>
+              <a href="nosotros.php" class="text-reset">Quienes Somos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Services</a>
+              <a href="Servicios.php" class="text-reset">Servicios</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Gallery</a>
+              <a href="Galeria.php" class="text-reset">Galeria</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contáctanos</a>
+              <a href="Contacto.php" class="text-reset">Contactenos</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -101,15 +96,20 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Contact
+              Contáctanos
             </h6>
-            <p><i class="fas fa-home me-3"></i> Address:No. 63, Mount Road, Guindy,Chennai-India</p>
+            <p><i class="fas fa-home me-3"></i><?php echo $general_setting['Address_line1'] ?>,
+             <?php echo $general_setting['Address_line2'] ?>,
+             <?php echo $general_setting['City'] ?>,
+             <?php echo $general_setting['State'] ?>,</p>
+             <p>Pais: <?php echo $general_setting['Country'] ?>,</p>
+             <p>Codigo Postal:<?php echo $general_setting['Zip_code'] ?> </p>
             <p>
               <i class="fas fa-envelope me-3"></i>
-             elite@gmail.com
+              <?php echo $general_setting['Email'] ?>
             </p>
-            <p><i class="fas fa-phone me-3"></i> + 9544 3220 00</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-phone me-3"></i>     <?php echo $general_setting['Phone_number'] ?> </p>
+            <p><i class="fas fa-print me-3"></i>     <?php echo $general_setting['Telephone_number'] ?> </p>
           </div>
           <!-- Grid column -->
         </div>
@@ -120,7 +120,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Con fines Educativos.
       
     </div>
     <!-- Copyright -->
@@ -129,11 +129,9 @@
   </section>
      
 
-<script  src="../assets/js/index.js"></script>
+<script  src="assets/js/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Jquery Time picker  -->
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
      </body>
 </html>

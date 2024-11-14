@@ -78,16 +78,16 @@
               Enlaces Rápidos
             </h6>
             <p>
-              <a href="about.php" class="text-reset">Quienes Somos</a>
+              <a href="nosotros.php" class="text-reset">Quienes Somos</a>
             </p>
             <p>
-              <a href="service.php" class="text-reset">Servicios</a>
+              <a href="Servicios.php" class="text-reset">Servicios</a>
             </p>
             <p>
-              <a href="gallery.php" class="text-reset">Galeria</a>
+              <a href="Galeria.php" class="text-reset">Galeria</a>
             </p>
             <p>
-              <a href="contact.php" class="text-reset">Contactenos</a>
+              <a href="Contacto.php" class="text-reset">Contactenos</a>
             </p>
           </div>
           <!-- Grid column -->
