@@ -61,7 +61,7 @@ if(isset($_POST['userFilter'])){
                     <td>'.$row["Rol"].'</td>
                     <td>
                        
-                      <input type="" name="userId" value="'.$row["UserId"].'"/> ';
+                      <input type="hidden" name="userId" value="'.$row["UserId"].'"/> ';
                       $userTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editUser('".$row["UserId"]."') \"> Editar</button>";
                       $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma el borrado de: ".$row["Nombre"]."') && deleteUser('".$row["UserId"]."')\">Borrar</button>
                     

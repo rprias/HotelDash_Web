@@ -88,39 +88,60 @@ if(!isset($_SESSION['loggedUserId'])) {
                 </div>
                
 
-                    <!-- First Name -->
+                    <!-- DcoTipo -->
                     <div class="input-group col-lg-6 mb-4">
                     <div class="ml-2">
-                         <label for="updatefirstName">Nombre Completo</label>
+                         <label for="updatedcoTipo">Tipo de Documento</label>
                      </div>
                      <div class="input-group ">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
+                                <i class="fa fa-id-card text-muted"></i>
                             </span>
                         </div>
-                        <input id="updatefirstName" type="text" name="firstName" placeholder="First Name" class="form-control bg-white border-left-0 border-md" required>
+                    <select id="updatedcoTipo" type="text" name="updatedcoTipo" placeholder="Tipo de Documento" class="form-control bg-white border-left-0 border-md" required>
+                    <option value="CC">Cédula de ciudadanía</option>
+                            <option value="CE">Cédula de extranjería</option>
+                            <option value="DIE">Documento de identificación extranjero</option>
+                            <option value="NUIP">NUIP</option>
+                            <option value="PP">Pasaporte</option>
+                            <option value="PEP">Permiso especial de permanencia</option>
+                    </select>
                     </div>
                     </div>
 
 
 
-                    <!-- Last Name -->
+                    <!-- Numero de Documento-->
                     <div class="input-group col-lg-6 mb-4">
                     <div class="ml-2">
-                         <label for="updatelastName">Last Name</label>
+                         <label for="updatenoDocu">Numero de Documento</label>
                      </div>
                      <div class="input-group ">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
+                                <i class="fa fa-id-card text-muted"></i>
                             </span>
                         </div>
-                        <input id="updatelastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="updatenoDocu" type="text" name="updatenoDocu" placeholder="Numero de Document" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                     </div>
            
-                    <!-- Email Address -->
+                    <!-- Nombre -->
+                    <div class="input-group col-lg-12 mb-4">
+                    <div class="ml-2">
+                         <label for="updateemail">Nombre Completo</label>
+                     </div>
+                     <div class="input-group ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0" >
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="updatenombre" type="text" name="updatenombre" placeholder="Direcion de Correo" class="form-control bg-white border-left-0 border-md" required>
+                    </div>
+                    </div>
+                <!-- Email -->
                     <div class="input-group col-lg-12 mb-4">
                     <div class="ml-2">
                          <label for="updateemail">Email</label>
@@ -131,12 +152,12 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-envelope text-muted"></i>
                             </span>
                         </div>
-                        <input id="updateemail" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="updateemail" type="email" name="email" placeholder="Direcion de Correo" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                     </div>
                   
                    
-                    <!-- Phone Number -->
+                    <!-- telefono -->
                     <div class="input-group col-lg-12 mb-4">
                     <div class="ml-2">
                          <label for="updatephoneNumber">Contact No</label>
@@ -149,15 +170,15 @@ if(!isset($_SESSION['loggedUserId'])) {
                         </div>
                        
                       
-                        <input id="updatephoneNumber" type="tel" name="contactno" pattern="[789][0-9]{9}" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3" required>
+                        <input id="updatephoneNumber" type="tel" name="contactno" pattern="[3,6][0-9]{9}" placeholder="Numero de Telefono" class="form-control bg-white border-md border-left-0 pl-3" required>
                     </div>
                     </div>
 
 
-                    <!-- Job -->
+                    <!-- Genero -->
                     <div class="input-group col-lg-12 mb-4">
                     <div class="ml-2">
-                         <label for="updategender">Gender</label>
+                         <label for="updategender">Genero</label>
                      </div>
                     <div class="input-group ">
                         <div class="input-group-prepend">
@@ -166,9 +187,10 @@ if(!isset($_SESSION['loggedUserId'])) {
                             </span>
                         </div>
                         <select id="updategender" name="gender" class="form-control custom-select bg-white border-left-0 border-md" required>
-                            <option value="">Choose your Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+
                         </select>
                     </div>
                     </div>
@@ -179,7 +201,7 @@ if(!isset($_SESSION['loggedUserId'])) {
          
                 <div class="form-group col-lg-6 mx-auto mb-0">
                         <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2" name="updateUser" >
-                            <span class="font-weight-bold">Save Changes</span>
+                            <span class="font-weight-bold">Guardar Cambios</span>
                         </button>
                     </div>
                
@@ -191,7 +213,7 @@ if(!isset($_SESSION['loggedUserId'])) {
         <div class="passwordMessage mt-4">
             
         </div>
-        <h5 class="mb-4 mt-5 text-center">Change Password</h5>
+        <h5 class="mb-4 mt-5 text-center">Cambiar Contraseña</h5>
             <form id="change_password" >
             <input type="hidden" id="userId" name="change_password" value="<?php echo $_SESSION['loggedUserId'];?>">
                <!--old Password -->
@@ -201,7 +223,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                         </div>
-                        <input id="oldPassword" type="password" name="oldPassword" placeholder="Old Password" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="oldPassword" type="password" name="oldPassword" placeholder="Contraseña Antigua" class="form-control bg-white border-left-0 border-md" required>
                     </div>
 
                     <!-- newPassword  -->
@@ -211,12 +233,12 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                         </div>
-                        <input id="newPassword" type="password" name="newPassword" placeholder="New Password" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="newPassword" type="password" name="newPassword" placeholder="Contraseña Nueva" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                    
                 <div class="form-group col-lg-6 mx-auto mb-0">
                         <button id="changePassword" type="submit" class="btn btn-primary btn-block py-2" name="changePassword" >
-                            <span class="font-weight-bold">Change Password</span>
+                            <span class="font-weight-bold">Cambiar Contraseña</span>
                         </button>
                     </div>
             </form>

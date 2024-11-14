@@ -46,15 +46,16 @@ if (!isset($_SESSION['loggedUserId'])) {
                             </div>
 
                             <!-- DcoTipo -->
-                            <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group col-lg-7 mb-4">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class="fa fa-user text-muted"></i>
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-id-card text-muted"></i>
                                     </span>
                                 </div>
-                                <select id="dcoTipo" type="text" name="dcoTipo" placeholder="Tipo de Documento"
+                                <select id="dcoTipo" type="text" name="dcoTipo" 
+                                placeholder="Tipo de Documento"
                                     class="form-control bg-white border-left-0 border-md" required>
-                                    <option value="">Tipo de Documento</option>
+                                    
                                     <option value="CC">Cédula de ciudadanía</option>
                                     <option value="CE">Cédula de extranjería</option>
                                     <option value="DIE">Documento de identificación extranjero</option>
@@ -65,10 +66,10 @@ if (!isset($_SESSION['loggedUserId'])) {
                             </div>
 
                             <!-- Numero de Documento-->
-                            <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class="fa fa-user text-muted"></i>
+                                        <i class="fa fa-id-card text-muted"></i>
                                     </span>
                                 </div>
                                 <input id="NoDocu" type="text" name="noDocu" placeholder="Numero de Documento"
@@ -86,8 +87,8 @@ if (!isset($_SESSION['loggedUserId'])) {
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                            <!-- Email Address -->
-                            <div class="input-group col-lg-12 mb-4">
+                           <!-- Direccion de Correo -->
+                           <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-envelope text-muted"></i>
@@ -97,21 +98,19 @@ if (!isset($_SESSION['loggedUserId'])) {
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                            <!-- Phone Number -->
+                            <!-- Numero de Contacto -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class="fa fa-phone-square text-muted"></i>
+                                        <i class="fa fa-user text-muted"></i>
                                     </span>
                                 </div>
-
                                 <input id="phoneNumber" type="tel" name="contactno" pattern="[3,6][0-9]{9}"
                                     placeholder="Telefono" class="form-control bg-white border-md border-left-0 pl-3"
                                     required>
                             </div>
 
-
-                            <!-- Job -->
+                            <!-- Genero -->
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -121,8 +120,8 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 <select id="genero" name="genero"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
                                     <option value="">Genero</option>
-                                    <option value="Hombre">Hombre</option>
-                                    <option value="Mujer">Mujer</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
                                     <option value="Otro">Otro</option>
 
                                 </select>
@@ -227,7 +226,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 </div>
                                 <select id="updatedcoTipo" name="dcoTipo"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
-                                    <option value="">Tipo de Documento</option>
+                                    
                                     <option value="CC">Cédula de ciudadanía</option>
                                     <option value="CE">Cédula de extranjería</option>
                                     <option value="DIE">Documento de identificación extranjero</option>
@@ -278,7 +277,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                                         <i class="fa fa-user text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="updateContactno" type="text" name="contactNo" placeholder="Numero de Contacto"
+                                <input id="updatecontactNo" type="text" name="contactNo" placeholder="Numero de Contacto"
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
@@ -293,8 +292,8 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 <select id="updategenero" name="genero"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
                                     <option value="">Esocoje tu Genero</option>
-                                    <option value="Hombre">Hombre</option>
-                                    <option value="Mujer">Mujer</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
                                 </select>
                             </div>
                             <!-- Rol -->
@@ -315,7 +314,7 @@ if (!isset($_SESSION['loggedUserId'])) {
 
                         </div>
                         <!-- Submit Button -->
-                        <input type="" id="userId" name="updateUserID">
+                        <input type="hidden" id="userId" name="updateUserID">
                             <div class="form-group col-lg-12 mx-auto mb-0">
                         <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2" name="updateUser" >
                             <span class="font-weight-bold">Guardar Cambios</span>

@@ -108,7 +108,7 @@ if(isset($_SESSION['loggedUserId'])) {
         <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="/assets/picture/profiles/<?php echo $user_details['ProfileImage']; ?>" width="40" height="40" class="rounded-circle">
+        <img src="http://localhost/HotelDash_Web/assets/picture/profiles/<?php echo $user_details['ProfileImage']; ?>" width="40" height="40" class="rounded-circle" alt="Perfil de Usuario" />
           <?php echo $user_details['Nombre']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

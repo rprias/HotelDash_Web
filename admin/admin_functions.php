@@ -150,7 +150,7 @@ if(isset($_POST['userUpdateId'])){
     echo json_encode($response);
 }
 
-//update the details of user table
+//Modificar usuarios desde la tabla.
 
 if (isset($_POST['updateUserID'])) {
     // Sanitizar los datos de entrada
@@ -186,7 +186,7 @@ if (isset($_POST['updateUserID'])) {
         echo json_encode($sendData);
     } else {
         // Actualizar los detalles del usuario
-        $update_query = "UPDATE users_details SET DcoTipo = '$dcoTipo', Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', Rol='$rol', ProfileImage='$profileImageName' WHERE UserId = '$user_id   '";
+        $update_query = "UPDATE users_details SET DcoTipo = '$dcoTipo', Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', Rol='$rol', ProfileImage='$profileImageName' WHERE UserId = '$user_id'";
 
         if (mysqli_query($con, $update_query)) {
             // Mover el archivo subido
@@ -1029,9 +1029,12 @@ if(isset($_POST['deleteContact'])){
 if(isset($_POST['updateAccount'])){
              
     $user_id = mysqli_real_escape_string($con, $_POST['updateAccount']);
-    $lastname = mysqli_real_escape_string($con, $_POST['lastname']);
-    $contactno = mysqli_real_escape_string($con, $_POST['contactno']);  
-    $gender = mysqli_real_escape_string($con, $_POST['gender']);
+    $dcoTipo = mysqli_real_escape_string($con, $_POST['dcoTipo']);
+    $nombre = mysqli_real_escape_string($con, $_POST['nombre']);  
+    $noDocu = mysqli_real_escape_string($con, $_POST['noDocu']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $contactno = mysqli_real_escape_string($con, $_POST['contactno']);
+    $genero = mysqli_real_escape_string($con, $_POST['genero']);
 
     // profile image upload
     $profileImageName = $_FILES["profileImage"]["name"];
@@ -1040,7 +1043,7 @@ if(isset($_POST['updateAccount'])){
          
 
                     // query validation
-                    $update="UPDATE users_details SET  LastName ='$lastname',ContactNo='$contactno',Gender='$gender',ProfileImage='$profileImageName' where UserId = '$user_id'" ;
+                    $update_query = "UPDATE users_details SET DcoTipo = '$dcoTipo', Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', ProfileImage='$profileImageName' WHERE UserId = '$user_id'";
 
 
                     if(mysqli_query($con,$update))
@@ -1077,7 +1080,7 @@ if(isset($_POST['updateAccount'])){
         
 }
 
-// -------------------------------- Change password -----------------------------------
+// -------------------------------- Cambiar Contraseña -----------------------------------
 
 if(isset($_POST["oldPassword"])){
     $old = $_POST['oldPassword'];

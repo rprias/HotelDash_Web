@@ -125,21 +125,23 @@ else {
 if(isset($_POST['updateAccount'])){
              
   $user_id = mysqli_real_escape_string($con, $_POST['updateAccount']);
-  $firstname = mysqli_real_escape_string($con, $_POST['firstName']);
-  $lastname = mysqli_real_escape_string($con, $_POST['lastname']);
+  $updatedcoTipo = mysqli_real_escape_string($con, $_POST['updatedcoTipo']);
+  $updatenoDocu = mysqli_real_escape_string($con, $_POST['updatenoDocu']);
+  $updatenombre = mysqli_real_escape_string($con, $_POST['updatenombre']);
   $email = mysqli_real_escape_string($con, $_POST['email']);
-  $contactno = mysqli_real_escape_string($con, $_POST['contactno']);  
+  $contactno = mysqli_real_escape_string($con, $_POST['contactno']); 
   $gender = mysqli_real_escape_string($con, $_POST['gender']);
 
   // profile image upload
   $profileImageName = $_FILES["profileImage"]["name"];
   $tempname = $_FILES["profileImage"]["tmp_name"];   
   $folder = "../assets/picture/profiles/".$profileImageName;
+
        
 
   // $re_pass = base64_encode(mysqli_real_escape_string($conn, $_POST['reg_pass']));
 
-  $User_details="SELECT * FROM users_details WHERE (Firstname='$firstname' OR Email='$email') AND UserId <> ' $user_id '";
+  $User_details="SELECT * FROM users_details WHERE (Email='$email') AND UserId <> ' $user_id '";
   $result=mysqli_query($con,$User_details)or die("can't fetch");
   $num=mysqli_num_rows($result);
 
@@ -147,8 +149,8 @@ if(isset($_POST['updateAccount'])){
   $sendData = array();
  
   
- if ($firstname == "admin") {
-      $error="Invalid Username (You cannot use the username as admin!)";
+ if ($updatenombre == "admin") {
+      $error="Nombre de usuario no válido (¡No puede utilizar el nombre de usuario como admin!)";
       $sendData = array(
           "msg"=>"",
           "error"=>$error
@@ -156,7 +158,7 @@ if(isset($_POST['updateAccount'])){
       echo json_encode($sendData);
   } 
  else if ($num>0) {
-      $error="Username or email id is already taken!";
+      $error="El email ya esta registrado";
       $sendData = array(
           "msg"=>"",
           "error"=>$error
@@ -165,13 +167,19 @@ if(isset($_POST['updateAccount'])){
   } else {
 
                   // query validation
-                  $update="UPDATE users_details SET  FirstName='$firstname', LastName ='$lastname',Email='$email',ContactNo='$contactno',Gender='$gender',ProfileImage='$profileImageName' where UserId = '$user_id'" ;
-
-
+                  $update="UPDATE users_details SET 
+                  Nombre='$updatenombre', 
+                  DcoTipo='$updatedcoTipo', 
+                  NoDocu ='$updatenoDocu',
+                  Email='$email',
+                  ContactNo='$contactno',
+                  Genero='$gender',
+                  ProfileImage='$profileImageName' 
+                  where UserId = '$user_id'";
+                  
                   if(mysqli_query($con,$update))
                   {
                       if(!move_uploaded_file($tempname, $folder)){
-                      //if(false){
                           $error ="Error in Updation ...! Try after sometime";
                           $sendData = array(
                               "msg"=>"",
@@ -204,7 +212,7 @@ if(isset($_POST['updateAccount'])){
 
 }
 
-// -------------------------------- Change password -----------------------------------
+// -------------------------------- Cambiar Contraseña -----------------------------------
 
 if(isset($_POST["oldPassword"])){
   $old = $_POST['oldPassword'];

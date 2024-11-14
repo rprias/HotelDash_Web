@@ -336,9 +336,9 @@ INSERT INTO `users_details` (`UserId`, `Nombre`, `NoDocu`, `Email`, `Password`, 
 (2, 'admin', 'Venka', 'admin@gmail.com', '123', '3044632346', 'female', '1.jpg', 'Admin', 'CC'),
 (5, 'Rajesh', 'K S', 'raju@gmail.com', '123', '3636636363', 'male', '2.jpeg', 'Cliente', 'CC'),
 (9, 'guvi', 'wew', 'guvi@gmail.com', '123', '3636636361', 'male', '2.jpeg', 'Cliente', 'CE'),
-(15, 'Rodrigo', 'Prias', 'Rodri@dash.com', '1234', '3563526352', 'hombre', '4.jpg', 'Admin', 'NUIP'),
+(15, 'Rodrigo', 'Prias', 'Rodri@dash.com', '1234', '3563526352', 'Masculino', '4.jpg', 'Admin', 'NUIP'),
 (16, 'Alexander', 'Echeverri', 'Alex@Dash-hotels.com', '123', '7160244487', 'male', '4.jpg', 'Cliente', 'PP'),
-(23, 'Rodrigo Prias', '80195531', 'rodrigo@prias.com', '123', '3044632346', 'Hombre', 'images.png', 'Cliente', 'CC');
+(23, 'Rodrigo Prias', '80195531', 'rodrigo@prias.com', '123', '3044632346', 'Masculino', 'images.png', 'Cliente', 'CC');
 
 --
 -- Indexes for dumped tables

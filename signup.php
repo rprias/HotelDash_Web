@@ -48,7 +48,7 @@ include('include/header.php');
                         </div>
                         <select id="dcoTipo" type="text" name="dcoTipo" placeholder="Tipo de Documento"
                             class="form-control bg-white border-left-0 border-md" required>
-                            <option value="">Tipo de Documento</option>
+                            
                             <option value="CC">Cédula de ciudadanía</option>
                             <option value="CE">Cédula de extranjería</option>
                             <option value="DIE">Documento de identificación extranjero</option>
@@ -115,8 +115,8 @@ include('include/header.php');
                         <select id="genero" name="genero"
                             class="form-control custom-select bg-white border-left-0 border-md" required>
                             <option value="">Selecciona tu genero</option>
-                            <option value="Hombre">Hombre</option>
-                            <option value="Mujer">Mujer</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
                             <option value="Otro">Otro</option>
                         </select>
                     </div>
