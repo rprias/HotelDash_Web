@@ -238,13 +238,14 @@ if (!isset($_SESSION['loggedUserId'])) {
                             </div>
 
                             <!-- Numero de Documento-->
+
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-id-card text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="updateNoDocu" name="NoDocu" placeholder="Numero de Documento"
+                                <input id="updatenoDocu" type="text" name="noDocu" placeholder="Nombre Completo"
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
@@ -274,13 +275,11 @@ if (!isset($_SESSION['loggedUserId'])) {
                             <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class="fa fa-phone-square text-muted"></i>
+                                        <i class="fa fa-user text-muted"></i>
                                     </span>
                                 </div>
-
-                                <input id="updatecontactNo" type="tel" name="contactno" pattern="[3,6][0-9]{9}"
-                                    placeholder="Numero de Contacto"
-                                    class="form-control bg-white border-md border-left-0 pl-3" required>
+                                <input id="updateContactno" type="text" name="contactNo" placeholder="Numero de Contacto"
+                                    class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
 
@@ -294,7 +293,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 <select id="updategenero" name="genero"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
                                     <option value="">Esocoje tu Genero</option>
-                                    <option value="Hombmre">Hombre</option>
+                                    <option value="Hombre">Hombre</option>
                                     <option value="Mujer">Mujer</option>
                                 </select>
                             </div>
@@ -305,7 +304,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                                         <i class="fa fa-black-tie text-muted"></i>
                                     </span>
                                 </div>
-                                <select id="updaterol" name="Rol"
+                                <select id="updaterol" name="rol"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
                                     <option disabled="" selected="">Seleccione un Rol</option>
                                     <option value="Cliente">Cliente</option>
@@ -316,7 +315,7 @@ if (!isset($_SESSION['loggedUserId'])) {
 
                         </div>
                         <!-- Submit Button -->
-                        <input type="" id="userID" name="updateUserID">
+                        <input type="" id="userId" name="updateUserID">
                             <div class="form-group col-lg-12 mx-auto mb-0">
                         <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2" name="updateUser" >
                             <span class="font-weight-bold">Guardar Cambios</span>

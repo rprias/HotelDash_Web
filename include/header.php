@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Establece la codificación de caracteres del documento HTML -->
+<meta charset="UTF-8"> 
+
+<!-- Indica a Internet Explorer que use el modo de renderizado más reciente -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Configura la ventana de visualización para dispositivos móviles -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Inclusion de FavIcon -->
     <link rel="icon" href="assets/picture/icons/favicon.png" type="image/x-icon">
 
@@ -33,99 +39,104 @@
 
  
 <?php 
+// Incluir archivos de funciones y configuraciones generales
 include('functions.php');
 include('general.php');
 
-if(isset($_SESSION['loggedUserId'])) {
-    $id = $_SESSION['loggedUserId'];
-    $s="select * from  users_details where UserId='$id' ";
-    $result=mysqli_query($con,$s) or die ('failed to query');
-    $user_details= mysqli_fetch_assoc($result);
-   
+// Verificar si el usuario está logueado mediante la sesión
+if(isset($_SESSION['loggedUser Id'])) {
+    // Obtener el ID del usuario logueado
+    $id = $_SESSION['loggedUser Id'];
+    
+    // Consulta para obtener detalles del usuario
+    $s = "SELECT * FROM users_details WHERE UserId='$id'";
+    $result = mysqli_query($con, $s) or die ('failed to query');
+    
+    // Obtener los detalles del usuario como un array asociativo
+    $user_details = mysqli_fetch_assoc($result);
 }
   
-  if(isset($user_details['Nombre'])){
-  ?>
-   <!-- navbar two (when user log in)  -->
-   <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark" >
+// Verificar si se han obtenido los detalles del usuario
+if(isset($user_details['Nombre'])) {
+?>
+   <!-- Navbar para usuarios logueados -->
+   <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand " href="#"><i class="fa-solid fa-hotel"></i><?php echo $general_setting['Name'] ?></a>
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-hotel"></i><?php echo $general_setting['Name'] ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link"  href="index.php">Hotel</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="about.php"> Quienes Somos</a>
+            <a class="nav-link" href="index.php">Hotel</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gallery.php">Galeria</a>
+            <a class="nav-link" href="about.php">Quienes Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.php">Galería</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="service.php">Servicios</a>
           </li>
-        
-            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Reservar
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="client/room.php">Habitaciones</a>
-            <a class="dropdown-item" href="client/event.php">Salon de Eventos</a>
-            <a class="dropdown-item" href="client/mybooking.php">Mis Reservas</a>
-          </div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Reservar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="client/room.php">Habitaciones</a>
+              <a class="dropdown-item" href="client/event.php">Salón de Eventos</a>
+              <a class="dropdown-item" href="client/mybooking.php">Mis Reservas</a>
+            </div>
           </li>   
-        
           <li class="nav-item">
-            <a class="nav-link" href="events.php">Salon de Eventos</a>
+            <a class="nav-link" href="events.php">Salón de Eventos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contáctenos</a>
           </li>
-          </ul >
-          
+        </ul>
+        
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <!-- <img src="<" width="40" height="40" class="rounded-circle"> -->
-          <?php echo $user_details['Nombre']; ?>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="client/dashboard.php">Mis Reservas</a>
-          <a class="dropdown-item" href="client/account.php">Editar Datos</a>
-          <a class="dropdown-item" href="destroy.php">Salir</a>
-        </div>
-      </li>   
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!-- Mostrar el nombre del usuario logueado -->
+              <?php echo $user_details['Nombre']; ?>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="client/dashboard.php">Mis Reservas</a>
+              <a class="dropdown-item" href="client/account.php">Editar Datos</a>
+              <a class="dropdown-item" href="destroy.php">Salir</a>
+            </div>
+          </li>   
         </ul>
         
       </div>
     </div>
   </nav>
-
   
- <?php } else{ ?>
+<?php 
+} else { 
+  // Navbar para usuarios no logueados
+?>
   
-    <!-- Navigation -->
- 
-<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark" >
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-    <a class="navbar-brand " href="#"><i class="fa-solid fa-hotel"></i><?php echo $general_setting['Name'] ?></a>
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-hotel"></i><?php echo $general_setting['Name'] ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link"  href="index.php">Hotel</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="about.php"> Quienes Somos</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Hotel</ </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gallery.php">Galeria</a>
+            <a class="nav-link" href="about.php">Quienes Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.php">Galería</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="service.php">Servicios</a>
@@ -136,18 +147,19 @@ if(isset($_SESSION['loggedUserId'])) {
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contáctenos</a>
           </li>
-          </ul >
-          <ul class="navbar-nav ml-auto">
-           <li class="nav-item">
-            <a class="nav-link " style="font-size: 18px !important;" href="login.php">Ingreso</a>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 18px !important;" href="login.php">Ingreso</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="font-size: 18px !important;" href="signup.php">Registro</a>
           </li>
-      
         </ul>
       </div>
     </div>
   </nav>
 
- <?php } ?>
+<?php 
+} 
+?>

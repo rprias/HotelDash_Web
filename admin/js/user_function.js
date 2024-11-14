@@ -80,7 +80,7 @@ function editUser(UserID){
       $('#updatenoDocu').val(userData.NoDocu);
       $('#updateemail').val(userData.Email);
       $('#updatedcoTipo').val(userData.DcoTipo);
-      $('#updatecontactNo').val(userData.Contactno);
+      $('#updatecontactNo').val(userData.ContactNo);
       $('#updategenero').val(userData.Genero);
       $('#updaterol').val(userData.Rol);
 

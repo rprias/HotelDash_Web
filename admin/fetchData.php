@@ -5,7 +5,7 @@
 include("../include/dbConnect.php");
 if(isset($_POST['userFilter'])){
 
-  $userTable='<br><br>';
+  $userTable='';
     if(isset($_POST['msg'])){ 
             $userTable.='<div class="alert alert-success" role="alert">' . $_POST["msg"].' </div>';
           }

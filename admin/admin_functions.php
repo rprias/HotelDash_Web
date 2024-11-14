@@ -1,11 +1,10 @@
 <?php
 include '../include/functions.php';
-    include '../include/dbconnection.php';
     
 // ---------------------------------------User Actions----------------------------------------------
 
    // Añade un nuevo usuario desde la consola de Administración
-    if(isset($_POST['user_registration'])){
+
     if(isset($_POST['user_registration'])){
         
         $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
@@ -27,7 +26,7 @@ include '../include/functions.php';
     
         // $re_pass = base64_encode(mysqli_real_escape_string($conn, $_POST['reg_pass']));
     
-        $User_details="SELECT * FROM users_details WHERE nombre='$nombre' OR Email='$email'";
+        $User_details="SELECT * FROM users_details WHERE Email='$email'";
         $result=mysqli_query($con,$User_details)or die("can't fetch");
         $num=mysqli_num_rows($result);
     
@@ -133,46 +132,23 @@ if(isset($_POST['deleteUser'])){
 }
 
 //update - getting the selected user details
-if (isset($_POST['userUpdateId'])) 
-
+if(isset($_POST['userUpdateId'])){
     $userID = $_POST['userUpdateId'];
 
-    // Preparar la consulta SQL
-    $query_selectUser  = "SELECT * FROM users_details WHERE UserId = '$userID'";
-    
-    // Inicializar la declaración
-    if ($stmt = mysqli_prepare($con, $query_selectUser )) {
-        // Vincular el parámetro
-        mysqli_stmt_bind_param($stmt, "s", $userID); // "s" indica que el parámetro es una cadena
-
-        // Ejecutar la consulta
-        mysqli_stmt_execute($stmt);
-
-        // Obtener el resultado
-        $result = mysqli_stmt_get_result($stmt);
-        $num_of_rows = mysqli_num_rows($result);
-        $response = array();
-
-        if ($num_of_rows < 1) {
-            $response['status'] = 200;
-            $response['message'] = "ID de usuario no válido";
-        } else {
-            // Obtener los datos del usuario
-            $response = mysqli_fetch_assoc($result);
+    $query_selectUser = "select * from users_details where UserId = '$userID' ";
+    $single_user = mysqli_query($con,$query_selectUser);
+    $num_of_rows = mysqli_num_rows($single_user);
+    $response = array();
+    if($num_of_rows<1){
+        $response['status'] = 200;
+        $response['message'] = "Id de Usuario no Valido.";
+    }else{
+        while($row = mysqli_fetch_assoc($single_user)){
+            $response = $row;
         }
-
-        // Cerrar la declaración
-        mysqli_stmt_close($stmt);
-    } else {
-        // Manejo de errores si la preparación de la consulta falla
-        $response['status'] = 500;
-        $response['message'] = "Error en la consulta a la base de datos";
     }
-
-    // Devolver la respuesta en formato JSON
     echo json_encode($response);
 }
-
 
 //update the details of user table
 
@@ -183,7 +159,7 @@ if (isset($_POST['updateUserID'])) {
     $noDocu = mysqli_real_escape_string($con, $_POST['noDocu']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $dcoTipo = mysqli_real_escape_string($con, $_POST['dcoTipo']);
-    $contactno = mysqli_real_escape_string($con, $_POST['contactno']);
+    $contactno = mysqli_real_escape_string($con, $_POST['contactNo']);
     $genero = mysqli_real_escape_string($con, $_POST['genero']);
     $rol = mysqli_real_escape_string($con, $_POST['rol']);
 
@@ -210,7 +186,7 @@ if (isset($_POST['updateUserID'])) {
         echo json_encode($sendData);
     } else {
         // Actualizar los detalles del usuario
-        $update_query = "UPDATE users_details SET Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', Rol='$rol', ProfileImage='$profileImageName' WHERE UserId = '$user_id'";
+        $update_query = "UPDATE users_details SET DcoTipo = '$dcoTipo', Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', Rol='$rol', ProfileImage='$profileImageName' WHERE UserId = '$user_id   '";
 
         if (mysqli_query($con, $update_query)) {
             // Mover el archivo subido
@@ -229,11 +205,8 @@ if (isset($_POST['updateUserID'])) {
             echo json_encode($sendData);
         }
     }
-} else {
-    $error = "No se recibieron datos para actualizar.";
-    $sendData = array("msg" => "", "error" => $error);
-    echo json_encode($sendData);
-}
+} 
+
 
 // ------------------------------------- Gallery Actions -----------------------------------------------------
 
