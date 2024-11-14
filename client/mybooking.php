@@ -94,7 +94,7 @@ if(!isset($_SESSION['loggedUserId'])) {
       <h2 class="mb-5 text-center">Booking History</h2>
 
       <div class="nav  d-flex carousel-nav" id="nav-tab" role="tablist">
-      <a class=" col nav-item nav-link active" id="nav-room-tab" data-toggle="tab" href="#nav-room" role="tab" aria-controls="nav-home" aria-selected="true">Room Booking</a>
+      <a class=" col nav-item nav-link Active" id="nav-room-tab" data-toggle="tab" href="#nav-room" role="tab" aria-controls="nav-home" aria-selected="true">Room Booking</a>
        <a class="col nav-item nav-link" id="nav-event-tab" data-toggle="tab" href="#nav-event" role="tab" aria-controls="nav-profile" aria-selected="false">Event Booking</a>
     
       </div>
@@ -103,7 +103,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 
     <div class="tab-content" id="nav-tabContent">
         <!-- Booked Rooms  -->
-        <div class="tab-pane fade show active" id="nav-room" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="tab-pane fade show Active" id="nav-room" role="tabpanel" aria-labelledby="nav-home-tab">
 
          <!-- Filter Drop down  -->
  <div class="float-right filterBy">

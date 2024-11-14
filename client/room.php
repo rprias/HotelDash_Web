@@ -18,9 +18,9 @@ if(!isset($_SESSION['loggedUserId'])) {
 <select name="category" id="roomFilter" class="form-control custom-select bg-white border-md filter">
   <option disabled="" selected="">FilterBy  </option>
   <option value="1">All</option>
-  <option value="2">Cost below 500</option>
+  <option value="2">Menos de $500.000</option>
   <option value="3">Cost between 500 and 1000</option>
-  <option value="4">Cost above 1000</option>
+  <option value="4">Mas de $1.000.000</option>
 </select>
 </div>
 

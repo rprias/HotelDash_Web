@@ -5,32 +5,32 @@
 		<div class="col-md-8 mx-auto">
 		<div class="message"></div>
 			<div class="contact-form">
-				<h1>Contact Us</h1>
-				<p class="hint-text">We'd love to hear from you, please drop us a line if you've any query.</p>
+				<h1>Contáctanos</h1>
+				<p class="hint-text">Nos encantaría saber de ti, escríbenos si tienes alguna duda.</p>
 				<form id="contact-form" action="functions.php" method="post"  autocomplete="off">
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="inputFirstName">First Name</label>
+								<label for="inputFirstName">Nombres</label>
 								<input type="text" class="form-control" id="FirstName" name="FirstName" required>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="inputLastName">Last Name</label>
+								<label for="inputLastName">Apellidos</label>
 								<input type="text" class="form-control" id="LastName" name="LastName" required>
 							</div>
 						</div>
 					</div>            
 					<div class="form-group">
-						<label for="inputEmail">Email Address</label>
+						<label for="inputEmail">Direccion de Correo Electronico</label>
 						<input type="email" class="form-control" id="Email" name="Email" required>
 					</div>
 					<div class="form-group">
-						<label for="inputMessage">Message</label>
+						<label for="inputMessage">Mensaje</label>
 						<textarea class="form-control" id="Message" name="Message" rows="5" required></textarea>
 					</div>
-					<button type="submit" class="btn btn-primary" name = "contact" > Submit </button>
+					<button type="submit" class="btn btn-primary" name = "contact" > Enviar </button>
 				</form>
 			</div>
 		</div>

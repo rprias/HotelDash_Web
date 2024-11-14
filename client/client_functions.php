@@ -18,7 +18,7 @@ if(isset($_POST['bookRoom'])){
     $checkOut = strtotime($checkOut);
     $checkOut = date('Y-m-d',$checkOut);
 
-    $query_roomType = "select * from room_list where RoomTypeId = '$roomTypeId' AND Status = 'active' order by RoomId";
+    $query_roomType = "select * from room_list where RoomTypeId = '$roomTypeId' AND Status = 'Activa' order by RoomId";
     $roomType  = mysqli_query($con,$query_roomType);
     if(mysqli_num_rows($roomType)>0)
 {  
@@ -76,7 +76,7 @@ if(isset($_POST['bookEvent'])){
     $eventDate = date('Y-m-d',$eventDate); 
     
 
-    $query_eventType = "select * from event_list where EventTypeId = '$eventTypeId' AND Status = 'active' order by EventId";
+    $query_eventType = "select * from event_list where EventTypeId = '$eventTypeId' AND Status = 'Activa' order by EventId";
     $Type  = mysqli_query($con,$query_eventType);
     if(mysqli_num_rows($Type)>0)
 {  
@@ -113,7 +113,7 @@ if(isset($_POST['bookEvent'])){
      
 }
 else {
-    echo "<script>alert('Oops! Active Event halls are not available'); window.location.href='room.php'; </script>";
+    echo "<script>alert('Oops! Activa Event halls are not available'); window.location.href='room.php'; </script>";
 }
 
 

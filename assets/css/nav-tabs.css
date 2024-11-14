@@ -28,9 +28,9 @@ h2 {
     display: inline-block; }
     .carousel-nav a:hover {
       color: #000; }
-    .carousel-nav a.active {
+    .carousel-nav a.Active {
       color: #000; }
-      .carousel-nav a.active:before {
+      .carousel-nav a.Active:before {
         content: "";
         bottom: -1px;
         left: 0;

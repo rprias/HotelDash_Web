@@ -16,8 +16,8 @@ $(function() {
   let currentLink = $('.nav-item a[href="'+pageName+'"]');
  
   if (currentLink) {
-    $('.nav-item').removeClass('active');
-    currentLink.parent('li').addClass('active');
+    $('.nav-item').removeClass('Active');
+    currentLink.parent('li').addClass('Active');
   };
   
   

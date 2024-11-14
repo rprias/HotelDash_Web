@@ -37,16 +37,16 @@ $(function() {
   console.log(currentLink);
 
   if (currentLink) {
-    $('.navbar-nav nav-item').removeClass('active');
-    currentLink.addClass('active');
+    $('.navbar-nav nav-item').removeClass('Active');
+    currentLink.addClass('Active');
   };
 
   if(pageName.includes("room") || pageName.includes("event") || pageName.includes("mybooking")){
-    currentLink.parent().parent('li').addClass('active');
+    currentLink.parent().parent('li').addClass('Active');
   } 
   
   if(pageName.includes("dashboard") || pageName.includes("account") ){
-    currentLink.parent().parent('li').addClass('active');
+    currentLink.parent().parent('li').addClass('Active');
   }
   
 });
@@ -75,7 +75,7 @@ $(document).ready(function(){
       $("#wizardUpdate-image").change(function(){
           readURL(this,'#addNewImage');
       });
-      //Room Type
+      //Tipo de Habitacion
       $("#roomTypeImage").change(function(){
           readURL(this,'#roomTypeImagePreview');
       });

@@ -4,8 +4,8 @@ $(function() {
     let currentLink = $('.nav-item a[href="'+pageName+'"]');
   
     if (currentLink) {
-      $('.navbar-nav nav-item').removeClass('active');
-      currentLink.addClass('active');
+      $('.navbar-nav nav-item').removeClass('Active');
+      currentLink.addClass('Active');
     };
     
   });
@@ -34,7 +34,7 @@ $(function() {
         $("#wizardUpdate-image").change(function(){
             readURL(this,'#addNewImage');
         });
-        //Room Type
+        //Tipo de Habitacion
         $("#roomTypeImage").change(function(){
             readURL(this,'#roomTypeImagePreview');
         });

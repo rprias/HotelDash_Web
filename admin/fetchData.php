@@ -3,6 +3,10 @@
 //---------------------------------------------- User table -----------------------------------------
 
 include("../include/dbConnect.php");
+
+function formatCurrency($amount) {
+  return "$ " . number_format($amount, 2, ',', '.');
+}
 if(isset($_POST['userFilter'])){
 
   $userTable='';
@@ -111,7 +115,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
 
  }
 
-   //---------------------------------------------- Room Type table -----------------------------------------
+   //---------------------------------------------- Tipo de Habitacion table -----------------------------------------
 
    if(isset($_POST['roomTypeFilter'])){
 
@@ -129,12 +133,12 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
         <table class="table table-hover " id="userTable">
 <thead class="thead-dark">
     <tr >
-      <th scope="col">Image</th>
-      <th scope="col">Type Name</th>
-      <th scope="col">Cost</th>
-      <th scope="col">Description</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Tipo de Habitacion</th>
+      <th scope="col">Costo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
      
       
     </tr>
@@ -148,11 +152,11 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
 
    switch($roomTypeFilter){
       case 1:  $selectAllType = "SELECT * FROM room_type "; break;
-      case 2:  $selectAllType = "SELECT * FROM room_type WHERE Status like 'active' ";break;
-      case 3:  $selectAllType = "SELECT * FROM room_type WHERE Status like 'in-active' ";break;
-      case 4:  $selectAllType = "SELECT * FROM room_type WHERE Cost < 500 ";break;
-      case 5:  $selectAllType = "SELECT * FROM room_type WHERE Cost >=500 AND Cost<=1000 ";break;
-      case 6:  $selectAllType = "SELECT * FROM room_type WHERE Cost >1000 ";break;
+      case 2:  $selectAllType = "SELECT * FROM room_type WHERE Status like 'Activa' ";break;
+      case 3:  $selectAllType = "SELECT * FROM room_type WHERE Status like 'Inactiva' ";break;
+      case 4:  $selectAllType = "SELECT * FROM room_type WHERE Cost < 500000 ";break;
+      case 5:  $selectAllType = "SELECT * FROM room_type WHERE Cost >=500000 AND Cost<=1000000 ";break;
+      case 6:  $selectAllType = "SELECT * FROM room_type WHERE Cost >1000000 ";break;
       default: $selectAllType = "SELECT * FROM room_type "; break;
       
    }
@@ -177,8 +181,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                     <td>
                        
               <input type="hidden" name="userId" value="'.$row["RoomTypeId"].'"/> ';
-              $typeTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editRoomType('".$row["RoomTypeId"]."') \"> Edit </button>";
-              $typeTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["RoomType"]."') && deleteRoomType('".$row["RoomTypeId"]."')\">Delete</button>
+              $typeTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editRoomType('".$row["RoomTypeId"]."') \"> Editar </button>";
+              $typeTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminación de:  ".$row["RoomType"]."') && deleteRoomType('".$row["RoomTypeId"]."')\">Borrar</button>
                      
                     </td>
             </tr>";
@@ -187,7 +191,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
     else 
     {
     
-      $typeTable.='<tr><td colspan="8" style="color:red;text-align:center;">No records are found </td></tr>';
+      $typeTable.='<tr><td colspan="8" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
     
     }
 
@@ -214,11 +218,11 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
         <table class="table table-hover " id="userTable">
 <thead class="thead-dark">
     <tr >
-      <th scope="col">Room Type</th>
-      <th scope="col">Cost</th>
-      <th scope="col">Room Number</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      <th scope="col">Tipo de Habitacion</th>
+      <th scope="col">Costo</th>
+      <th scope="col">Numero de Habitación</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
       
     </tr>
   </thead>
@@ -252,8 +256,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                     <td>
                        
               <input type="hidden" name="userId" value="'.$row["RoomId"].'"/> ';
-              $roomTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editRoom('".$row["RoomId"]."') \"> Edit </button>";
-              $roomTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete the room number  ".$row["RoomNumber"]."') && deleteRoom('".$row["RoomId"]."')\">Delete</button>
+              $roomTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editRoom('".$row["RoomId"]."') \"> Editar </button>";
+              $roomTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Desea eliminar la habitación?  ".$row["RoomNumber"]."') && deleteRoom('".$row["RoomId"]."')\">Borrar</button>
                      
                     </td>
             </tr>";
@@ -262,7 +266,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
     else 
     {
     
-      $roomTable.='<tr><td colspan="8" style="color:red;text-align:center;">No records are found </td></tr>';
+      $roomTable.='<tr><td colspan="8" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
     
     }
 
@@ -289,16 +293,16 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
         <table class="table table-hover " id="userTable">
 <thead class="thead-dark">
     <tr >
-      <th scope="col">User</th>
-      <th scope="col">Date</th>
-      <th scope="col">Room Type</th>
-      <th scope="col">Room No</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Tipo de Habitacion</th>
+      <th scope="col">Numero de Habitacion</th>
       <th scope="col">CheckIn</th>
       <th scope="col">CheckOut</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
-      <th scope="col">Details</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
+      <th scope="col">Detalles</th>
       
     </tr>
   </thead>
@@ -395,7 +399,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                           if($row['Status']=="Booked"){
                           $roomTable .=' <td>
                           <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Are you sure ? Do you want to Cancel this Booking \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
+                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
                          
                           </td>	 ';
                           }
@@ -434,7 +438,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
    else 
    {
    
-     $roomTable.='<tr><td colspan="12" style="color:red;text-align:center;">No records are found </td></tr>';
+     $roomTable.='<tr><td colspan="12" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
    
    }
 
@@ -462,12 +466,12 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
         <table class="table table-hover " id="userTable">
 <thead class="thead-dark">
     <tr >
-      <th scope="col">User</th>
-      <th scope="col">Payment Date</th>
-      <th scope="col">Payment Type</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Room Type</th>
-      <th scope="col">Room No</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Fecha de Pago</th>
+      <th scope="col">Tipo de Pago</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Tipo de Habitacion</th>
+      <th scope="col">Numero de Habitacion</th>
       <th scope="col">CheckIn</th>
       <th scope="col">CheckOut</th>
       
@@ -596,7 +600,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
    else 
    {
    
-     $paymentTable.='<tr><td colspan="12" style="color:red;text-align:center;">No records are found </td></tr>';
+     $paymentTable.='<tr><td colspan="12" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
    
    }
 
@@ -623,12 +627,12 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
         <table class="table table-hover " id="userTable">
 <thead class="thead-dark">
     <tr >
-      <th scope="col">Image</th>
-      <th scope="col">Type Name</th>
-      <th scope="col">Cost</th>
-      <th scope="col">Description</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Costo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
      
       
     </tr>
@@ -642,8 +646,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
 
    switch($roomTypeFilter){
       case 1:  $selectAllType = "SELECT * FROM event_type "; break;
-      case 2:  $selectAllType = "SELECT * FROM event_type WHERE Status like 'active' ";break;
-      case 3:  $selectAllType = "SELECT * FROM event_type WHERE Status like 'in-active' ";break;
+      case 2:  $selectAllType = "SELECT * FROM event_type WHERE Status like 'Activa' ";break;
+      case 3:  $selectAllType = "SELECT * FROM event_type WHERE Status like 'Inactiva' ";break;
       case 4:  $selectAllType = "SELECT * FROM event_type WHERE Cost < 500 ";break;
       case 5:  $selectAllType = "SELECT * FROM event_type WHERE Cost >=500 AND Cost<=1000 ";break;
       case 6:  $selectAllType = "SELECT * FROM event_type WHERE Cost >1000 ";break;
@@ -670,8 +674,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                    
                     <td>';
 
-              $typeTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editEventType('".$row["EventTypeId"]."') \"> Edit </button>";
-              $typeTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["EventTypeId"]."') && deleteEventType('".$row["EventTypeId"]."')\">Delete</button>
+              $typeTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editEventType('".$row["EventTypeId"]."') \"> Editar </button>";
+              $typeTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminacion de:   ".$row["EventTypeId"]."') && deleteEventType('".$row["EventTypeId"]."')\">Borrar</button>
                      
                     </td>
             </tr>";
@@ -680,7 +684,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
     else 
     {
     
-      $typeTable.='<tr><td colspan="8" style="color:red;text-align:center;">No records are found </td></tr>';
+      $typeTable.='<tr><td colspan="8" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
     
     }
 
@@ -747,8 +751,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                    
                     <td>
              ';
-              $eventTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editEvent('".$row["EventId"]."') \"> Edit </button>";
-              $eventTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete the hall number  ".$row["EventId"]."') && deleteEvent('".$row["EventId"]."')\">Delete</button>
+              $eventTable.="<button class='btn btn-secondary'  name='EditUser' onclick=\" editEvent('".$row["EventId"]."') \"> Editar </button>";
+              $eventTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Desea eliminar el Salón?  ".$row["EventId"]."') && deleteEvent('".$row["EventId"]."')\">Borrar</button>
                      
                     </td>
             </tr>";
@@ -757,7 +761,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
     else 
     {
     
-      $eventTable.='<tr><td colspan="8" style="color:red;text-align:center;">No records are found </td></tr>';
+      $eventTable.='<tr><td colspan="8" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
     
     }
 
@@ -784,16 +788,16 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
         <table class="table table-hover " id="userTable">
    <thead class="thead-dark">
     <tr >
-      <th scope="col">User</th>
-      <th scope="col">Date</th>
-      <th scope="col">Event Type</th>
-      <th scope="col">Hall No</th>
-      <th scope="col">Event Date</th>
-      <th scope="col">Event Time</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
-      <th scope="col">Details</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Tipo de Evento</th>
+      <th scope="col">No. de Salón</th>
+      <th scope="col">Fecha del Evento</th>
+      <th scope="col">Duracion del Evento</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
+      <th scope="col">Detalles</th>
       
     </tr>
    </thead>
@@ -891,7 +895,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                           if($row['Status']=="Booked"){
                           $eventTable .=' <td>
                           <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Are you sure ? Do you want to Cancel this Booking \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
+                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
                          
                           </td>	 ';
                           }
@@ -900,7 +904,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                               <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
                               <button type="submit" class="btn btn-primary btn-sm">Bill</button>
                               </form>
-                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'Are you sure ? Do you want to make available this event \') && setFree(\''.$row["BookingId"].'\')">Free</button>
+                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'¿Está seguro? ¿Desea poner a disposición este evento:  \') && setFree(\''.$row["BookingId"].'\')">Free</button>
                             
                               </td> 	 ';
                           }
@@ -930,7 +934,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
    else 
    {
    
-     $eventTable.='<tr><td colspan="12" style="color:red;text-align:center;">No records are found </td></tr>';
+     $eventTable.='<tr><td colspan="12" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
    
    }
    
@@ -1092,7 +1096,7 @@ case 9:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Firs
  else 
  {
  
-   $paymentTable.='<tr><td colspan="12" style="color:red;text-align:center;">No records are found </td></tr>';
+   $paymentTable.='<tr><td colspan="12" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
  
  }
 
@@ -1102,7 +1106,7 @@ case 9:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Firs
   echo $paymentTable;
 }
  
-// ------------------------------------------- Contact Details - ----------------------------
+// ------------------------------------------- Listado de Mensajes - ----------------------------
 
 if(isset($_POST['contactDetails'])){
 
@@ -1120,8 +1124,8 @@ if(isset($_POST['contactDetails'])){
 <thead class="thead-dark">
     <tr >
    
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
       <th scope="col">Email</th>
       <th scope="col">Feedback</th>
       <th scope="col">Action</th>
@@ -1150,7 +1154,7 @@ if(isset($_POST['contactDetails'])){
                     <td>'.$row["Message"].'</td>
                     <td> ';
            
-              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Are you want to delete  ".$row["FirstName"]." Feedback') && deleteContact('".$row["ID"]."')\">Delete</button>
+              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminacion de:   ".$row["FirstName"]." Feedback') && deleteContact('".$row["ID"]."')\">Borrar</button>
                      
                     </td>
             </tr>";
@@ -1159,7 +1163,7 @@ if(isset($_POST['contactDetails'])){
     else 
     {
     
-      $userTable.='<tr><td colspan="5" style="color:red;text-align:center;">No records are found </td></tr>';
+      $userTable.='<tr><td colspan="5" style="color:red;text-align:center;">No hay  registros disponibles </td></tr>';
     
     }
 

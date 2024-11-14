@@ -5,7 +5,7 @@
 <section class="white-section " id="testimonial-service">
 <div id="testimonial-carousel" class="carousel slide" data-ride="false">
   <div class="carousel-inner">
-    <div class="carousel-item active container-fluid">
+    <div class="carousel-item Active container-fluid">
       <h2 class="testimonial-text">We offers High-speed free Internet access is complimentary both in the rooms and public areas</h2>
       <img class='testimonials-image' src="assets/picture/icons/wifi.png" alt="dog-profile">
       <em>Free Wifi</em>

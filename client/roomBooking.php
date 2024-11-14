@@ -50,7 +50,7 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="form-group col-lg-6 mb-4">
                      
                      <div class="ml-2">
-                         <label for="roomType">Room Type</label>
+                         <label for="roomType">Tipo de Habitacion</label>
                      </div>
                     <div class="input-group ">
                         <div class="input-group-prepend">
@@ -78,7 +78,7 @@ while($row = mysqli_fetch_assoc($result)){
                     </div>
                     </div>
 
-                    <!-- Email Address -->
+                    <!-- Direccion de Correo Electronico -->
                     <div class="form-group col-lg-12 mb-4">
                      
                      <div class="ml-2">
@@ -90,7 +90,7 @@ while($row = mysqli_fetch_assoc($result)){
                                 <i class="fa fa-envelope text-muted"></i>
                             </span>
                         </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="email" type="email" name="email" placeholder="Direccion de Correo Electronico" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                     </div>
                    

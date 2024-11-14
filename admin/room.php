@@ -11,7 +11,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-dark" id="addRoomBtn">
-+ Add New Room
++ Añadir una nueva Habitación.
 </button>
 
 
@@ -20,7 +20,7 @@ if(!isset($_SESSION['loggedUserId'])) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Room</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar habitacion</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -30,7 +30,7 @@ if(!isset($_SESSION['loggedUserId'])) {
             
 
       <?php
-      $query_roomType = "select * from room_type where Status = 'active' order by RoomTypeId";
+      $query_roomType = "select * from room_type where Status = 'Activa' order by RoomTypeId";
       $result = mysqli_query($con,$query_roomType);
 
       ?>
@@ -42,7 +42,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                     </span>
                 </div>
                 <select id="roomType" name="roomType" class="form-control custom-select bg-white border-left-0 border-md" required>
-                    <option disabled="" selected="">choose a room type</option>
+                    <option disabled="" selected="">Escoja un Tipo de Habitacion</option>
                     <?php 
                     while ($row = mysqli_fetch_array($result))
                     {
@@ -64,8 +64,8 @@ if(!isset($_SESSION['loggedUserId'])) {
                 <input id="roomNumber" type="text" name="roomNumber" placeholder="Room Number" class="form-control bg-white border-left-0 border-md" required>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Add</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Añadir</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
       </form>
       </div>
@@ -90,7 +90,7 @@ if(!isset($_SESSION['loggedUserId'])) {
             
 
       <?php
-      $query_roomType = "select * from room_type where Status = 'active' order by RoomTypeId";
+      $query_roomType = "select * from room_type where Status = 'Activa' order by RoomTypeId";
       $result = mysqli_query($con,$query_roomType);
 
       ?>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                     </span>
                 </div>
                 <select id="editRoomType" name="editRoomType" class="form-control custom-select bg-white border-left-0 border-md" required>
-                    <option disabled="" selected="">choose a room type</option>
+                    <option disabled="" selected="">Escoja un Tipo de Habitacion</option>
                     <?php 
                     while ($row = mysqli_fetch_array($result))
                     {
@@ -131,17 +131,17 @@ if(!isset($_SESSION['loggedUserId'])) {
                             </span>
                         </div>
                         <select id="editStatus" name="editStatus" class="form-control custom-select bg-white border-left-0 border-md" required>
-                            <option disabled="" selected="">choose a status</option>
-                            <option value="active">Active</option>
-                            <option value="in-active">In-active</option>
+                            <option disabled="" selected="">Seleccione el estado</option>
+                            <option value="Activa">Activa</option>
+                            <option value="Inactiva">Inactiva</option>
                         </select>
             </div>
               <!-- for getting the id when the form is submitted  -->
               <input type="hidden" id="updateRoomId" name="updateRoomId">
 
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Save Changes</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
       </form>
       </div>
@@ -154,10 +154,10 @@ if(!isset($_SESSION['loggedUserId'])) {
  <!-- Filter Drop down  -->
  <div class="float-right filterBy">
 <select name="category" id="roomFilter" class="form-control custom-select bg-white border-md filter">
-  <option disabled="" selected="">FilterBy  </option>
+  <option disabled="" selected="">Filtrar por  </option>
   <option value="">All</option>
-  <option value="active">active</option>
-  <option value="in-active">in-active</option>
+  <option value="Activa">Activa</option>
+  <option value="Inactiva">Inactiva</option>
 </select>
 </div>
  <!-- table for the display the content  -->

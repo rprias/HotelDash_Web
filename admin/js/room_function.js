@@ -85,7 +85,7 @@ $(document).ready(function(){
     displayRooms('','','');
       
 
-    //Filter for the room type
+    //Filter for the Tipo de Habitacion
     $('#roomFilter').on('change',function(){
       var value = $(this).val();
       displayRooms(value,"","");

@@ -65,7 +65,7 @@ if(isset($_POST['bookingId'])){
     $pdf->Ln(20);
 
     
-    $pdf->Cell(100,5,"Room Type",0,0,'C');
+    $pdf->Cell(100,5,"Tipo de Habitacion",0,0,'C');
     $pdf->Cell(20,5,":",0,0);
     $pdf->Cell(50,5,$result['RoomType'],0,0);
     $pdf->Ln(20);

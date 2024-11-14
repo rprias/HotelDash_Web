@@ -85,7 +85,7 @@ CREATE TABLE `event_list` (
   `EventId` bigint(10) NOT NULL,
   `EventTypeId` bigint(10) NOT NULL,
   `HallNumber` bigint(10) NOT NULL,
-  `Status` enum('active','in-active') NOT NULL,
+  `Status` enum('Activa','Inactiva') NOT NULL,
   `Booking_status` enum('Booked','Available') NOT NULL DEFAULT 'Available'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -94,15 +94,15 @@ CREATE TABLE `event_list` (
 --
 
 INSERT INTO `event_list` (`EventId`, `EventTypeId`, `HallNumber`, `Status`, `Booking_status`) VALUES
-(18, 11, 1, 'active', 'Available'),
-(19, 11, 2, 'active', 'Booked'),
-(20, 11, 3, 'active', 'Booked'),
-(21, 11, 4, 'active', 'Available'),
-(22, 12, 5, 'active', 'Available'),
-(23, 12, 6, 'active', 'Available'),
-(24, 11, 7, 'active', 'Available'),
-(25, 12, 8, 'active', 'Available'),
-(26, 11, 9, 'active', 'Available');
+(18, 11, 1, 'Activa', 'Available'),
+(19, 11, 2, 'Activa', 'Booked'),
+(20, 11, 3, 'Activa', 'Booked'),
+(21, 11, 4, 'Activa', 'Available'),
+(22, 12, 5, 'Activa', 'Available'),
+(23, 12, 6, 'Activa', 'Available'),
+(24, 11, 7, 'Activa', 'Available'),
+(25, 12, 8, 'Activa', 'Available'),
+(26, 11, 9, 'Activa', 'Available');
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,7 @@ CREATE TABLE `event_type` (
   `EventImage` text NOT NULL,
   `Description` text NOT NULL,
   `Cost` double NOT NULL,
-  `Status` enum('active','in-active') NOT NULL DEFAULT 'active'
+  `Status` enum('Activa','Inactiva') NOT NULL DEFAULT 'Activa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -148,9 +148,9 @@ CREATE TABLE `event_type` (
 --
 
 INSERT INTO `event_type` (`EventTypeId`, `EventType`, `EventImage`, `Description`, `Cost`, `Status`) VALUES
-(11, 'Wedding Hall', 'wedding.jpg', 'This hall is a space offered mainly for weddings, birthdays, bridal showers and other personal events. They could be separate or part of a hotel or restaurant.', 2000, 'active'),
-(12, 'Meeting Hall', 'meeting.jpeg', 'The Killi, Kaveri and Tanjore meeting rooms are the perfect combination of space and ideal ambiance with state of the art amenities and audio visual equipments', 1200, 'active'),
-(13, 'Conference Hall', 'accomadation.jpg', 'Ten distinct dining destinations featuring Indian & international cuisine along with some of the .....', 1700, 'active');
+(11, 'Wedding Hall', 'wedding.jpg', 'This hall is a space offered mainly for weddings, birthdays, bridal showers and other personal events. They could be separate or part of a hotel or restaurant.', 2000, 'Activa'),
+(12, 'Meeting Hall', 'meeting.jpeg', 'The Killi, Kaveri and Tanjore meeting rooms are the perfect combination of space and ideal ambiance with state of the art amenities and audio visual equipments', 1200, 'Activa'),
+(13, 'Conference Hall', 'accomadation.jpg', 'Ten distinct dining destinations featuring Indian & international cuisine along with some of the .....', 1700, 'Activa');
 
 -- --------------------------------------------------------
 
@@ -225,7 +225,7 @@ CREATE TABLE `room_list` (
   `RoomId` bigint(10) NOT NULL,
   `RoomTypeId` bigint(10) NOT NULL,
   `RoomNumber` bigint(10) NOT NULL,
-  `Status` enum('active','in-active') NOT NULL,
+  `Status` enum('Activa','Inactiva') NOT NULL,
   `Booking_status` enum('Booked','Available') NOT NULL DEFAULT 'Available'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -234,26 +234,26 @@ CREATE TABLE `room_list` (
 --
 
 INSERT INTO `room_list` (`RoomId`, `RoomTypeId`, `RoomNumber`, `Status`, `Booking_status`) VALUES
-(13, 11, 1, 'active', 'Available'),
-(14, 11, 2, 'active', 'Available'),
-(15, 11, 3, 'active', 'Available'),
-(16, 12, 4, 'active', 'Booked'),
-(17, 11, 5, 'active', 'Available'),
-(18, 12, 6, 'active', 'Booked'),
-(19, 12, 7, 'active', 'Available'),
-(20, 13, 8, 'active', 'Booked'),
-(21, 13, 9, 'active', 'Available'),
-(22, 14, 10, 'active', 'Booked'),
-(23, 14, 11, 'active', 'Available'),
-(24, 14, 12, 'active', 'Available'),
-(25, 15, 13, 'active', 'Available'),
-(26, 15, 14, 'active', 'Available'),
-(27, 16, 15, 'active', 'Available'),
-(28, 18, 16, 'active', 'Available'),
-(29, 17, 17, 'active', 'Booked'),
-(30, 16, 18, 'active', 'Available'),
-(31, 17, 19, 'active', 'Available'),
-(32, 15, 20, 'active', 'Available');
+(13, 11, 1, 'Activa', 'Available'),
+(14, 11, 2, 'Activa', 'Available'),
+(15, 11, 3, 'Activa', 'Available'),
+(16, 12, 4, 'Activa', 'Booked'),
+(17, 11, 5, 'Activa', 'Available'),
+(18, 12, 6, 'Activa', 'Booked'),
+(19, 12, 7, 'Activa', 'Available'),
+(20, 13, 8, 'Activa', 'Booked'),
+(21, 13, 9, 'Activa', 'Available'),
+(22, 14, 10, 'Activa', 'Booked'),
+(23, 14, 11, 'Activa', 'Available'),
+(24, 14, 12, 'Activa', 'Available'),
+(25, 15, 13, 'Activa', 'Available'),
+(26, 15, 14, 'Activa', 'Available'),
+(27, 16, 15, 'Activa', 'Available'),
+(28, 18, 16, 'Activa', 'Available'),
+(29, 17, 17, 'Activa', 'Booked'),
+(30, 16, 18, 'Activa', 'Available'),
+(31, 17, 19, 'Activa', 'Available'),
+(32, 15, 20, 'Activa', 'Available');
 
 -- --------------------------------------------------------
 
@@ -292,7 +292,7 @@ CREATE TABLE `room_type` (
   `RoomImage` text NOT NULL,
   `Description` text NOT NULL,
   `Cost` double NOT NULL,
-  `Status` enum('active','in-active') NOT NULL DEFAULT 'active'
+  `Status` enum('Activa','Inactiva') NOT NULL DEFAULT 'Activa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -300,14 +300,14 @@ CREATE TABLE `room_type` (
 --
 
 INSERT INTO `room_type` (`RoomTypeId`, `RoomType`, `RoomImage`, `Description`, `Cost`, `Status`) VALUES
-(11, 'Family Room', 'away.jpg', '32 Inch flat screen TV, Kitchen facilities,Towels,Dining tables', 1200, 'active'),
-(12, 'Bachelor Room', 'F.jpg', 'Soap & bath amenities,Mini-bar, Telephone', 1800, 'active'),
-(13, 'Presidential Suites', 'A.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 2000, 'active'),
-(14, 'Classic Room', 'accomadation.jpg', 'Closet with hangers, HD flat-screen TV, Telephone\r\n\r\n', 1750, 'active'),
-(15, 'Club Room ', 'A.jpg', ' Closet with hangers, 24 Hour room service,Computer and Internet access', 1680, 'active'),
-(16, 'Deluxe Room', 'classic.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 1900, 'active'),
-(17, 'Super Deluxe ', 'club.jpg', '32 Inch flat screen TV, HD flat-screen TV,Mini-bar, Telephone', 3500, 'active'),
-(18, 'Luxury', 'super.jpg', 'Closet with hangers,32 Inch flat screen TV,Mini-bar, Telephone', 3500, 'active');
+(11, 'Family Room', 'away.jpg', '32 Inch flat screen TV, Kitchen facilities,Towels,Dining tables', 1200, 'Activa'),
+(12, 'Bachelor Room', 'F.jpg', 'Soap & bath amenities,Mini-bar, Telephone', 1800, 'Activa'),
+(13, 'Presidential Suites', 'A.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 2000, 'Activa'),
+(14, 'Classic Room', 'accomadation.jpg', 'Closet with hangers, HD flat-screen TV, Telephone\r\n\r\n', 1750, 'Activa'),
+(15, 'Club Room ', 'A.jpg', ' Closet with hangers, 24 Hour room service,Computer and Internet access', 1680, 'Activa'),
+(16, 'Deluxe Room', 'classic.jpg', 'Closet with hangers, HD flat-screen TV, Telephone', 1900, 'Activa'),
+(17, 'Super Deluxe ', 'club.jpg', '32 Inch flat screen TV, HD flat-screen TV,Mini-bar, Telephone', 3500, 'Activa'),
+(18, 'Luxury', 'super.jpg', 'Closet with hangers,32 Inch flat screen TV,Mini-bar, Telephone', 3500, 'Activa');
 
 -- --------------------------------------------------------
 

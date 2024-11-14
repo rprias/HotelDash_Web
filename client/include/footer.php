@@ -92,7 +92,7 @@
               <a href="#!" class="text-reset">Gallery</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contact us</a>
+              <a href="#!" class="text-reset">Contáctanos</a>
             </p>
           </div>
           <!-- Grid column -->

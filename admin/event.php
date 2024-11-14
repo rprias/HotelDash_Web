@@ -30,7 +30,7 @@ if(!isset($_SESSION['loggedUserId'])) {
             
 
       <?php
-      $query_eventType = "select * from event_type where Status = 'active' order by EventTypeId";
+      $query_eventType = "select * from event_type where Status = 'Activa' order by EventTypeId";
       $result = mysqli_query($con,$query_eventType);
 
       ?>
@@ -42,7 +42,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                     </span>
                 </div>
                 <select id="eventType" name="eventType" class="form-control custom-select bg-white border-left-0 border-md" required>
-                    <option disabled="" selected="">choose a event type</option>
+                    <option disabled="" selected="">Escoja un event type</option>
                     <?php 
                     while ($row = mysqli_fetch_array($result))
                     {
@@ -90,7 +90,7 @@ if(!isset($_SESSION['loggedUserId'])) {
             
 
       <?php
-      $query_eventType = "select * from event_type where Status = 'active' order by EventTypeId";
+      $query_eventType = "select * from event_type where Status = 'Activa' order by EventTypeId";
       $result = mysqli_query($con,$query_eventType);
 
       ?>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                     </span>
                 </div>
                 <select id="editEventType" name="editEventType" class="form-control custom-select bg-white border-left-0 border-md" required>
-                    <option disabled="" selected="">choose a event type</option>
+                    <option disabled="" selected="">Escoja un event type</option>
                     <?php 
                     while ($row = mysqli_fetch_array($result))
                     {
@@ -131,9 +131,9 @@ if(!isset($_SESSION['loggedUserId'])) {
                             </span>
                         </div>
                         <select id="editStatus" name="editStatus" class="form-control custom-select bg-white border-left-0 border-md" required>
-                            <option disabled="" selected="">choose a status</option>
-                            <option value="active">Active</option>
-                            <option value="in-active">In-active</option>
+                            <option disabled="" selected="">Seleccione el estado</option>
+                            <option value="Activa">Activa</option>
+                            <option value="Inactiva">Inactiva</option>
                         </select>
             </div>
               <!-- for getting the id when the form is submitted  -->
@@ -156,8 +156,8 @@ if(!isset($_SESSION['loggedUserId'])) {
 <select name="category" id="eventFilter" class="form-control custom-select bg-white border-md filter">
   <option disabled="" selected="">FilterBy  </option>
   <option value="">All</option>
-  <option value="active">active</option>
-  <option value="in-active">in-active</option>
+  <option value="Activa">Activa</option>
+  <option value="Inactiva">Inactiva</option>
 </select>
 </div>
  <!-- table for the display the content  -->

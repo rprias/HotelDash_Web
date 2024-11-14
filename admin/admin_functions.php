@@ -258,7 +258,7 @@ if (unlink($filename)) {
 echo json_encode($sendData);
 }
 
-// --------------------------------------- Room Type Action ----------------------------------------
+// --------------------------------------- Tipo de Habitacion Action ----------------------------------------
 
 //add new type of room
 if(isset($_POST['roomTypeName'])){
@@ -297,7 +297,7 @@ if(isset($_POST['roomTypeName'])){
         }
         else{
     
-          $message = "Room Type is Added";
+          $message = "Tipo de Habitacion is Added";
             $sendData = array(
                 "msg"=>$message,
                 "error"=>""
@@ -318,7 +318,7 @@ if(isset($_POST['roomTypeName'])){
     echo json_encode($sendData);
 }
 
-// deleting the room type
+// deleting the Tipo de Habitacion
 
 if(isset($_POST['deleteRoomType'])){
     $type_id = $_POST['typeId'];
@@ -326,12 +326,12 @@ if(isset($_POST['deleteRoomType'])){
     $sendData = array();
     if(mysqli_query($con,$query_deleteUser)){
         $sendData = array(
-            "msg"=>"This Room Type is Deleted",
+            "msg"=>"This Tipo de Habitacion is Deleted",
             "error"=>""
         );
         echo json_encode($sendData);
     }else{
-        $error = "This Room Type Has a Rooms in Hotel";
+        $error = "This Tipo de Habitacion Has a Rooms in Hotel";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -341,7 +341,7 @@ if(isset($_POST['deleteRoomType'])){
 }
 
 
-//update - getting the selected room type details
+//update - getting the selected Tipo de Habitacion details
 
 if(isset($_POST['roomTypeUpdateId'])){
     $roomTypeUpdateId = $_POST['roomTypeUpdateId'];
@@ -363,7 +363,7 @@ if(isset($_POST['roomTypeUpdateId'])){
 
 
 
-//update the datails of the room type
+//Actualizar los detalles del Tipo de Habitacion
 
 if(isset($_POST['roomTypeId'])){
              
@@ -371,7 +371,6 @@ if(isset($_POST['roomTypeId'])){
     $roomType = ucfirst($_POST['editRoomTypeName']);
     $roomCost =  $_POST['editRoomCost'];
     $desc =  $_POST['editDescription'];
-    $rol =  $_POST['editRol'];
     $fileName = $_FILES['editRoomTypeImage']['name'];
     $tempname = $_FILES['editRoomTypeImage']['tmp_name'];
     $folder = "../assets/picture/RoomType/".$fileName;
@@ -383,7 +382,7 @@ if(isset($_POST['roomTypeId'])){
     
     $sendData = array();
     if ($num_rooms==0) {
-        $error="Room Type is Not avaiable!";
+        $error="Tipo de Habitacion is Not avaiable!";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -396,9 +395,9 @@ if(isset($_POST['roomTypeId'])){
         $result_dup = mysqli_query($con,$sql_duplicate);
         $nums = mysqli_num_rows($result_dup);
 
-        // already available room type 
+        // already available Tipo de Habitacion 
         if($nums>0){
-            $error ="Room Type Name is Already Available";
+            $error ="Tipo de Habitacion ya disponible";
             $sendData = array(
                 "msg"=>"",
                 "error"=>$error
@@ -408,7 +407,7 @@ if(isset($_POST['roomTypeId'])){
         else{
 
 
-            $update="UPDATE room_type SET  RoomType='$roomType', RoomImage ='$fileName',Description='$desc',Rol='$rol',Cost='$roomCost' where RoomTypeId = '$updateId'" ;
+            $update="UPDATE room_type SET  RoomType='$roomType', RoomImage ='$fileName',Description='$desc',Cost='$roomCost' where RoomTypeId = '$updateId'" ;
         
         
             if(mysqli_query($con,$update))
@@ -422,7 +421,7 @@ if(isset($_POST['roomTypeId'])){
                                 );
                                 echo json_encode($sendData);
                             }else{
-                                $message = "Room Type details updated";
+                                $message = "Detalles del Tipo de Habitacion Actualizados con Exito";
                               // message("user.php","User Added");
                               $sendData = array(
                                   "msg"=>$message,

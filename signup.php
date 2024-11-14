@@ -81,7 +81,7 @@ include('include/header.php');
                         <input id="Nombre" type="text" name="nombre" placeholder="Nombre Completo"
                             class="form-control bg-white border-left-0 border-md" required>
                     </div>
-                    <!-- Email Address -->
+                    <!-- Direccion de Correo Electronico -->
                     <div class="input-group col-lg-12 mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">

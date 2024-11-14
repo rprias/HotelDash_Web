@@ -2,7 +2,7 @@
 include("../include/functions.php");
 
 
-// ------------------------------------ Room types Available ------------------------------------
+// ------------------------------------ Tipo de Habitacions Available ------------------------------------
 
 if(isset($_POST['roomType'])){
     $roomTypeCard ='';
@@ -10,27 +10,27 @@ if(isset($_POST['roomType'])){
     switch($typeFilter){
         case 1:  $selectAllType = "select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='active' AND rt.Status='active'
+                                    where rl.Status='Activa' AND rt.Status='Activa'
                                     group by rl.RoomTypeId "; break;
 
         case 2:  $selectAllType ="select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='active' AND rt.Status='active' AND rt.Cost<=500
+                                    where rl.Status='Activa' AND rt.Status='Activa' AND rt.Cost<=500
                                     group by rl.RoomTypeId "; break;
 
         case 3:  $selectAllType ="select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='active' AND rt.Status='active'  AND rt.Cost>=500 AND rt.Cost<=1000 
+                                    where rl.Status='Activa' AND rt.Status='Activa'  AND rt.Cost>=500 AND rt.Cost<=1000 
                                     group by rl.RoomTypeId "; break;
 
         case 4:  $selectAllType = "select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='active' AND rt.Status='active' AND rt.Cost>=1000
+                                    where rl.Status='Activa' AND rt.Status='Activa' AND rt.Cost>=1000
                                     group by rl.RoomTypeId "; break;
 
         default: $selectAllType = "select rt.*,count(rl.RoomId) as count_rooms
                                     from room_type rt inner join room_list rl on rt.RoomTypeId = rl.RoomTypeId 
-                                    where rl.Status='active' AND rt.Status='active'
+                                    where rl.Status='Activa' AND rt.Status='Activa'
                                     group by rl.RoomTypeId "; break;
         
      }
@@ -40,7 +40,7 @@ if(isset($_POST['roomType'])){
      if($noOfType>=1){
          while($row=mysqli_fetch_assoc($allType))
          {
-             $query_avail = "select count(RoomId) as avail_rooms from room_list where RoomTypeId = ' ".$row["RoomTypeId"]." ' AND Status = 'active' AND Booking_status = 'Available'";
+             $query_avail = "select count(RoomId) as avail_rooms from room_list where RoomTypeId = ' ".$row["RoomTypeId"]." ' AND Status = 'Activa' AND Booking_status = 'Available'";
              $exec_avail = mysqli_query($con,$query_avail);
              $countOfRooms=mysqli_fetch_assoc($exec_avail);
 
@@ -82,7 +82,7 @@ if(isset($_POST['roomType'])){
      
        $roomTypeCard.='<br><br>
       
-            <p class="col-12 text-center text-danger" >No Room Types are Available...</p>'
+            <p class="col-12 text-center text-danger" >No Tipo de Habitacions are Available...</p>'
            ;
      
      }
@@ -197,7 +197,7 @@ if(isset($_POST['roomBooking'])){
                                     if($row['Status']=="Booked"){
                                         $roomBooking .=' <div class="time">
                                         <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                                        <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Are you sure ? Do you want to Cancel this Booking \') && setCancel(\''.$row["BookingId"].'\')">Cancel</a>
+                                        <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setCancel(\''.$row["BookingId"].'\')">Cancel</a>
                                         <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                         </div>	 ';
                                     }
@@ -257,29 +257,29 @@ if(isset($_POST['eventType'])){
     switch($typeFilter){
         case 1:  $selectAllType = "select et.*,count(el.EventId) as count_events
                                     from event_type et inner join event_list el on et.EventTypeId = el.EventTypeId 
-                                    where el.Status='active' AND et.Status='active'
+                                    where el.Status='Activa' AND et.Status='Activa'
                                     group by el.EventTypeId "; break;
         case 2:  $selectAllType = "select et.*,count(el.EventId) as count_events
                                     from event_type et inner join event_list el on et.EventTypeId = el.EventTypeId 
-                                    where el.Status='active' AND et.Status='active' AND et.Cost <1500
+                                    where el.Status='Activa' AND et.Status='Activa' AND et.Cost <1500
                                     group by el.EventTypeId "; break;
         case 3:  $selectAllType = "select et.*,count(el.EventId) as count_events
                                     from event_type et inner join event_list el on et.EventTypeId = el.EventTypeId 
-                                    where el.Status='active' AND et.Status='active'  AND (et.Cost >= 1500  AND et.Cost <= 2000)
+                                    where el.Status='Activa' AND et.Status='Activa'  AND (et.Cost >= 1500  AND et.Cost <= 2000)
                                     group by el.EventTypeId "; break;
         case 4:  $selectAllType = "select et.*,count(el.EventId) as count_events
                                     from event_type et inner join event_list el on et.EventTypeId = el.EventTypeId 
-                                    where el.Status='active' AND et.Status='active' AND (et.Cost >= 2000  AND et.Cost <= 2500)
+                                    where el.Status='Activa' AND et.Status='Activa' AND (et.Cost >= 2000  AND et.Cost <= 2500)
                                     group by el.EventTypeId "; break;
         case 5:  $selectAllType = "select et.*,count(el.EventId) as count_events
                                     from event_type et inner join event_list el on et.EventTypeId = el.EventTypeId 
-                                    where el.Status='active' AND et.Status='active'  AND et.Cost >2500
+                                    where el.Status='Activa' AND et.Status='Activa'  AND et.Cost >2500
                                     group by el.EventTypeId "; break;
 
 
         default: $selectAllType = "select et.*,count(el.EventId) as count_events
                                     from event_type et inner join event_list el on et.EventTypeId = el.EventTypeId 
-                                    where el.Status='active' AND et.Status='active'
+                                    where el.Status='Activa' AND et.Status='Activa'
                                     group by el.EventTypeId "; break;
         
      }
@@ -289,7 +289,7 @@ if(isset($_POST['eventType'])){
      if($noOfType>=1){
          while($row=mysqli_fetch_assoc($allType))
          {
-             $query_avail = "select count(EventId) as avail_events from event_list where EventTypeId = ' ".$row["EventTypeId"]." ' AND Status = 'active' AND Booking_status = 'Available'";
+             $query_avail = "select count(EventId) as avail_events from event_list where EventTypeId = ' ".$row["EventTypeId"]." ' AND Status = 'Activa' AND Booking_status = 'Available'";
              $exec_avail = mysqli_query($con,$query_avail);
              $countOfRooms=mysqli_fetch_assoc($exec_avail);
 
@@ -452,7 +452,7 @@ if(isset($_POST['eventBooking'])){
                                       if($row['Status']=="Booked"){
                                           $eventBooking .=' <div class="time">
                                           <a href="#" class="btn btn-primary btn-sm" onclick="setEventPaid(\''.$row["BookingId"].'\')">Pay</a>
-                                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Are you sure ? Do you want to Cancel this Booking \') && setEventCancel(\''.$row["BookingId"].'\')">Cancel</a>
+                                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setEventCancel(\''.$row["BookingId"].'\')">Cancel</a>
                                           <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                           </div>	 ';
                                       }

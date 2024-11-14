@@ -54,7 +54,7 @@ function drawChart(roomData,eventDate){
       type:"POST",
       data:Data,
       beforeSend:function(){
-      //   $('#contentArea').html("<br><br><span>Working...</span>");
+      //   $('#contentArea').html("<br><br><span>Cargando...</span>");
       },
       success:function(data){
           var dbData = JSON.parse(data);
@@ -80,7 +80,7 @@ function drawChart(roomData,eventDate){
       type:"POST",
       data:Data,
       beforeSend:function(){
-      //   $('#contentArea').html("<br><br><span>Working...</span>");
+      //   $('#contentArea').html("<br><br><span>Cargando...</span>");
       },
       success:function(data){
           var dbData = JSON.parse(data);

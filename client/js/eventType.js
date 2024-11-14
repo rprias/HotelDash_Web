@@ -1,5 +1,5 @@
 
-// display the room types with ajax
+// display the Tipo de Habitacions with ajax
 function displayEventTypes(value){
 
     $.ajax({
@@ -10,7 +10,7 @@ function displayEventTypes(value){
             filter : value
         },
         beforeSend:function(){
-            $('#contentArea').html("<br><br><span>Working...</span>");
+            $('#contentArea').html("<br><br><span>Cargando...</span>");
           },
           success:function(data){
             $('#contentArea').html(data);

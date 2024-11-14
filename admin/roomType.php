@@ -6,14 +6,14 @@ if(!isset($_SESSION['loggedUserId'])) {
 <!-- Page Content  -->
 <div id="content" class="p-4 p-md-5 pt-5">
 
-<h2 class="mb-4">Room Type</h2>
+<h2 class="mb-4">Tipo de Habitacion</h2>
 
 
 <!-- Model For adding new User  -->
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-dark" id="addRoomTypeBtn">
-+ Add New Room Type
++ Nuevo Tipo de Habitacion
 </button>
 
 <!-- Add Modal -->
@@ -21,7 +21,7 @@ if(!isset($_SESSION['loggedUserId'])) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Room Type</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Tipo de Habitacion</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -29,14 +29,14 @@ if(!isset($_SESSION['loggedUserId'])) {
       <div class="modal-body">
         <form action="admin_functions.php" method="POST" id="model-addRoomType" autocomplete="off">
             <div class="row">
-                <!-- Room Type Image  -->
+                <!-- Tipo de Habitacion Image  -->
                 <div class="container mb-4">
                             <div class="picture-container">
                                 <div class="picture">
                                 <img src="../assets/picture/icons/addImage.png" class="picture-src" id="roomTypeImagePreview" title="">
                                 <input type="file" id="roomTypeImage" class="" name="roomTypeImage" required>
                             </div>
-                        <h6 class="">Choose Picture</h6>
+                        <h6 class="">Seleccione la Imagen</h6>
                         
                     </div>
                    
@@ -50,7 +50,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="typeName" type="text" name="roomTypeName" placeholder="Room Type Name" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="typeName" type="text" name="roomTypeName" placeholder="Tipo de Habitacion Name" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                     <!-- Cost -->
                     <div class="input-group col-lg-11 ml-3 mb-4">
@@ -94,14 +94,14 @@ if(!isset($_SESSION['loggedUserId'])) {
       <div class="modal-body">
         <form action="admin_functions.php" method="POST" id="modal-editRoomType" autocomplete="off">
             <div class="row">
-                <!-- Room Type Image  -->
+                <!-- Tipo de Habitacion Image  -->
                 <div class="container mb-4">
                             <div class="picture-container">
                                 <div class="picture">
                                 <img src="../assets/picture/icons/addImage.png" class="picture-src" id="roomTypeImagePreviewEdit" title="">
                                 <input type="file" id="roomTypeImageEdit" class="" name="editRoomTypeImage" required>
                             </div>
-                        <h6 class="">Choose Picture</h6>
+                        <h6 class="">Seleccione la Imagen</h6>
                         
                     </div>
                    
@@ -115,7 +115,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="editRoomTypeName" type="text" name="editRoomTypeName" placeholder="Room Type Name" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="editRoomTypeName" type="text" name="editRoomTypeName" placeholder="Tipo de Habitacion Name" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                     <!-- Cost -->
                     <div class="input-group col-lg-11 ml-3 mb-4">
@@ -137,9 +137,9 @@ if(!isset($_SESSION['loggedUserId'])) {
                             </span>
                         </div>
                         <select id="editStatus" name="editStatus" class="form-control custom-select bg-white border-left-0 border-md" required>
-                            <option disabled="" selected="">choose a status</option>
-                            <option value="active">Active</option>
-                            <option value="in-active">In-active</option>
+                            <option disabled="" selected="">Seleccione el estado</option>
+                            <option value="Activa">Activa</option>
+                            <option value="Inactiva">Inactiva</option>
                         </select>
                     </div>
 
@@ -156,7 +156,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 
             </div>
            <div class="modal-footer">
-               <button type="submit" class="btn btn-primary">Save changes</button>
+               <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </form>
@@ -171,13 +171,13 @@ if(!isset($_SESSION['loggedUserId'])) {
  <!-- Filter Drop down  -->
 <div class="float-right filterBy">
 <select name="category" id="roomTypeFilter" class="form-control custom-select bg-white border-md filter">
-  <option disabled="" selected="">FilterBy  </option>
-  <option value="1">All</option>
-  <option value="2">Active</option>
-  <option value="3">In-active</option>
-  <option value="4">Cost below 500</option>
-  <option value="5">Cost between 500 and 1000</option>
-  <option value="6">Cost above 1000</option>
+  <option disabled="" selected="">Filtra por Precios</option>
+  <option value="1">Todas</option>
+  <option value="2">Activa</option>
+  <option value="3">Inactiva</option>
+  <option value="4">Menos de $500.000</option>
+  <option value="5">Entre $500.000 and $1000.000</option>
+  <option value="6">Mas de $1.000.000</option>
 </select>
 </div>
 

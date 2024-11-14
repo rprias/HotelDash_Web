@@ -36,7 +36,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <img src="../assets/picture/icons/addImage.png" class="picture-src" id="eventTypeImagePreview" title="">
                                 <input type="file" id="eventTypeImage" class="" name="eventTypeImage" required>
                             </div>
-                        <h6 class="">Choose Picture</h6>
+                        <h6 class="">Seleccione la Imagen</h6>
                         
                     </div>
                    
@@ -101,7 +101,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <img src="../assets/picture/icons/addImage.png" class="picture-src" id="eventTypeImagePreviewEdit" title="">
                                 <input type="file" id="editEventTypeImage" class="" name="editEventTypeImage" required>
                             </div>
-                        <h6 class="">Choose Picture</h6>
+                        <h6 class="">Seleccione la Imagen</h6>
                         
                     </div>
                    
@@ -137,9 +137,9 @@ if(!isset($_SESSION['loggedUserId'])) {
                             </span>
                         </div>
                         <select id="editStatus" name="editStatus" class="form-control custom-select bg-white border-left-0 border-md" required>
-                            <option disabled="" selected="">choose a status</option>
-                            <option value="active">Active</option>
-                            <option value="in-active">In-active</option>
+                            <option disabled="" selected="">Seleccione el estado</option>
+                            <option value="Activa">Activa</option>
+                            <option value="Inactiva">Inactiva</option>
                         </select>
                     </div>
 
@@ -156,7 +156,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 
             </div>
            <div class="modal-footer">
-             <button type="submit" class="btn btn-primary">Save changes</button>
+             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </form>
@@ -173,11 +173,11 @@ if(!isset($_SESSION['loggedUserId'])) {
 <select name="category" id="eventTypeFilter" class="form-control custom-select bg-white border-md filter">
   <option disabled="" selected="">FilterBy  </option>
   <option value="1">All</option>
-  <option value="2">Active</option>
-  <option value="3">In-active</option>
-  <option value="4">Cost below 500</option>
+  <option value="2">Activa</option>
+  <option value="3">Inactiva</option>
+  <option value="4">Menos de $500.000</option>
   <option value="5">Cost between 500 and 1000</option>
-  <option value="6">Cost above 1000</option>
+  <option value="6">Mas de $1.000.000</option>
 </select>
 </div>
 

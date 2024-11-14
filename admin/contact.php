@@ -6,7 +6,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 <!-- Page Content  -->
 <div id="content" class="p-4 p-md-5 pt-5">
 
-<h2 class="mb-4">Contact Details</h2>
+<h2 class="mb-4">Listado de Mensajes</h2>
 
 
 <br>

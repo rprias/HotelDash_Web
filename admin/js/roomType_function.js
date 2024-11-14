@@ -15,7 +15,7 @@ function displayRoomType(value,msg,err){
     type:"POST",
     data:Data,
     beforeSend:function(){
-      $('#contentArea').html("<br><br><span>Working...</span>");
+      $('#contentArea').html("<br><br><span>Cargando...</span>");
     },
     success:function(data){
       $('#contentArea').html(data);
@@ -88,7 +88,7 @@ $(document).ready(function(){
 
     displayRoomType("","","");
 
-    //Filter for the room type
+    //Filter for the Tipo de Habitacion
     $('#roomTypeFilter').on('change',function(){
       var value = $(this).val();
       displayRoomType(value,"","");
@@ -141,7 +141,7 @@ $(document).ready(function(){
   }));
 
 
-  // update the room type
+  // update the Tipo de Habitacion
 
   
 //update the content of user

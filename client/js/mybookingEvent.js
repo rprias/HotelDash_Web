@@ -18,7 +18,7 @@ function eventBooking(value,msg,err){
         type:"POST",
         data:Data,
         beforeSend:function(){
-            $('#contentArea1').html("<br><br><span>Working...</span>");
+            $('#contentArea1').html("<br><br><span>Cargando...</span>");
           },
           success:function(data){
             $('#contentArea1').html(data);

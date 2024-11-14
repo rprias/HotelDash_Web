@@ -94,9 +94,9 @@ if(isset($_POST['card'])){
          "AvailRooms"=>"0"
      );
     
-     $query3 = "SELECT count(RoomTypeId) as count FROM room_type where Status = 'active'";
-     $query4 = "SELECT count(RoomId) as count FROM room_list where Status = 'active'";
-     $query5 = "SELECT count(RoomId) as count FROM room_list where Status = 'active' AND Booking_status='Available' ";
+     $query3 = "SELECT count(RoomTypeId) as count FROM room_type where Status = 'Activa'";
+     $query4 = "SELECT count(RoomId) as count FROM room_list where Status = 'Activa'";
+     $query5 = "SELECT count(RoomId) as count FROM room_list where Status = 'Activa' AND Booking_status='Available' ";
 
      $result3 = mysqli_query($con,$query3);
      $result4 = mysqli_query($con,$query4);
@@ -120,9 +120,9 @@ if(isset($_POST['card'])){
          "AvailRooms"=>"0"
      );
     
-     $query3 = "SELECT count(RoomTypeId) as count FROM room_type where Status = 'active'";
-     $query4 = "SELECT count(RoomId) as count FROM room_list where Status = 'active'";
-     $query5 = "SELECT count(RoomId) as count FROM room_list where Status = 'active' AND Booking_status='Available' ";
+     $query3 = "SELECT count(RoomTypeId) as count FROM room_type where Status = 'Activa'";
+     $query4 = "SELECT count(RoomId) as count FROM room_list where Status = 'Activa'";
+     $query5 = "SELECT count(RoomId) as count FROM room_list where Status = 'Activa' AND Booking_status='Available' ";
 
      $result3 = mysqli_query($con,$query3);
      $result4 = mysqli_query($con,$query4);
@@ -145,9 +145,9 @@ if(isset($_POST['card'])){
         "AvailHalls"=>"0"
     );
     
-    $query6 = "SELECT count(EventTypeId) as count FROM event_type where Status = 'active'";
-    $query7 = "SELECT count(EventId) as count FROM event_list where Status = 'active'";
-    $query8 = "SELECT count(EventId) as count FROM event_list where Status = 'active' AND Booking_status='Available' ";
+    $query6 = "SELECT count(EventTypeId) as count FROM event_type where Status = 'Activa'";
+    $query7 = "SELECT count(EventId) as count FROM event_list where Status = 'Activa'";
+    $query8 = "SELECT count(EventId) as count FROM event_list where Status = 'Activa' AND Booking_status='Available' ";
     
     $result6 = mysqli_query($con,$query6);
     $result7 = mysqli_query($con,$query7);

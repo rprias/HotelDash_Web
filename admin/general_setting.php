@@ -147,7 +147,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                     
                     <br>
 
-                    <!-- Email Address -->
+                    <!-- Direccion de Correo Electronico -->
                     <div class="input-group col-lg-12 mb-4">
                     <div class="ml-2">
                          <label for="email">Email</label>
