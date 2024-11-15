@@ -67,13 +67,10 @@ include('../include/general.php');
 				<li class="nav-item">
                     <a class="tab" href="room.php">Habitaciones</a>
                 </li>
-
-				<!-- En revision
 				<li class="nav-item">
                     <a class="tab" href="roomBooking.php">Estado de Reservas</a>
                 </li>
-				!-->
-				
+	
 	            </ul>
 	          </li>
 			  <li>

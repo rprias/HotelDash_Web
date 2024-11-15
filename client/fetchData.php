@@ -204,7 +204,7 @@ if(isset($_POST['roomBooking'])){
                                     else if ($row['Status']=="Paid"){
                                         $roomBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                         <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
-                                        <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                                         <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                         </div></form> 	 ';
                                     }
@@ -224,7 +224,7 @@ if(isset($_POST['roomBooking'])){
                                     else{
                                         $roomBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                         <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
-                                        <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                                         <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                         </div></form> 	 ';
                                     }
@@ -459,7 +459,7 @@ if(isset($_POST['eventBooking'])){
                                       else if ($row['Status']=="Paid"){
                                           $eventBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                           <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
-                                          <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                                          <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                                           <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                           </div></form> 	 ';
                                       }
@@ -479,7 +479,7 @@ if(isset($_POST['eventBooking'])){
                                       else{
                                           $eventBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                           <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
-                                          <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                                          <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                                           <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                           </div></form> 	 ';
                                       }
