@@ -32,6 +32,8 @@ if(!isset($_SESSION['loggedUserId'])) {
                 <option value="Credit Card">Tarjeta de Credito</option>
                 <option value="Debit Card">Tarjeta Debito</option>
                 <option value="Nequi">Nequi</option>
+                <option value="Daviplata">Daviplata</option>
+                <option value="Nequi">Nequi</option>
                 <option value="DaviPlata">Daviplata</option>
             </select>
             <input type="hidden" id="bookingId" name="bookingId">
@@ -71,6 +73,8 @@ if(!isset($_SESSION['loggedUserId'])) {
                 <option value="Net Banking">Transferencia Bancaria</option>
                 <option value="Credit Card">Tarjeta de Credito</option>
                 <option value="Debit Card">Tarjeta Debito</option>
+                <option value="Nequi">Nequi</option>
+                <option value="Daviplata">Daviplata</option>
                 <option value="Nequi">Nequi</option>
                 <option value="DaviPlata">Daviplata</option>
             </select>

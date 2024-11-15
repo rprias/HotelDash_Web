@@ -186,7 +186,7 @@ if(isset($_POST['roomBooking'])){
                                         <li class="widget-49-meeting-item"><span class="font-weight-bold ">Check-In Date : '.$row['CheckIn'].'</span></li>
                                         <li class="widget-49-meeting-item"><span class="font-weight-bold ">Check-Out Date : '.$row['CheckOut'].'</span></li>
                                         
-                                        <li class="widget-49-meeting-item"><span class="font-weight-bold ">Total Cost : <i class="fa fa-inr" aria-hidden="true"></i>'.$row['Amount'].'</span></li>
+                                        <li class="widget-49-meeting-item"><span class="font-weight-bold ">Total Cost : <i class="fa fa-usd" aria-hidden="true"></i>'.$row['Amount'].'</span></li>
                                 
                                         <li class="widget-49-meeting-item"><span>No of Guest : '.$row['NoOfGuest'].'</span></li>
                                         <li class="widget-49-meeting-item"><span>Email : '.$row['Email'].'</span></li>
@@ -198,26 +198,26 @@ if(isset($_POST['roomBooking'])){
                                         $roomBooking .=' <div class="time">
                                         <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pagar</a>
                                         <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setCancel(\''.$row["BookingId"].'\')">Cancelar</a>
-                                        <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                        <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                         </div>	 ';
                                     }
                                     else if ($row['Status']=="Paid"){
                                         $roomBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                         <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
                                         <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
-                                        <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                        <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                         </div></form> 	 ';
                                     }
                                     else if ($row['Status']=="Cancelled"){
                                         $roomBooking .='       <div class="time">
                                        
-                                        <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                        <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                         </div>	';
                                     } 
                                     else if ($row['Status']=="Rejected"){
                                         $roomBooking .='       <div class="time">
                         
-                                        <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                        <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                         </div>	';
                                     }
                                     //checked Out
@@ -225,7 +225,7 @@ if(isset($_POST['roomBooking'])){
                                         $roomBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                         <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
                                         <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
-                                        <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                        <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                         </div></form> 	 ';
                                     }
                                     
@@ -441,7 +441,7 @@ if(isset($_POST['eventBooking'])){
                                           <li class="widget-49-meeting-item"><span class="font-weight-bold ">Event Time : '.$row['EventTime'].'</span></li>
                                           <li class="widget-49-meeting-item"><span class="font-weight-bold ">Package Limit : '.$row['Package'].' hrs</span></li>
                                           
-                                          <li class="widget-49-meeting-item"><span class="font-weight-bold ">Total Cost : <i class="fa fa-inr" aria-hidden="true"></i>'.$row['Amount'].'</span></li>
+                                          <li class="widget-49-meeting-item"><span class="font-weight-bold ">Total Cost : <i class="fa fa-usd" aria-hidden="true"></i>'.$row['Amount'].'</span></li>
                                   
                                           <li class="widget-49-meeting-item"><span>No of Guest : '.$row['NoOfGuest'].'</span></li>
                                           <li class="widget-49-meeting-item"><span>Email : '.$row['Email'].'</span></li>
@@ -453,26 +453,26 @@ if(isset($_POST['eventBooking'])){
                                           $eventBooking .=' <div class="time">
                                           <a href="#" class="btn btn-primary btn-sm" onclick="setEventPaid(\''.$row["BookingId"].'\')">Pagar</a>
                                           <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setEventCancel(\''.$row["BookingId"].'\')">Cancelar</a>
-                                          <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                          <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                           </div>	 ';
                                       }
                                       else if ($row['Status']=="Paid"){
                                           $eventBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                           <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
                                           <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
-                                          <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                          <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                           </div></form> 	 ';
                                       }
                                       else if ($row['Status']=="Cancelled"){
                                           $eventBooking .='       <div class="time">
                                          
-                                          <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                          <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                           </div>	';
                                       } 
                                       else if ($row['Status']=="Rejected"){
                                           $eventBooking .='       <div class="time">
                           
-                                          <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                          <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                           </div>	';
                                       }
                                       //checked Out
@@ -480,7 +480,7 @@ if(isset($_POST['eventBooking'])){
                                           $eventBooking .='<form action="../include/pdf.php" method="POST" ><div class="time">
                                           <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
                                           <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
-                                          <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
+                                          <span class="pull-right">Fecha de Modificación : '.$row['Modified_date'].'</span>
                                           </div></form> 	 ';
                                       }
                                       

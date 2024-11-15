@@ -25,7 +25,7 @@ if(isset($_POST['paymentType'])){
         );
        
     }else{
-        $error = "Oh no ! Your Payment is Failed , Try After sometimes";
+        $error = "Tu pago ha fallado.  Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -57,7 +57,7 @@ if(isset($_POST['roomBookingCancel'])){
         );
        
     }else{
-        $error = "Oh no ! Your Action is Failed , Try After sometimes";
+        $error = "Esta acción no está Disponible, Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -93,7 +93,7 @@ if(isset($_POST['eventPaymentType'])){
         );
        
     }else{
-        $error = "Oh no ! Your Payment is Failed , Try After sometimes";
+        $error = "Tu pago ha fallado.  Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -128,7 +128,7 @@ if(isset($_POST['eventBookingCancel'])){
         );
        
     }else{
-        $error = "Oh no ! Your Action is Failed , Try After sometimes";
+        $error = "Esta acción no está Disponible, Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
