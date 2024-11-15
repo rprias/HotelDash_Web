@@ -188,9 +188,9 @@ if(isset($_POST['roomBooking'])){
                                         
                                         <li class="widget-49-meeting-item"><span class="font-weight-bold ">Total Cost : <i class="fa fa-usd" aria-hidden="true"></i>'.$row['Amount'].'</span></li>
                                 
-                                        <li class="widget-49-meeting-item"><span>No of Guest : '.$row['NoOfGuest'].'</span></li>
+                                        <li class="widget-49-meeting-item"><span>Invitados : '.$row['NoOfGuest'].'</span></li>
                                         <li class="widget-49-meeting-item"><span>Email : '.$row['Email'].'</span></li>
-                                        <li class="widget-49-meeting-item"><span>Phone number : '.$row['Phone_number'].'</span></li>
+                                        <li class="widget-49-meeting-item"><span>Telefono : '.$row['Phone_number'].'</span></li>
                                     
                                 
                                     </ul>';
@@ -439,13 +439,13 @@ if(isset($_POST['eventBooking'])){
                                       <ul class="widget-49-meeting-points">
                                           <li class="widget-49-meeting-item"><span class="font-weight-bold ">Event Date : '.$row['Event_date'].'</span></li>
                                           <li class="widget-49-meeting-item"><span class="font-weight-bold ">Event Time : '.$row['EventTime'].'</span></li>
-                                          <li class="widget-49-meeting-item"><span class="font-weight-bold ">Package Limit : '.$row['Package'].' hrs</span></li>
+                                          <li class="widget-49-meeting-item"><span class="font-weight-bold ">Limitaciones : '.$row['Package'].' hrs</span></li>
                                           
                                           <li class="widget-49-meeting-item"><span class="font-weight-bold ">Total Cost : <i class="fa fa-usd" aria-hidden="true"></i>'.$row['Amount'].'</span></li>
                                   
-                                          <li class="widget-49-meeting-item"><span>No of Guest : '.$row['NoOfGuest'].'</span></li>
+                                          <li class="widget-49-meeting-item"><span>Invitados : '.$row['NoOfGuest'].'</span></li>
                                           <li class="widget-49-meeting-item"><span>Email : '.$row['Email'].'</span></li>
-                                          <li class="widget-49-meeting-item"><span>Phone number : '.$row['Phone_number'].'</span></li>
+                                          <li class="widget-49-meeting-item"><span>Telefono : '.$row['Phone_number'].'</span></li>
                                       
                                   
                                       </ul>';

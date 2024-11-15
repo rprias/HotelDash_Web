@@ -64,17 +64,17 @@ function showDetails(bookingId){
              </div>
          </div>
          <ol class="widget-49-meeting-points">
-             <li class="widget-49-meeting-item"><span>Username : ${bookingData.FirstName} </span></li>
-             <li class="widget-49-meeting-item"><span>User Contact No : ${bookingData.ContactNo} </span></li>
-             <li class="widget-49-meeting-item"><span></span></span>Event Date : ${bookingData.Event_date} </span></li>
-             <li class="widget-49-meeting-item"><span>Event Time : ${bookingData.EventTime}</span></li>
-             <li class="widget-49-meeting-item"><span>Package Limit : ${bookingData.Package} hrs</span></li>
+             <li class="widget-49-meeting-item"><span>Nombre : ${bookingData.FirstName} </span></li>
+             <li class="widget-49-meeting-item"><span>Telefono : ${bookingData.ContactNo} </span></li>
+             <li class="widget-49-meeting-item"><span></span></span>Fecha del Evento : ${bookingData.Event_date} </span></li>
+             <li class="widget-49-meeting-item"><span>Duracion : ${bookingData.EventTime}</span></li>
+             <li class="widget-49-meeting-item"><span>Limitaciones : ${bookingData.Package} hrs</span></li>
              
-             <li class="widget-49-meeting-item"><span>Total Cost : <i class="fa fa-usd" aria-hidden="true"></i>${bookingData.Amount}</span></li>
+             <li class="widget-49-meeting-item"><span>Costo Total : <i class="fa fa-usd" aria-hidden="true"></i>${bookingData.Amount}</span></li>
      
-             <li class="widget-49-meeting-item"><span>No of Guest : ${bookingData.NoOfGuest} </span></li>
+             <li class="widget-49-meeting-item"><span>Invitados : ${bookingData.NoOfGuest} </span></li>
              <li class="widget-49-meeting-item"><span>Email : ${bookingData.Email}</span></li>
-             <li class="widget-49-meeting-item"><span>Phone number : ${bookingData.Phone_number}</span></li>
+             <li class="widget-49-meeting-item"><span>Telefono : ${bookingData.Phone_number}</span></li>
          </ol>
          <div class="time">                 
             <span class="pull-right">Fecha de Modificación : ${bookingData.Modified_date}</span>
