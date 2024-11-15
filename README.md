@@ -1,3 +1,9 @@
+
+# Disclaimer
+Este Repositorio se basa en la logica de Negocio y Metodos presentados en el Repo: Hotel-Management-System-Ajax-PHP-Mysql
+el cual se ajustó, corrigió y aumentó para cumplir con las especificaciones del ACA Final de Desarrollo Web 2.
+
+
 # Sistema de Gestión Hotelera
 
  Un sistema de gestión hotelera en el que los clientes pueden realizar operaciones como reservar una habitación y un evento. Es posible que los clientes cancelen las habitaciones que han reservado y el administrador tiene control sobre las habitaciones asignadas a los clientes y también puede gestionar las solicitudes de habitaciones y salones de eventos de los clientes. Desde el lado del administrador, este puede agregar un nuevo tipo de habitación y eventos, y luego el administrador puede añadir nuevas habitaciones y salones al tipo correspondiente. Además, el administrador tiene una visión general de las reservas del hotel en el panel de Control.
