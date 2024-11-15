@@ -53,6 +53,6 @@
   
 <p align="center"><img src="https://user-images.githubusercontent.com/36665975/59350977-fcc68900-8d3a-11e9-9450-e5c478497caa.png"></p>
 
-Corporacion Unificada Nacional 
-Desarrollo Web 2
-Noviembre 2024
+Corporacion Unificada Nacional.
+Desarrollo Web 2.
+Noviembre 2024.
