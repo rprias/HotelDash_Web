@@ -7,9 +7,9 @@
 
 <h1>Credenciales de Prueba</h1>
  <h3>Admin :</h3>
-   <p>Email : rodrigo.prias@cun.edu.co<br>Password : 123</p>
+   <p>Correo : rodrigo.prias@cun.edu.co<br>Password : 123</p>
  <h3>Cliente :</h3>
-   <p>Email : laura.lopez@example.com<br>Password : password123</p>
+   <p>Correo : laura.lopez@example.com<br>Password : password123</p>
 
 
   
@@ -53,3 +53,6 @@
   
 <p align="center"><img src="https://user-images.githubusercontent.com/36665975/59350977-fcc68900-8d3a-11e9-9450-e5c478497caa.png"></p>
 
+Corporacion Unificada Nacional 
+Desarrollo Web 2
+Noviembre 2024
