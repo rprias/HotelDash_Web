@@ -16,7 +16,7 @@ if(!isset($_SESSION['loggedUserId'])) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Make Payment</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Hacer Pago</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -24,19 +24,21 @@ if(!isset($_SESSION['loggedUserId'])) {
       <div class="modal-body">
           <form id="model-payment" action="status_functions.php" method="POST">
                   <!-- for getting the id when the form is submitted  -->
-            <label for="paymentType">Choose payment method</label>
+            <label for="paymentType">Escojer Metodo de Pago</label>
             <select name="paymentType" id="paymentType" class="form-control custom-select bg-white border-md filter" required>
     
-                <option value="Cash">Cash</option>
-                <option value="Net Banking">Net Banking</option>
-                <option value="Credit Card">Credit Card</option>
-                <option value="Debit Card">Debit Card</option>
+                <option value="Cash">Efectivo</option>
+                <option value="Net Banking">Transferencia Bancaria</option>
+                <option value="Credit Card">Tarjeta de Credito</option>
+                <option value="Debit Card">Tarjeta Debito</option>
+                <option value="Nequi">Nequi</option>
+                <option value="DaviPlata">Daviplata</option>
             </select>
             <input type="hidden" id="bookingId" name="bookingId">
 
       <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Pay</button>
-          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Pagar</button>
+          <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
           </form>
             
@@ -62,19 +64,21 @@ if(!isset($_SESSION['loggedUserId'])) {
       <div class="modal-body">
           <form id="event-modal-payment" action="status_functions.php" method="POST">
                   <!-- for getting the id when the form is submitted  -->
-            <label for="eventPaymentType">Choose payment method</label>
+            <label for="eventPaymentType">Escojer Metodo de Pago</label>
             <select name="eventPaymentType" id="eventPaymentType" class="form-control custom-select bg-white border-md filter" required>
     
-                <option value="Cash">Cash</option>
-                <option value="Net Banking">Net Banking</option>
-                <option value="Credit Card">Credit Card</option>
-                <option value="Debit Card">Debit Card</option>
+                <option value="Cash">Efectivo</option>
+                <option value="Net Banking">Transferencia Bancaria</option>
+                <option value="Credit Card">Tarjeta de Credito</option>
+                <option value="Debit Card">Tarjeta Debito</option>
+                <option value="Nequi">Nequi</option>
+                <option value="DaviPlata">Daviplata</option>
             </select>
             <input type="hidden" id="eventBookingId" name="eventBookingId">
 
       <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Pay</button>
-          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Pagar</button>
+          <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
           </form>
             
@@ -91,11 +95,11 @@ if(!isset($_SESSION['loggedUserId'])) {
     
   
 
-      <h2 class="mb-5 text-center">Booking History</h2>
+      <h2 class="mb-5 text-center">Todas las Reservas</h2>
 
       <div class="nav  d-flex carousel-nav" id="nav-tab" role="tablist">
-      <a class=" col nav-item nav-link Active" id="nav-room-tab" data-toggle="tab" href="#nav-room" role="tab" aria-controls="nav-home" aria-selected="true">Room Booking</a>
-       <a class="col nav-item nav-link" id="nav-event-tab" data-toggle="tab" href="#nav-event" role="tab" aria-controls="nav-profile" aria-selected="false">Event Booking</a>
+      <a class=" col nav-item nav-link Active" id="nav-room-tab" data-toggle="tab" href="#nav-room" role="tab" aria-controls="nav-home" aria-selected="true">Reserva de Habitaciones</a>
+       <a class="col nav-item nav-link" id="nav-event-tab" data-toggle="tab" href="#nav-event" role="tab" aria-controls="nav-profile" aria-selected="false">Reserva de Salones</a>
     
       </div>
 
@@ -108,13 +112,13 @@ if(!isset($_SESSION['loggedUserId'])) {
          <!-- Filter Drop down  -->
  <div class="float-right filterBy">
 <select name="category" id="roomBookingFilter" class="form-control custom-select bg-white border-md filter">
-  <option disabled="" selected="">FilterBy </option>
-  <option value="1">All Booking</option>
-  <option value="2">Booked</option>
-  <option value="3">Paid Booking</option>
-  <option value="4">Cancelled Booking</option>
-  <option value="5">Rejected Booking</option>
-  <option value="6">Expired Booking</option>
+  <option disabled="" selected="">Filtrar Por</option>
+  <option value="1">Mostrar Todas</option>
+  <option value="2">Abiertas</option>
+  <option value="3">Pagadas</option>
+  <option value="4">Canceladas</option>
+  <option value="5">Rechazadas</option>
+  <option value="6">Expiradas</option>
 </select>
 </div>
 <br>
@@ -135,13 +139,13 @@ if(!isset($_SESSION['loggedUserId'])) {
             <!-- Filter Drop down  -->
             <div class="float-right filterBy">
                 <select name="eventBookingFilter" id="eventBookingFilter" class="form-control custom-select bg-white border-md filter">
-                    <option disabled="" selected="">FilterBy </option>
-                    <option value="1">All Booking</option>
-                    <option value="2">Booked</option>
-                    <option value="3">Paid Booking</option>
-                    <option value="4">Cancelled Booking</option>
-                    <option value="5">Rejected Booking</option>
-                    <option value="6">Expired Booking</option>
+                    <option disabled="" selected="">Filtrar Por</option>
+                    <option value="1">Reservas de Salon</option>
+                    <option value="2">Agendadas</option>
+                    <option value="3">Pagadas</option>
+                    <option value="4">Canceladas</option>
+                    <option value="5">Rechazadas</option>
+                    <option value="6">Expiradas</option>
                 </select>
             </div>
             <br>

@@ -240,7 +240,7 @@ else
 
 $roomBooking.='</div> <br><br>
 
-     <p class="col-12 text-center text-danger" >No Booked Rooms are available</p>'
+     <p class="col-12 text-center text-danger" >No hay habitaciones reservadas</p>'
     ;
 
 }
@@ -495,7 +495,7 @@ if(isset($_POST['eventBooking'])){
   
   $eventBooking.='</div> <br><br>
   
-       <p class="col-12 text-center text-danger" >No Booked Events are available</p>'
+       <p class="col-12 text-center text-danger" >No hay salones de Eventos reservados</p>'
       ;
   
   }

@@ -179,7 +179,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                 </div>
                 <div class="modal-footer">
 
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
                 </div>
 
