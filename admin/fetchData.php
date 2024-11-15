@@ -398,8 +398,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
 
                           if($row['Status']=="Booked"){
                           $roomTable .=' <td>
-                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
+                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pagar</a>
+                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancelar</a>
                          
                           </td>	 ';
                           }
@@ -408,7 +408,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                               <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
                               <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                               </form>
-                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'Esta seguro de disponibilizar la habitación? \') && setFree(\''.$row["BookingId"].'\')">Free</button>
+                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'Esta seguro de disponibilizar la habitación? \') && setFree(\''.$row["BookingId"].'\')">Libre</button>
                             
                               </td> 	 ';
                           }
@@ -894,8 +894,8 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
    
                           if($row['Status']=="Booked"){
                           $eventTable .=' <td>
-                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
+                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pagar</a>
+                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancelar</a>
                          
                           </td>	 ';
                           }
@@ -904,7 +904,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                               <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
                               <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                               </form>
-                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'¿Está seguro? ¿Desea poner a disposición este evento:  \') && setFree(\''.$row["BookingId"].'\')">Free</button>
+                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'¿Está seguro? ¿Desea poner a disposición este evento:  \') && setFree(\''.$row["BookingId"].'\')">Libre</button>
                             
                               </td> 	 ';
                           }
@@ -1148,13 +1148,13 @@ if(isset($_POST['contactDetails'])){
            
           $userTable.=' <tr>
                    
-                    <td>'.$row["Nombre"].'</td>
+                    <td>'.$row["FirstName"].'</td>
                     <td>'.$row["LastName"].'</td>
                     <td>'.$row["Email"].'</td>
                     <td>'.$row["Message"].'</td>
                     <td> ';
            
-              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminacion de:   ".$row["Nombre"]." Feedback') && deleteContact('".$row["ID"]."')\">Borrar</button>
+              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminacion del Mensaje de: ".$row["FirstName"]."?') && deleteContact('".$row["ID"]."')\">Borrar</button>
                      
                     </td>
             </tr>";

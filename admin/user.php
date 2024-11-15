@@ -153,7 +153,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                            <!-- Password Confirmation -->
+                            <!-- Confirmacion de Contraseña-->
                             <div class="input-group col-lg-6 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -165,7 +165,7 @@ if (!isset($_SESSION['loggedUserId'])) {
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                            <!-- Submit Button -->
+                            <!-- Boton Enviar -->
                             <div class="form-group col-lg-12 mx-auto mb-0">
                                 <button type="submit" class="btn btn-success btn-block py-2" name="user_registration">
                                     <span class="font-weight-bold">Crear Cuenta</span>
@@ -226,17 +226,10 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 </div>
                                 <select id="updatedcoTipo" name="dcoTipo"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
-<<<<<<< HEAD
-                                    
-                                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
-                                    <option value="Cédula de extranjería">Cédula de extranjería</option>
-                                    <option value="Documento de identificación extranjero">Documento de identificación extranjero</option>
-=======
                                     
                                     <option value="CC">Cédula de ciudadanía</option>
                                     <option value="CE">Cédula de extranjería</option>
                                     <option value="DIE">Documento de identificación extranjero</option>
->>>>>>> b93f509fb91ad06c9ef8906d742b98393927b2c2
                                     <option value="NUIP">NUIP</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                     <option value="Permiso especial de permanencia">Permiso especial de permanencia</option>

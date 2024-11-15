@@ -196,8 +196,8 @@ if(isset($_POST['roomBooking'])){
                                     </ul>';
                                     if($row['Status']=="Booked"){
                                         $roomBooking .=' <div class="time">
-                                        <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                                        <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setCancel(\''.$row["BookingId"].'\')">Cancel</a>
+                                        <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pagar</a>
+                                        <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setCancel(\''.$row["BookingId"].'\')">Cancelar</a>
                                         <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                         </div>	 ';
                                     }
@@ -451,8 +451,8 @@ if(isset($_POST['eventBooking'])){
                                       </ul>';
                                       if($row['Status']=="Booked"){
                                           $eventBooking .=' <div class="time">
-                                          <a href="#" class="btn btn-primary btn-sm" onclick="setEventPaid(\''.$row["BookingId"].'\')">Pay</a>
-                                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setEventCancel(\''.$row["BookingId"].'\')">Cancel</a>
+                                          <a href="#" class="btn btn-primary btn-sm" onclick="setEventPaid(\''.$row["BookingId"].'\')">Pagar</a>
+                                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setEventCancel(\''.$row["BookingId"].'\')">Cancelar</a>
                                           <span class="pull-right">Modified Date : '.$row['Modified_date'].'</span>
                                           </div>	 ';
                                       }
