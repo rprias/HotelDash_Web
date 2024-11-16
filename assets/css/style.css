@@ -10,7 +10,7 @@
 /* nav bar  */
 
 .carousel-item {
-  height: 20vh;
+  height: 80vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -22,6 +22,7 @@
   padding-left: 0.6rem;
 }
 .navbar-nav {
+  color: black; /* Cambia el color del texto a negro */
   padding-left: 0.6rem;
 }
 #navbar_top {
@@ -29,6 +30,7 @@
   transition: 0.4s;
 }
 .fixed-top.navbar_top {
+  background-color: #d7b49c; /* Color de café claro */
   transition: 0.4s;
 }
 #slider {

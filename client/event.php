@@ -1,6 +1,6 @@
 <?php 
 
-include('include/currentPage_header.php');
+include('include/header.php') ;
 if(!isset($_SESSION['loggedUserId'])) {
     header('Location:../login.php');
 }

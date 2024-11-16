@@ -3454,6 +3454,7 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
+  color: black; /* Cambia el color del texto del brand a negro */
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -3476,6 +3477,7 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none; }
   .navbar-nav .nav-link {
+    color: black; /* Cambia el color del texto a negro */
     padding-right: 0;
     padding-left: 0; }
   .navbar-nav .dropdown-menu {

@@ -41,6 +41,22 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
     <link rel="stylesheet" href="assets/css/form_style.css">
+    <style>
+        /* Estilo personalizado para la barra de navegación */
+        #navbar_top {
+            background-color: #d7b49c; /* Color de café claro */
+        }
+        .navbar-nav .nav-link {
+            color: black; /* Cambia el color del texto a negro */
+        }
+        .navbar-brand {
+            color: black; /* Cambia el color del texto del brand a negro */
+        }
+        .navbar-nav .nav-item.active .nav-link {
+            font-weight: bold; /* Mantiene el texto en negrita para el elemento activo */
+            color: black; /* Asegura que el color del texto activo sea negro */
+        }
+    </style>
 </head>
 
 <body>
