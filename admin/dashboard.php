@@ -1,142 +1,127 @@
-<?php include("include/header.php"); 
+<?php include("include/header.php");
 if(!isset($_SESSION['loggedUserId'])) {
   echo "<script> window.location.href = '../login.php';</script>";
 }
 ?>
 <!-- Page Content  -->
-<style>
-    
-  .hovereffect {
-    width: 100%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    cursor: default;
-  }
-  
-  .hovereffect .overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    background-color: rgba(0,0,0,0.5);
-    -webkit-transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
-    transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
-  }
-  
-  .hovereffect img {
-    display: block;
-    position: relative;
-    -webkit-transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
-    transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
-  }
-  
- 
-  .hovereffect a.info {
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #fff;
-    border: 1px solid #fff;
-    background-color: transparent;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-    margin: 50px 0 0;
-    padding: 7px 14px;
-  }
-  
-  .hovereffect a.info:hover {
-    box-shadow: 0 0 5px #fff;
-  }
-  
-  .hovereffect:hover img {
-    -ms-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  
-  .hovereffect:hover .overlay {
-    opacity: 1;
-    filter: alpha(opacity=100);
-  }
-  
-.hovereffect:hover a.info {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    -ms-transform: translatey(0);
-    -webkit-transform: translatey(0);
-    transform: translatey(0);
-  }
-  
-  .hovereffect:hover a.info {
-    -webkit-transition-delay: .2s;
-    transition-delay: .2s;
-  }
-  .addImage{
-     width:30rem;
-     height :20rem;
-  }
-
-</style>
 <div id="content" class="p-4 p-md-5 pt-5">
 
+<h2 class="mb-4">Cuadro de Mando</h2>
+<h6 class="mb-4">Resumen de Reservas</h6>
+<div class = "container">
+  <canvas id="myChart"></canvas>
+</div>
+ <br><br>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-dark ml-3" id="addImageBtn">
-+ Añadir Fotografia
-</button>
+ 
+<div class="row ml-4" >
 
-<div class="modal fade" id="modelGallery" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Seleccionar Fotografía</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form  id="model-addImage" method="POST" action="admin_functions.php" enctype="multipart/form-data" autocomplete="off">
-      
-                <div class="picture-container">
-                  <div class="picture">
-                      <img src="../assets/picture/icons/addImage.png" class="picture-src" id="addNewImage" title="">
-                      <input type="file" id="wizardUpdate-image" class="addImage" name="galleryImage" required>
-                  </div>
-                  <h6 class="">Escoja la Fotografía</h6>
-                </div>
-
-            
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Añadir Fotografía</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </form>
-      </div>
-    </div>
+<div class="col-md-6 col-sm-12">
+<div class="card border-light mb-3" style="max-width: 36rem;">
+  <div class="card-header  font-weight-bold">Estado de la reserva <span class="text-muted">(Año Actual)</span></div>
+  <div class="card-body">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+   
+   <p class="font-weight-bold">Total Reservas</p>
+      <p id="room_total_booking">10</p>
+      <p class="font-weight-bold">Reserva Rechazadas</p>
+      <p id="room_rejeted_booking">2</p>
+      <p class="font-weight-bold">Reserva Cancelada</p>
+      <p id="room_cancelled_booking">0</p>
+   </div>
+   <div class="col-md-6 col-sm-12">
+     
+   <p class="font-weight-bold">Reservaciones</p>
+      <p id="room_booked_booking">8</p>
+      <p class="font-weight-bold">Reservas Pagadas</p>
+      <p id="room_paid_booking">6</p>
+      <p class="font-weight-bold">Reserva Checked Out</p>
+      <p id="room_checkedout_booking">2</p>
+   </div>
+</div>
+    
   </div>
 </div>
+</div>
 
-<div class="container">
-            <div class="intro">
-                <h2 class="text-center">Galeria del Hotel Dash</h2>
-                <p class="text-center">Estas son todoas las fotografias. Escoja la fotografia para eliminar</p>
-            </div>
-           
-            <div class="row photos" id="contentArea"> 
-            </div>
-        </div>
+<div class="col-md-6 col-sm-12">
+<div class="card border-light mb-3" style="max-width: 36rem;">
+  <div class="card-header  font-weight-bold">Estado de la reserva Eventos <span class="text-muted"> (Año Actual)</span></div>
+  <div class="card-body">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+   
+   <p class="font-weight-bold">Reservaciones</p>
+      <p id="event_total_booking">...</p>
+      <p class="font-weight-bold">Reservas Rechazada</p>
+      <p id="event_rejeted_booking">...</p>
+      <p class="font-weight-bold">Reserva Cancelada</p>
+      <p id="event_cancelled_booking">...</p>
+   </div>
+   <div class="col-md-6 col-sm-12">
+     
+   <p class="font-weight-bold">Reservaciones</p>
+      <p id="event_booked_booking">...</p>
+      <p class="font-weight-bold">Reservas Pagadas</p>
+      <p id="event_paid_booking">...</p>
+      <p class="font-weight-bold">Reservas Checked Out</p>
+      <p id="event_checkedout_booking">...</p>
+   </div>
+</div>
+    
+  </div>
+</div>
+</div>
 
-        <script src="js/gallery_function.js" type="text/javascript"></script>
+</div>
 
+<div class="row ml-4" >
 
+<div class="col-md-4 col-sm-12">
+<div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card-header  font-weight-bold">Estado de Habitaciones <span class="text-muted"> (Año Actual)</span></div>
+  <div class="card-body">
+ 
+    <p class="font-weight-bold">Habitaciones Disponibles por Tipo</p>
+    <p id="room_type">...</p>
+    <p class="font-weight-bold">Total de Habitaciones</p>
+    <p id="rooms">...</p>
+    <p class="font-weight-bold">Habitaciones Disponibles</p>
+    <p id="avail_room">...</p>
+    
+  </div>
+</div>
+</div>
 
-<?php include("include/footer.php"); ?>
+<div class="col-md-4 col-sm-12">
+<div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card-header  font-weight-bold">Detalle de Eventos <span class="text-muted"> (Año Actual)</span></div>
+  <div class="card-body">
+ 
+    <p class="font-weight-bold">Salones Disponibles</p>
+    <p id="event_type">...</p>
+    <p class="font-weight-bold">Total de Salones</p>
+    <p id="events">...</p>
+    <p class="font-weight-bold">Salones Disponibles</p>
+    <p id="avail_event">...</p>
+   
+  </div>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-12">
+<div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card-header font-weight-bold">Cantidades <span class="text-muted"> (Año Actual)</span></div>
+  <div class="card-body">
+ 
+    <p class="font-weight-bold">Total de Reservas de Habitaciones</p>
+    <p id="room_booking">...</p>
+    <p class="font-weight-bold">Total Reservas de Eventos</p>
+    <p id="event_booking">...</p>
+    <p class="font-weight-bold">Total Reservas</p>
+    <p id="total_amount">...</p>
+   
+  </div>
+</div>
+</div>
