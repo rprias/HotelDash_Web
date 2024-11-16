@@ -1,6 +1,6 @@
 
 
-//function to edit the user 
+//Editar Usuario Modo Admin
 function editUser(){
     UserID = $('#user_Id').val();
     console.log(UserID);

@@ -138,7 +138,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="updatenombre" type="text" name="updatenombre" placeholder="Direcion de Correo" class="form-control bg-white border-left-0 border-md" required>
+                        <input id="updatenombre" type="text" name="Nombre" placeholder="Direcion de Correo" class="form-control bg-white border-left-0 border-md" required>
                     </div>
                     </div>
                 <!-- Email -->
@@ -186,7 +186,7 @@ if(!isset($_SESSION['loggedUserId'])) {
                                 <i class="fa fa-black-tie text-muted"></i>
                             </span>
                         </div>
-                        <select id="updategender" name="gender" class="form-control custom-select bg-white border-left-0 border-md" required>
+                        <select id="updateRol" name="Rol" class="form-control custom-select bg-white border-left-0 border-md" required>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Otro">Otro</option>

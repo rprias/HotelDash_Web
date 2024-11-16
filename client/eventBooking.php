@@ -70,7 +70,7 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="input-group ">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
-                            <i class="fa fa-inr"></i>
+                            <i class="fa fa-usd"></i>
                             </span>
                         </div>
                         <input id="eventCost" type="text" value="<?php echo $row['Cost'] ?>" name="eventCost" class="form-control bg-white border-left-0 border-md" required readonly>
@@ -199,7 +199,7 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="input-group ">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
-                            <i class="fa fa-inr"></i>
+                            <i class="fa fa-usd"></i>
                             </span>
                         </div>
                         <input id="totalCost" type="text" name="totalCost" value="0" class="form-control bg-white border-left-0 border-md" required readonly>

@@ -8,7 +8,7 @@ if(!isset($_SESSION['loggedUserId'])) {
 <!-- Page Content  -->
 <div id="content" class="p-4 p-md-5 pt-5">
 
-<h2 class="mb-4">Event Booking</h2>
+<h2 class="mb-4">Reserva de Salones</h2>
 
 
     
@@ -26,13 +26,17 @@ if(!isset($_SESSION['loggedUserId'])) {
       <div class="modal-body">
           <form id="modal-payment" action="status_functions.php" method="POST" autocomplete="off">
                   <!-- for getting the id when the form is submitted  -->
-            <label for="eventPaymentType">Choose payment method</label>
+            <label for="eventPaymentType">Escojer Metodo de Pago</label>
             <select name="eventPaymentType" id="eventPaymentType" class="form-control custom-select bg-white border-md filter" required>
     
                 <option value="Cash">Cash</option>
-                <option value="Net Banking">Net Banking</option>
-                <option value="Credit Card">Credit Card</option>
-                <option value="Debit Card">Debit Card</option>
+                <option value="Net Banking">Transferencia Bancaria</option>
+                <option value="Credit Card">Tarjera de Credito</option>
+                <option value="Debit Card">Tarjeta Debito</option>
+                <option value="Nequi">Nequi</option>
+                <option value="Daviplata">Daviplata</option>
+
+                
             </select>
             <input type="hidden" id="eventBookingId" name="eventBookingId">
 
@@ -40,7 +44,7 @@ if(!isset($_SESSION['loggedUserId'])) {
             
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Pay</button>
+            <button type="submit" class="btn btn-primary">Pagar</button>
            
           </div>
         </form>
@@ -53,7 +57,7 @@ if(!isset($_SESSION['loggedUserId'])) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Detalles de la Reserva</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -64,7 +68,7 @@ if(!isset($_SESSION['loggedUserId'])) {
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
@@ -75,14 +79,14 @@ if(!isset($_SESSION['loggedUserId'])) {
  <!-- Filter Drop down  -->
 <div class="float-right filterBy">
 <select name="category" id="eventBookingFilter" class="form-control custom-select bg-white border-md filter">
-  <option disabled="" selected="">FilterBy </option>
-  <option value="1">All Booking</option>
-  <option value="2">Booked</option>
-  <option value="3">Paid Booking</option>
-  <option value="4">Cancelled Booking</option>
-  <option value="5">Rejected Booking</option>
-  <option value="6">Expired Booking</option>
-  <option value="7">CheckedOut Events</option>
+  <option disabled="" selected="">Filtrar Por</option>
+  <option value="1">Todas las Reservas</option>
+  <option value="2">Reservadas</option>
+  <option value="3">Reservas Pagadas</option>
+  <option value="4">Reservas Canceladas</option>
+  <option value="5">Reservas Rechazadas</option>
+  <option value="6">Reservas Expiradas</option>
+  <option value="7">Eventos Finalizados</option>
 </select>
 </div>
 

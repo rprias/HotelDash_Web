@@ -26,7 +26,7 @@ if(isset($_POST['paymentType'])){
         );
        
     }else{
-        $error = "Oh no ! Your Payment is Failed , Try After sometimes";
+        $error = "Tu pago ha fallado.  Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -50,14 +50,14 @@ if(isset($_POST['roomBookingRejected'])){
 
     $sendData = array();
     if(mysqli_query($con,$query_updateStatus)  &&  mysqli_query($con,$query_updateAvail) ){
-        $error = "The Booking Was Rejected";
+        $error = "La Reserva fue Rechazada";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
         );
        
     }else{
-        $error = "Oh no ! Your Action is Failed , Try After sometimes";
+        $error = "Esta acción no está Disponible, Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -81,14 +81,14 @@ if(isset($_POST['roomBookingCheckedOut'])){
 
     $sendData = array();
     if(mysqli_query($con,$query_updateStatus)  &&  mysqli_query($con,$query_updateAvail) ){
-        $msg = "The Room is Available Now !";
+        $msg = "La habitación esta ahora dispobnible.!";
         $sendData = array(
             "msg"=>$msg,
             "error"=>""
         );
        
     }else{
-        $error = "Oh no ! Your Action is Failed , Try After sometimes";
+        $error = "Esta acción no está Disponible, Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -121,7 +121,7 @@ if(isset($_POST['eventPaymentType'])){
         );
        
     }else{
-        $error = "Oh no ! Your Payment is Failed , Try After sometimes";
+        $error = "Tu pago ha fallado.  Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -145,14 +145,14 @@ if(isset($_POST['eventBookingRejected'])){
 
     $sendData = array();
     if(mysqli_query($con,$query_updateStatus)  &&  mysqli_query($con,$query_updateAvail) ){
-        $error = "The Booking Was Rejected";
+        $error = "La Reserva fue Rechazada";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
         );
        
     }else{
-        $error = "Oh no ! Your Action is Failed , Try After sometimes";
+        $error = "Esta acción no está Disponible, Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error
@@ -176,14 +176,14 @@ if(isset($_POST['eventBookingCheckedOut'])){
 
     $sendData = array();
     if(mysqli_query($con,$query_updateStatus)  &&  mysqli_query($con,$query_updateAvail) ){
-        $msg = "The Hall is Available Now !";
+        $msg = "El salón está Disponible Ahora !";
         $sendData = array(
             "msg"=>$msg,
             "error"=>""
         );
        
     }else{
-        $error = "Oh no ! Your Action is Failed , Try After sometimes";
+        $error = "Esta acción no está Disponible, Intentalo de nuevo mas tarde.";
         $sendData = array(
             "msg"=>"",
             "error"=>$error

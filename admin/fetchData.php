@@ -311,14 +311,14 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
   $filter = $_POST['filter'];
 
   switch($filter){
-    case 1:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 1:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
                                 order by rm.Date desc";
                                 break;
 
-    case 2:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 2:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -326,7 +326,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by rm.Date desc";
                                 break;
 
-    case 3:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 3:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -335,7 +335,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 break;
 
 
-    case 4:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 4:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm 
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -343,7 +343,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by rm.Date desc";
                                 break;
 
-    case 5:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 5:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm 
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -351,7 +351,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by rm.Date desc";
                                 break;
 
-    case 6:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 6:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm 
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -359,7 +359,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by rm.Date desc";
                                 break;
 
-    case 7:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    case 7:  $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm 
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -367,7 +367,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by rm.Date desc";
                                 break;
 
-    default: $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_booking rm 
+    default: $selectBooking =  "SELECT rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_booking rm 
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
                                 inner join users_details us on us.Userid = rm.User_id 
@@ -385,7 +385,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
           
          $roomTable.=' <tr>
                    
-                   <td>'.$row["FirstName"].'</td>
+                   <td>'.$row["Nombre"].'</td>
                    <td>'.$row["Date"].'</td>
                    <td>'.$row["RoomType"].'</td>
                    <td>'.$row["RoomNumber"].'</td>
@@ -398,41 +398,41 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
 
                           if($row['Status']=="Booked"){
                           $roomTable .=' <td>
-                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
+                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pagar</a>
+                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancelar</a>
                          
                           </td>	 ';
                           }
                           else if ($row['Status']=="Paid"){
                               $roomTable .='<td><form action="../include/pdf.php" method="POST" >
                               <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
-                              <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                              <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                               </form>
-                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'Are you sure ? Do you want to make available this room \') && setFree(\''.$row["BookingId"].'\')">Free</button>
+                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'Esta seguro de disponibilizar la habitación? \') && setFree(\''.$row["BookingId"].'\')">Libre</button>
                             
                               </td> 	 ';
                           }
                           else if ($row['Status']=="Cancelled"){
                               $roomTable .='       <td>
                               
-                              <span>Cancalled by Client</span>
+                              <span>Cancelado por Cliente</span>
                               </td>	';
                           } 
                           else if ($row['Status']=="Rejected"){
                               $roomTable .='         <td>
                               
-                              <span>Cancalled by Admin</span>
+                              <span>Cancelado por Administrador</span>
                               </td>	';
                           }
                           else{
                               $roomTable .='<td><form action="../include/pdf.php" method="POST" >
                               <input type="hidden" value="'.$row['BookingId'].'"  name="bookingId" />
-                              <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                              <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                             
                               </td></form> 	 ';
                           }
                             
-                   $roomTable.='  <td><button class="btn btn-light btn-sm"  name="showDetails" onclick=" showDetails(\''.$row["BookingId"].'\') "> View </button></td> </tr>';
+                   $roomTable.='  <td><button class="btn btn-light btn-sm"  name="showDetails" onclick=" showDetails(\''.$row["BookingId"].'\') "> Ver Detalle</button></td> </tr>';
        }
      }
    else 
@@ -482,7 +482,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
   $filter = $_POST['filter'];
 
   switch($filter){
-    case 1:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 1:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                 inner join room_booking rm on rp.BookingId = rm.BookingId
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -490,7 +490,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by rp.PaymentDate desc";
                                 break;
 
-    case 2:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 2:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -499,7 +499,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 3:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 3:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -508,7 +508,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 4:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 4:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -517,7 +517,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 5:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 5:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -526,7 +526,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 6:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 6:  $selectPayments =   "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -535,7 +535,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 7:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 7:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -544,7 +544,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 8:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 8:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -553,7 +553,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   order by rp.PaymentDate desc";
                                   break;
 
-    case 9:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    case 9:  $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                   inner join room_booking rm on rp.BookingId = rm.BookingId
                                   inner join room_list rl on rl.RoomId = rm.RoomId
                                   inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -563,7 +563,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                   break;
 
 
-    default: $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.FirstName FROM room_payment rp
+    default: $selectPayments =  "SELECT rp.*,rm.*,rt.RoomType,rl.RoomNumber,us.Nombre FROM room_payment rp
                                 inner join room_booking rm on rp.BookingId = rm.BookingId
                                 inner join room_list rl on rl.RoomId = rm.RoomId
                                 inner join room_type rt on rl.RoomTypeId = rt.RoomTypeId 
@@ -582,7 +582,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
           
          $paymentTable.=' <tr>
                    
-                   <td>'.$row["FirstName"].'</td>
+                   <td>'.$row["Nombre"].'</td>
                    <td>'.$row["PaymentDate"].'</td>
                    <td>'.$row["PaymentType"].'</td>
                    <td>'.$row["Amount"].'</td>
@@ -807,14 +807,14 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
    
    switch($filter){
 
-    case 1:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 1:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
                                 order by em.Date desc"; 
                                 break;
 
-    case 2:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 2:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -822,7 +822,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by em.Date desc";
                                 break;
 
-    case 3:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 3:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -830,7 +830,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by em.Date desc";
                                 break;
 
-    case 4:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 4:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -838,7 +838,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by em.Date desc";
                                 break;
 
-    case 5:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 5:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -847,7 +847,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 break;
 
    
-    case 6:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 6:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -856,7 +856,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 break;
 
    
-    case 7:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    case 7:  $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -864,7 +864,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
                                 order by em.Date desc";
                                 break;
    
-    default: $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.FirstName FROM event_booking em 
+    default: $selectBooking =  "SELECT em.*,et.EventType,el.HallNumber,us.Nombre FROM event_booking em 
                                 inner join event_list el on el.EventId = em.EventId
                                 inner join event_type et on el.EventTypeId = et.EventTypeId 
                                 inner join users_details us on us.Userid = em.User_id 
@@ -881,7 +881,7 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
           
          $eventTable.=' <tr>
                    
-                   <td>'.$row["FirstName"].'</td>
+                   <td>'.$row["Nombre"].'</td>
                    <td>'.$row["Date"].'</td>
                    <td>'.$row["EventType"].'</td>
                    <td>'.$row["HallNumber"].'</td>
@@ -894,41 +894,41 @@ $returnData.='<div class="col-12 alert alert-danger">' . $_POST["error"] . '</di
    
                           if($row['Status']=="Booked"){
                           $eventTable .=' <td>
-                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pay</a>
-                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancel</a>
+                          <a href="#" class="btn btn-primary btn-sm" onclick="setPaid(\''.$row["BookingId"].'\')">Pagar</a>
+                          <a href="#" class="btn btn-danger btn-sm" onclick="confirm(\'Esta seguro de querer cancelar esta Reserva?: \') && setReject(\''.$row["BookingId"].'\')">Cancelar</a>
                          
                           </td>	 ';
                           }
                           else if ($row['Status']=="Paid"){
                               $eventTable .='<td><form action="../include/pdf.php" method="POST" >
                               <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
-                              <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                              <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                               </form>
-                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'¿Está seguro? ¿Desea poner a disposición este evento:  \') && setFree(\''.$row["BookingId"].'\')">Free</button>
+                              <button class="btn btn-secondary btn-sm" onclick="confirm(\'¿Está seguro? ¿Desea poner a disposición este evento:  \') && setFree(\''.$row["BookingId"].'\')">Libre</button>
                             
                               </td> 	 ';
                           }
                           else if ($row['Status']=="Cancelled"){
                               $eventTable .='       <td>
                               
-                              <span>Cancalled by Client</span>
+                              <span>Cancelado por Cliente</span>
                               </td>	';
                           } 
                           else if ($row['Status']=="Rejected"){
                               $eventTable .='         <td>
                               
-                              <span>Cancalled by Admin</span>
+                              <span>Cancelado por Administrador</span>
                               </td>	';
                           }
                           else{
                               $eventTable .='<td><form action="../include/pdf.php" method="POST" >
                               <input type="hidden" value="'.$row['BookingId'].'"  name="eventBookingId" />
-                              <button type="submit" class="btn btn-primary btn-sm">Bill</button>
+                              <button type="submit" class="btn btn-primary btn-sm">Facturar</button>
                             
                               </td></form> 	 ';
                           }
                             
-                   $eventTable.='  <td><button class="btn btn-light btn-sm"  name="showDetails" onclick=" showDetails(\''.$row["BookingId"].'\') "> View </button></td> </tr>';
+                   $eventTable.='  <td><button class="btn btn-light btn-sm"  name="showDetails" onclick=" showDetails(\''.$row["BookingId"].'\') "> Ver Detalle</button></td> </tr>';
        }
      }
    else 
@@ -980,7 +980,7 @@ $filter = $_POST['filter'];
 
 switch($filter){
 
-  case 1:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+  case 1:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -988,7 +988,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
-  case 2:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+  case 2:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -997,7 +997,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
- case 3:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+ case 3:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1006,7 +1006,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
- case 4:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+ case 4:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1015,7 +1015,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
- case 5:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+ case 5:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1024,7 +1024,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
- case 6:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+ case 6:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1033,7 +1033,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
- case 7:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+ case 7:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1042,7 +1042,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
- case 8:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+ case 8:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1051,7 +1051,7 @@ switch($filter){
                               order by ep.PaymentDate desc";
                               break;
 
-case 9:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+case 9:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on ep.BookingId = em.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on el.EventTypeId = et.EventTypeId 
@@ -1060,7 +1060,7 @@ case 9:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Firs
                               order by ep.PaymentDate desc";
                               break;
 
-  default: $selectPayments = "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.FirstName FROM event_payment ep
+  default: $selectPayments = "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Nombre FROM event_payment ep
                               inner join event_booking em on em.BookingId = ep.BookingId
                               inner join event_list el on el.EventId = em.EventId
                               inner join event_type et on et.EventTypeId = el.EventTypeId 
@@ -1078,7 +1078,7 @@ case 9:  $selectPayments =  "SELECT ep.*,em.*,et.EventType,el.HallNumber,us.Firs
         
        $paymentTable.=' <tr>
                  
-                 <td>'.$row["FirstName"].'</td>
+                 <td>'.$row["Nombre"].'</td>
                  <td>'.$row["PaymentDate"].'</td>
                  <td>'.$row["PaymentType"].'</td>
                  <td>'.$row["Amount"].'</td>
@@ -1154,7 +1154,7 @@ if(isset($_POST['contactDetails'])){
                     <td>'.$row["Message"].'</td>
                     <td> ';
            
-              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminacion de:   ".$row["FirstName"]." Feedback') && deleteContact('".$row["ID"]."')\">Borrar</button>
+              $userTable.="<button class='btn btn-danger' name='deleteUser' onclick=\"confirm('Confirma la eliminacion del Mensaje de: ".$row["FirstName"]."?') && deleteContact('".$row["ID"]."')\">Borrar</button>
                      
                     </td>
             </tr>";

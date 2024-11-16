@@ -1,6 +1,6 @@
 <?php 
 
-include('include/header.php');
+include('include/currentPage_header.php');
 if(!isset($_SESSION['loggedUserId'])) {
     header('Location:../login.php');
 }
@@ -14,30 +14,29 @@ if(!isset($_SESSION['loggedUserId'])) {
                 <h2 class="my-3">Tipos de Eventos Disponibles</h2>
             </div>
         </div>
- 
- <!-- Filter Drop down  -->
- <div class="float-right ">
-<select name="category" id="roomFilter" class="form-control custom-select bg-white border-md filter">
-  <option disabled="" selected="">Filtrar por  </option>
-  <option value="1">All</option>
-  <option value="2">Menos de $500.000</option>
-  <option value="3">Cost between 500 and 1000</option>
-  <option value="4">Mas de $1.000.000</option>
-</select>
-</div>
 
-<br>
-<br>
-<br>
+        <!-- Filter Drop down  -->
+        <div class="float-right ">
+            <select name="category" id="roomFilter" class="form-control custom-select bg-white border-md filter">
+                <option disabled="" selected="">Filtrar por </option>
+                <option value="1">All</option>
+                <option value="2">Menos de $500.000</option>
+                <option value="3">Cost between 500 and 1000</option>
+                <option value="4">Mas de $1.000.000</option>
+            </select>
+        </div>
+
+        <br>
+        <br>
+        <br>
         <div class="row" id="contentArea">
-            
-           
+
+
         </div>
 
     </div>
 </section>
 
-<script src ="js/eventType.js" ></script>
+<script src="js/eventType.js"></script>
 
 <?php include('include/footer.php')?>
-
