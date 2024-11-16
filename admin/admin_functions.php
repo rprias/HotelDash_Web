@@ -1,7 +1,7 @@
 <?php
 include '../include/functions.php';
     
-// ---------------------------------------User Actions----------------------------------------------
+// ---------------------------------------Acciones del Usuario----------------------------------------------
 
    // Añade un nuevo usuario desde la consola de Administración
 
@@ -18,7 +18,7 @@ include '../include/functions.php';
         $confirmPassword = mysqli_real_escape_string($con, $_POST['conformPassword']);
 
      
-        // profile image upload
+        // Carga de la Imagen de Perfil
         $profileImageName = $_FILES["profileImage"]["name"];
         $tempname = $_FILES["profileImage"]["tmp_name"];   
         $folder = "../assets/picture/profiles/".$profileImageName;
@@ -55,7 +55,7 @@ include '../include/functions.php';
            
             // if(strlen($password) < 3 || !$number || !$uppercase || !$lowercase || !$specialChars) {
     
-             //password validation 
+             //Validacion del Password 
     
               if(strlen($password) < 3) {
                     $error = "La contraseña debe tener al menos 3 caracteres y contener como mínimo un número, una letra mayúscula, una letra minúscula y un carácter especial.";
@@ -75,7 +75,7 @@ include '../include/functions.php';
                         echo json_encode($sendData);
                   }else{
     
-                        // query validation
+                        // Validacion de la Consulta
                         $insert = "INSERT INTO users_details (dcoTipo, Nombre, NoDocu, Email, password, ContactNo, genero, ProfileImage) 
                            VALUES ('$dcoTipo', '$nombre', '$noDocu', '$email', '$password', '$contactno', '$genero', '$profileImageName')";
     
@@ -90,7 +90,7 @@ include '../include/functions.php';
                                 echo json_encode($sendData);
                             }else{
                                 header("Location:user.php");
-                                exit(); // Asegúrate de usar exit después de redirigir
+                                exit(); // Exit después de redirigir
                             }
                         }
                         else{
@@ -131,7 +131,7 @@ if(isset($_POST['deleteUser'])){
     }
 }
 
-//update - getting the selected user details
+//update - Traer los datos Previos
 if (isset($_POST['userUpdateId'])){
 
     $userID = $_POST['userUpdateId'];
@@ -391,7 +391,7 @@ if(isset($_POST['roomTypeId'])){
         echo json_encode($sendData);
     } else {
         
-        // query validation
+        // Validacion de la Consulta
         $sql_duplicate = "select * from room_type where roomType like '$roomType' AND RoomTypeId <> '$updateId' ";
         $result_dup = mysqli_query($con,$sql_duplicate);
         $nums = mysqli_num_rows($result_dup);
@@ -415,7 +415,7 @@ if(isset($_POST['roomTypeId'])){
             {
                             if(!move_uploaded_file($tempname, $folder)){
                                 //if(false){
-                                    $error ="Error in Updation ...! Try after sometime";
+                                    $error ="Error al actualizar, intentelo nuevamente.";
                                 $sendData = array(
                                     "msg"=>"",
                                     "error"=>$error
@@ -565,7 +565,7 @@ if(isset($_POST['updateRoomId'])){
 
     } else {
         
-        // query validation
+        // Validacion de la Consulta
         $update="UPDATE room_list SET  RoomTypeId='$editRoomType',RoomNumber='$editRoomNumber',Rol='$editRol' where roomId = '$updateRoomId'" ;
         
         
@@ -750,7 +750,7 @@ if(isset($_POST['eventTypeUpdateId'])){
         else{
 
 
-        // query validation
+        // Validacion de la Consulta
         $update="UPDATE event_type SET  EventType='$Type', EventImage ='$fileName', Description='$desc',Rol='$rol',Cost='$Cost' where EventTypeId = '$updateId'" ;
         
         
@@ -758,7 +758,7 @@ if(isset($_POST['eventTypeUpdateId'])){
         {
                         if(!move_uploaded_file($tempname, $folder)){
                             //if(false){
-                                $error ="Error in Updation ...! Try after sometime";
+                                $error ="Error al actualizar, intentelo nuevamente.";
                             $sendData = array(
                                 "msg"=>"",
                                 "error"=>$error
@@ -938,7 +938,7 @@ if(isset($_POST['updateEventId'])){
 
     } else {
         
-        // query validation
+        // Validacion de la Consulta
         $update="UPDATE event_list SET  EventTypeId='$editEventType',HallNumber='$editHallNumber',Rol='$editRol' where EventId = '$updateEventId'" ;
         
         
@@ -1024,7 +1024,7 @@ if(isset($_POST['deleteContact'])){
 // ----------------------------------- Account ---------------------------------------
 
 
-//update the datals of user table
+//Actualizar los detalles de la Tabla
 
 if(isset($_POST['updateAccount'])){
              
@@ -1036,13 +1036,13 @@ if(isset($_POST['updateAccount'])){
     $contactno = mysqli_real_escape_string($con, $_POST['contactno']);
     $genero = mysqli_real_escape_string($con, $_POST['genero']);
 
-    // profile image upload
+    // Carga de la Imagen de Perfil
     $profileImageName = $_FILES["profileImage"]["name"];
     $tempname = $_FILES["profileImage"]["tmp_name"];   
     $folder = "../assets/picture/profiles/".$profileImageName;
          
 
-                    // query validation
+                    // Validacion de la Consulta
                     $update_query = "UPDATE users_details SET DcoTipo = '$dcoTipo', Nombre='$nombre', NoDocu='$noDocu', Email='$email', ContactNo='$contactno', Genero='$genero', ProfileImage='$profileImageName' WHERE UserId = '$user_id'";
 
 
@@ -1050,14 +1050,14 @@ if(isset($_POST['updateAccount'])){
                     {
                         if(!move_uploaded_file($tempname, $folder)){
                         //if(false){
-                            $error ="Error in Updation ...! Try after sometime";
+                            $error ="Error al actualizar, intentelo nuevamente.";
                             $sendData = array(
                                 "msg"=>"",
                                 "error"=>$error
                             );
                             echo json_encode($sendData);
                         }else{
-                          $message = "User details updated";
+                          $message = "Detalles del usuario Actualizado";
                           // message("user.php","User Added");
                           $sendData = array(
                             "msg"=>$message,
@@ -1067,7 +1067,7 @@ if(isset($_POST['updateAccount'])){
                         }
                     }
                     else{
-                          $error ="Error in Updation ...! Try after sometime";
+                          $error ="Error al actualizar, intentelo nuevamente.";
                           $sendData = array(
                             "msg"=>"",
                             "error"=>$error
@@ -1122,7 +1122,7 @@ if(isset($_POST["oldPassword"])){
  echo json_encode($sendData);
 }
 
-// -------------------------------- General Setting-----------------------------------------
+// -------------------------------- Ajustes Generales-----------------------------------------
 
 if(isset($_POST["generalSettings"])){
    

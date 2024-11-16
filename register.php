@@ -13,7 +13,7 @@ if (isset($_POST['user_registration'])) {
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $confirmPassword = mysqli_real_escape_string($con, $_POST['confirmPassword']);
     
-    // Profile image upload
+    // Carga de la Imagen de Perfil
     $profileImageName = $_FILES["profileImage"]["name"];
     $tempname = $_FILES["profileImage"]["tmp_name"];
     $folder = "assets/picture/profiles/" . $profileImageName;

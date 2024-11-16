@@ -48,14 +48,13 @@ if (!isset($_SESSION['loggedUserId'])) {
                             <!-- DcoTipo -->
                             <div class="input-group col-lg-7 mb-4">
                                 <div class="input-group-prepend">
-                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-id-card text-muted"></i>
                                     </span>
                                 </div>
-                                <select id="dcoTipo" type="text" name="dcoTipo" 
-                                placeholder="Tipo de Documento"
+                                <select id="dcoTipo" type="text" name="dcoTipo" placeholder="Tipo de Documento"
                                     class="form-control bg-white border-left-0 border-md" required>
-                                    
+
                                     <option value="CC">Cédula de ciudadanía</option>
                                     <option value="CE">Cédula de extranjería</option>
                                     <option value="DIE">Documento de identificación extranjero</option>
@@ -87,8 +86,8 @@ if (!isset($_SESSION['loggedUserId'])) {
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
-                           <!-- Direccion de Correo -->
-                           <div class="input-group col-lg-12 mb-4">
+                            <!-- Direccion de Correo -->
+                            <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-envelope text-muted"></i>
@@ -188,7 +187,7 @@ if (!isset($_SESSION['loggedUserId'])) {
     </div>
 
 
-<!-- Modal Update for  User -->
+    <!-- Modal Update for  User -->
     <div class="modal" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -226,13 +225,14 @@ if (!isset($_SESSION['loggedUserId'])) {
                                 </div>
                                 <select id="updatedcoTipo" name="dcoTipo"
                                     class="form-control custom-select bg-white border-left-0 border-md" required>
-                                    
+
                                     <option value="CC">Cédula de ciudadanía</option>
                                     <option value="CE">Cédula de extranjería</option>
                                     <option value="DIE">Documento de identificación extranjero</option>
                                     <option value="NUIP">NUIP</option>
                                     <option value="Pasaporte">Pasaporte</option>
-                                    <option value="Permiso especial de permanencia">Permiso especial de permanencia</option>
+                                    <option value="Permiso especial de permanencia">Permiso especial de permanencia
+                                    </option>
                                 </select>
                             </div>
 
@@ -277,7 +277,8 @@ if (!isset($_SESSION['loggedUserId'])) {
                                         <i class="fa fa-user text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="updatecontactNo" type="text" name="contactNo" placeholder="Numero de Contacto"
+                                <input id="updatecontactNo" type="text" name="contactNo"
+                                    placeholder="Numero de Contacto"
                                     class="form-control bg-white border-left-0 border-md" required>
                             </div>
 
@@ -315,11 +316,12 @@ if (!isset($_SESSION['loggedUserId'])) {
                         </div>
                         <!-- Submit Button -->
                         <input type="hidden" id="userId" name="updateUserID">
-                            <div class="form-group col-lg-12 mx-auto mb-0">
-                        <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2" name="updateUser" >
-                            <span class="font-weight-bold">Guardar Cambios</span>
-                        </button>
-                    </div>
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button id="updateUser" type="submit" class="btn btn-primary btn-block py-2"
+                                name="updateUser">
+                                <span class="font-weight-bold">Guardar Cambios</span>
+                            </button>
+                        </div>
 
                     </form>
                 </div>

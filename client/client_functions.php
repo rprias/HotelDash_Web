@@ -120,7 +120,7 @@ else {
 }
 
 // ----------------------------------------- Account Action -----------------------------------------------
-//update the datals of user table
+//Actualizar los detalles de la Tabla
 
 if(isset($_POST['updateAccount'])){
              
@@ -132,7 +132,7 @@ if(isset($_POST['updateAccount'])){
   $contactno = mysqli_real_escape_string($con, $_POST['contactno']); 
   $gender = mysqli_real_escape_string($con, $_POST['gender']);
 
-  // profile image upload
+  // Carga de la Imagen de Perfil
   $profileImageName = $_FILES["profileImage"]["name"];
   $tempname = $_FILES["profileImage"]["tmp_name"];   
   $folder = "../assets/picture/profiles/".$profileImageName;
@@ -166,7 +166,7 @@ if(isset($_POST['updateAccount'])){
       echo json_encode($sendData);
   } else {
 
-                  // query validation
+                  // Validacion de la Consulta
                   $update="UPDATE users_details SET 
                   Nombre='$updatenombre', 
                   DcoTipo='$updatedcoTipo', 
@@ -180,14 +180,14 @@ if(isset($_POST['updateAccount'])){
                   if(mysqli_query($con,$update))
                   {
                       if(!move_uploaded_file($tempname, $folder)){
-                          $error ="Error in Updation ...! Try after sometime";
+                          $error ="Error al actualizar, intentelo nuevamente.";
                           $sendData = array(
                               "msg"=>"",
                               "error"=>$error
                           );
                           echo json_encode($sendData);
                       }else{
-                        $message = "User details updated";
+                        $message = "Detalles del usuario Actualizado";
                         // message("user.php","User Added");
                         $sendData = array(
                           "msg"=>$message,
@@ -197,7 +197,7 @@ if(isset($_POST['updateAccount'])){
                       }
                   }
                   else{
-                        $error ="Error in Updation ...! Try after sometime";
+                        $error ="Error al actualizar, intentelo nuevamente.";
                         $sendData = array(
                           "msg"=>"",
                           "error"=>$error
