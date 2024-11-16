@@ -118,13 +118,8 @@
 <section class="white-section" id="feature">
   <div class="row featurette m-5">
     <div class="col-md-7 container">
-      <h1 class="featurette-heading display-5">Managing Hotel Facility. <span class="text-muted lead">Space Usage
-          Plan</span></h1>
-      <p class="lead">Management of a hotel facility is another important aspect of facility planning that facility
-        planning firms, such as HPG Consulting, handle on a regular basis. The main objective is to ensure seamless
-        coordination among various hotel processes, and business continuity and sustainability. It takes into account
-        hotel space, infrastructure, personnel,
-        and equipment and helps ensure they comply with the requirements of the business.</p>
+      <h1 class="featurette-heading display-5">Bienvenidos al Hotel Dash de Bogotá. <span class="text-muted lead">Un espacio único para tu comodidad</span></h1>
+      <p class="lead">En el Hotel Dash de Bogotá, nos enorgullece ofrecerte una experiencia inigualable, donde la comodidad, el servicio y la atención al detalle se combinan para hacer de tu estancia una experiencia memorable. Nuestro objetivo es brindarte un ambiente relajante y moderno, con espacios diseñados para tu comodidad, y un equipo siempre dispuesto a ayudarte. Ya sea que viajes por negocios o placer, en Dash encontrarás todo lo que necesitas para hacer tu visita a Bogotá aún más especial.</p>
     </div>
     <div class="col-md-5 ">
       <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500"
@@ -133,7 +128,6 @@
   </div>
 </section>
 
-<!-- Testimonials -->
 
 
 <section class="colored-section pt-3" id="testiminoal-rooms">
@@ -155,7 +149,6 @@
       <ol class="carousel-indicators">
         <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
         <li data-target="#multi-item-example" data-slide-to="1"></li>
-
       </ol>
       <!--/.Indicators-->
 
@@ -171,9 +164,9 @@
               <img class="card-img-top" src="assets/picture/common/away.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Suite Sojourns</h4>
-                <p class="card-text">Exceptional value for a superlative experience with Wi-Fi, breakfast and more.</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Suite Dash</h4>
+                <p class="card-text">Disfruta de una experiencia de lujo con Wi-Fi, desayuno y más en nuestra suite más exclusiva.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -183,10 +176,9 @@
               <img class="card-img-top" src="assets/picture/common/suits.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Short Break</h4>
-                <p class="card-text">Capture a lifetime of great memories.
-                  Includes Wi-Fi, Breakfast and more</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Estancia Cortas</h4>
+                <p class="card-text">Escapate a Bogotá y disfruta de Wi-Fi, desayuno y otros servicios exclusivos.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -196,10 +188,9 @@
               <img class="card-img-top" src="assets/picture/common/dining.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Wellness</h4>
-                <p class="card-text">Capture a lifetime of great memories.
-                  Includes Wi-Fi, Breakfast and more</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Bienestar Dash</h4>
+                <p class="card-text">Relájate y disfruta de nuestro espacio de bienestar con todos los servicios incluidos.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -209,10 +200,9 @@
               <img class="card-img-top" src="assets/picture/common/accomadation.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Accommodation</h4>
-                <p class="card-text"> Apartments which
-                  are the epitome of Indian grace and style</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Alojamientos Dash</h4>
+                <p class="card-text">Habitaciones modernas y confortables, ideales para tu estancia en Bogotá.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -228,11 +218,9 @@
               <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
                 alt="Card image cap" height="180" width="50">
               <div class="card-body">
-                <h4 class="card-title">City Gateway</h4>
-                <p class="card-text">Discover exquisite weekend getaways in the comfort of your own city. Enjoy
-                  breakfast,
-                  savings on dining & spa, and more</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Escapadas Urbanas</h4>
+                <p class="card-text">Explora Bogotá desde el confort de nuestras habitaciones, con desayuno y mucho más.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -242,10 +230,9 @@
               <img class="card-img-top" src="assets/picture/common/events.jpeg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Conference</h4>
-                <p class="card-text">Ten distinct dining destinations featuring Indian & international
-                  cuisine along with well appreciated and prized beverages</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Eventos Dash</h4>
+                <p class="card-text">Ofrecemos espacios ideales para conferencias y eventos, con todo lo necesario para tu éxito.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -255,10 +242,9 @@
               <img class="card-img-top" src="assets/picture/common/wedding.jpg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Wedding</h4>
-                <p class="card-text">Dream up a traditional Indian wedding and turn it into
-                  an event extraordinaire. Encapsulate the memorable moments into reality</p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Bodas en Dash</h4>
+                <p class="card-text">Celebra tu boda de ensueño con el toque único y elegante de Hotel Dash Bogotá.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -268,11 +254,9 @@
               <img class="card-img-top" src="assets/picture/common/meeting.jpeg" alt="Card image cap" height="200"
                 width="50">
               <div class="card-body">
-                <h4 class="card-title">Meeting</h4>
-                <p class="card-text">The Killi, Kaveri and Tanjore meeting rooms are the perfect combination
-                  of space and audio visual equipments
-                </p>
-                <a class="btn btn-primary">Button</a>
+                <h4 class="card-title">Reuniones Dash</h4>
+                <p class="card-text">Salas de reuniones equipadas con tecnología de punta, ideales para tus eventos empresariales.</p>
+                <a class="btn btn-primary" href="contacto.php">Ver más</a>
               </div>
             </div>
           </div>
@@ -280,14 +264,14 @@
         </div>
         <!--/.Second slide-->
 
-
-
       </div>
       <!--/.Slides-->
 
     </div>
     <!--/.Carousel Wrapper-->
 </section>
+
+
 
 <section id="contact" class="white-section">
   <div class="container-xl mb-5 p-5">

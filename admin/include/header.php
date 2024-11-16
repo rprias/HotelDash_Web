@@ -50,9 +50,6 @@ include('../include/general.php');
 		  		<h1><a href="../index.php" class="logo"><?php echo $general_setting['Name'] ?></a></h1>
 	        <ul class="list-unstyled components mb-5" id="nav">
 				<li class="nav-item">
-					<a class="tab" href="dashboard.php">Cuadro de Mando</a>
-				</li>
-				<li class="nav-item">
 					<a class="tab" href="gallery.php">Galeria</a>
 				</li >
 				<li class="nav-item">
